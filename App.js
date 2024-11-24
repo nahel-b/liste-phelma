@@ -1,14 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +13,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+const Stack = createStackNavigator();
+
+function HomeScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
+
+function DetailsScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Details Screen</Text>
+    </View>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
