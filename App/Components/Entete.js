@@ -41,7 +41,7 @@ export default function Entete() {
             <View style={{ alignItems : "center", justifyContent : "center",flex:1
   }}>
   
-            <Text style={{ color: "white",fontSize : 22, marginRight: 10,fontFamily : "JungleBold", }}>Nom de la liste</Text>
+            <Text style={{ color: "black",fontSize : 22, marginRight: 10,fontFamily : "JungleBold", }}>Nom de la liste</Text>
             </View>
         </View>
         </View>

@@ -9,7 +9,7 @@ const { width, height } = Dimensions.get("window");
 export default function Bottom() {
 
     return (
-        <View>
+        <View pointerEvents='none'>
         <Image
           source={require("../../assets/images/liane/leaf-frame.png")}
           style={{

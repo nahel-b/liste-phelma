@@ -25,7 +25,23 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font"
+      [
+        "expo-font",
+        {
+          "fonts": [
+              "./App/assets/fonts/Inter-Black.ttf",
+              "./App/assets/fonts/Inter-Bold.ttf",
+              "./App/assets/fonts/Inter-ExtraBold.ttf",
+              "./App/assets/fonts/Inter-Light.ttf",
+              "./App/assets/fonts/Inter-Medium.ttf",
+              "./App/assets/fonts/Inter-Regular.ttf",
+              "./App/assets/fonts/Inter-SemiBold.ttf",
+              "./App/assets/fonts/Inter-Thin.ttf",
+              "./App/assets/fonts/Inter-ExtraLight.ttf",
+              "./App/assets/fonts/Jungle-View.ttf",
+              "./App/assets/fonts/Jungle-Regular.otf"
+            ]
+        }]
     ]
   }
 }

@@ -1,14 +1,27 @@
 import React from "react";
-import { Text, View, TouchableOpacity, StyleSheet, Dimensions,Image } from "react-native";
+import { Text, View, StyleSheet, Dimensions,Image } from "react-native";
 const { width, height } = Dimensions.get("window");
 import { useFonts,getLoadedFonts } from 'expo-font';
+import lightTheme from "../Colors";
+import Entete from "../Components/Entete";
+import { useNavigation } from "@react-navigation/native";
+
+import RNBounceable from "@freakycoder/react-native-bounceable";
+
+
+
+
 
 export default function Acceuil() {
 
-
-    console.log(getLoadedFonts());
+  const navigation = useNavigation();
+    
+  
   return (
+
+<View style={{flex : 1,backgroundColor : lightTheme.background}}>
     <View style={styles.container}>
+      
       {/* Event du jour et Calendrier */}
 
 
@@ -75,12 +88,12 @@ export default function Acceuil() {
           }}/>
       </View>
       <View style={[styles.section,styles.sectionContainer ]}>
-        <TouchableOpacity style={styles.largeButton}>
-          <Text style={styles.largeButtonText}>Event du jour</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.largeButton}>
+        <RNBounceable style={styles.largeButton}>
+          <Text style={styles.largeButtonText}>EVENT DU JOUR</Text>
+        </RNBounceable>
+        <RNBounceable onPress={()=>{navigation.navigate("Calendrier")}} style={styles.largeButton}>
           <Text style={styles.largeButtonText}>CALENDRIER</Text>
-        </TouchableOpacity>
+        </RNBounceable>
       </View>
 
       {/* BDE Section */}
@@ -88,55 +101,60 @@ export default function Acceuil() {
       <View style={[styles.section, styles.bdeSection]}>
         <Text style={styles.sectionTitle}>BDE</Text>
         <View style={styles.row}>
-          <TouchableOpacity style={styles.smallButton}>
+          <RNBounceable style={styles.smallButton}>
             <Text style={styles.smallButtonText}>WEL</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.smallButton}>
+          </RNBounceable>
+          <RNBounceable style={styles.smallButton}>
             <Text style={styles.smallButtonText}>SOS</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.smallButton}>
+          </RNBounceable>
+          <RNBounceable style={styles.smallButton}>
             <Text style={styles.smallButtonText}>soirée BDE</Text>
-          </TouchableOpacity>
+          </RNBounceable>
         </View>
       </View>
     </View> 
       {/* BDA and BDS Sections */}
-      <View style={[styles.row, styles.sectionContainer]}>
-        <View style={[styles.bdaBdsSection, { width: width * 0.45,backgroundColor :"rgb(122,97,29)" }]}>
+      <View style={[styles.row, styles.sectionContainer,{width : "95%"}]}>
+        <View style={[styles.bdaBdsSection, { width: width * 0.45,backgroundColor : lightTheme.brown }]}>
             <Text style={styles.sectionTitle}>BDA</Text>
             <View style={styles.row}>
-            <TouchableOpacity style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
             <Text style={styles.smallButtonText}>Soirée{"\n"}Zik</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            </RNBounceable>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
             <Text style={styles.smallButtonText}>Aprem{"\n"}BDA</Text>
-            </TouchableOpacity>
+            </RNBounceable>
             </View>
         </View>
 
-        <View style={[styles.bdaBdsSection, { width: width * 0.4,backgroundColor :"rgb(101,114,42)" }]}>
+        <View style={[styles.bdaBdsSection, { width: width * 0.4,backgroundColor : lightTheme.lightGreen }]}>
             <Text style={styles.sectionTitle}>BDS</Text>
             <View style={styles.row}>
 
-            <TouchableOpacity style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
             <Text style={styles.smallButtonText}>MINP</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            </RNBounceable>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
             <Text style={styles.smallButtonText}>Event{"\n"}Sport</Text>
-            </TouchableOpacity>
+            </RNBounceable>
             </View>
         </View>
         </View>
 
       {/* Carte de la liste et Les défis */}
       <View style={[styles.row,styles.sectionContainer,]}>
-        <TouchableOpacity style={[styles.cardButton,{transform: [{ rotate: "-8deg" }],}]}>
+        <RNBounceable >
+          <View style={[styles.cardButton,{transform: [{ rotate: "-8deg" },{translateY : -10}]}]}>
           <Text style={styles.titledCard}>CARTE DE{"\n"}LA LISTE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.cardButton,{transform: [{ rotate: "8deg"},{translateY : -10 }],}]}>
+          </View>
+        </RNBounceable>
+        <RNBounceable > 
+        <View style={[styles.cardButton,{transform: [{ rotate: "8deg"},{translateY : -20 }],}]}>
           <Text style={styles.titledCard}>LES DEFIS !</Text>
-        </TouchableOpacity>
+        </View>
+        </RNBounceable>
       </View>
+    </View>
     </View>
   );
 }
@@ -162,7 +180,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 0.03*height,
-    fontFamily : "Black",
+    fontFamily : "JungleBold",
     color: "black",
     //marginBottom: 10,
   },
@@ -175,7 +193,7 @@ const styles = StyleSheet.create({
     
   },
   largeButton: {
-    backgroundColor: "#d8e9d0",
+    backgroundColor: lightTheme.lightBackground,
     paddingVertical: height * 0.02, // Proportionnel à la hauteur
     paddingHorizontal: width * 0.1, // Proportionnel à la largeur
     borderRadius: 10,
@@ -194,7 +212,7 @@ const styles = StyleSheet.create({
     alignSelf : "center",
   },
   smallButton: {
-    backgroundColor: "#eaece5",
+    backgroundColor: lightTheme.lightBackground,
     paddingVertical: height * 0.017,
     paddingHorizontal: width * 0.05,
     borderRadius: 5,
@@ -203,8 +221,9 @@ const styles = StyleSheet.create({
     borderColor: "#000",
   },
     rowSmallButton: {
-        backgroundColor: "#eaece5",
+        backgroundColor: lightTheme.lightBackground,
         //paddingVertical: 10,
+        marginTop: height * 0.015,
         paddingHorizontal: width * 0.03,
         borderRadius: 5,
         marginHorizontal: width * 0.01,
@@ -216,7 +235,7 @@ const styles = StyleSheet.create({
     },
   smallButtonText: {
     fontSize: width * 0.03,
-    fontFamily : "Inter-Bold",
+    fontFamily : "Black",
     color: "#000",
     textAlign: "center",
   },
@@ -238,8 +257,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   titledCard : {
-    fontSize : 0.05*width,
-    fontFamily : "Inter-SemiBold",
+    fontSize : 0.06*width,
+    fontFamily : "JungleBold",
     color : "#000",
     textAlign : "center"
     },
@@ -250,9 +269,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderWidth: 1,
     borderColor: "#000",
+    flex : 1
   },
   bdeSection: {
-    backgroundColor: "#49542b", // Couleur verte foncée pour BDE
+    backgroundColor: lightTheme.darkGreen, // Couleur verte foncée pour BDE
    // paddingVertical: 0.04*height,
    height : 0.15*height,
     width: "80%",
