@@ -8,6 +8,7 @@ import Acceuil from './App/Pages/Acceuil';
 import Entete from './App/Components/Entete';
 import Bottom from './App/Components/Bottom';
 import Calendrier from './App/Pages/Calendrier';
+import SOS from './App/Pages/SOS';
 import { useFonts } from 'expo-font';
 
 
@@ -41,6 +42,7 @@ export default function App() {
         <Stack.Navigator initialRouteName="Acceuil" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Acceuil" component={Acceuil} />
           <Stack.Screen name="Calendrier" component={Calendrier} />
+          <Stack.Screen name="SOS" component={SOS} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>

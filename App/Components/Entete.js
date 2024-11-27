@@ -33,9 +33,9 @@ export default function Entete() {
                 }}
             >
   
-            <Entypo name="facebook" size={30} color="white" style={{ margin: 10 }} />
-            <Entypo name="instagram" size={30} color="white" style={{ margin: 10 }} />
-            <Entypo name="youtube" size={30} color="white" style={{ margin: 8 }} />
+            <Entypo name="facebook" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            <Entypo name="instagram" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            <Entypo name="youtube" size={30} color={lightTheme.lightGreen} style={{ margin: 8 }} />
             </View>
             
             <View style={{ alignItems : "center", justifyContent : "center",flex:1

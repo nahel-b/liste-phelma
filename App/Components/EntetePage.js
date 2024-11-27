@@ -39,7 +39,7 @@ export default function EntetePage({Titre}) {
 
                     </View>
                 <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
-                    <Text style={{ color: "white", fontSize: 30, fontFamily: "JungleBold", }}>{Titre}</Text>
+                    <Text style={{ color: "white",opacity : 0.8, fontSize: 30, fontFamily: "JungleBold", }}>{Titre}</Text>
                 </View>
             </View>
         </View>

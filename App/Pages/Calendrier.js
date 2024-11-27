@@ -72,8 +72,9 @@ export default function Calendrier() {
     ];
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isModalVisible, setIsModalVisible] = useState(true); // Toujours visible mais en bas
-    const modalHeight = height/3 ; // Hauteur du modal ouvert
-    const collapsedHeight =  height * 1; // Hauteur du modal fermé
+    const modalHeight = height * 0.35;
+        
+    const collapsedHeight =  height ; // Hauteur du modal fermé
 
     const translateY = useSharedValue(10); // Position initiale du modal (fermé)
 
@@ -146,6 +147,12 @@ export default function Calendrier() {
  
         <View style={{ flex: 1 }}>
             <CalendrierComp events={events} onEventPress={setSelectedEvent} />
+        </View>
+
+
+
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Image source={require("../../assets/images/logo-liste.png")} style={{ width: width * 0.5, height: width * 0.5 }} />
         </View>
     
     
@@ -230,7 +237,7 @@ const styles = StyleSheet.create({
         fontFamily : "SemiBold",
     },
     calendarContainer: {
-        flex: 1,
+        
         //padding: 10,
         backgroundColor: "transparent",
         
@@ -256,7 +263,7 @@ const styles = StyleSheet.create({
     },
     cell: {
         width: width/7 - width*0.01, // Divise l'écran en 7 colonnes
-        height: height*0.16, // Hauteur des cellules
+        height: height*0.13, // Hauteur des cellules
         // borderWidth: 1,
         // borderColor: "transparent",
         borderRadius : 10,
@@ -283,9 +290,14 @@ const styles = StyleSheet.create({
     },
     modal: {
         backgroundColor: 'white',
-        justifyContent: 'center',
+        justifyContent: 'flex-start', // Alignement en haut
         alignItems: 'center',
         borderRadius: 15,
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        height: height * 0.35, // Assurez-vous que la hauteur correspond au nouveau modalHeight
+        overflow: 'hidden', // Empêcher le contenu de déborder
     },
     modalContent: {
         width: '90%',

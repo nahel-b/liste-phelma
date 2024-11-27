@@ -83,11 +83,12 @@ export default function Acceuil() {
       style={{
         
         height : width * 0.6,
-        width : width * 0.4,
+        width : width * 0.3,
         
           }}/>
       </View>
-      <View style={[styles.section,styles.sectionContainer ]}>
+      
+      <View style={[styles.section,styles.sectionContainer,{backgroundColor : "transparent",flex : 0.9} ]}>
         <RNBounceable style={styles.largeButton}>
           <Text style={styles.largeButtonText}>EVENT DU JOUR</Text>
         </RNBounceable>
@@ -97,14 +98,23 @@ export default function Acceuil() {
       </View>
 
       {/* BDE Section */}
-      <View style={[styles.sectionContainer]}>
-      <View style={[styles.section, styles.bdeSection]}>
-        <Text style={styles.sectionTitle}>BDE</Text>
-        <View style={styles.row}>
+      <View style={[styles.sectionContainer,{backgroundColor : "transparent"}]}>
+      <View style={[styles.section, styles.bdeSection,{justifyContent : "space-evenly", backgroundColor : "transparent"}]}>
+        <Image 
+        style={{
+          top : 0,
+          height : 0.17*height,
+          width : 0.8*width,
+          position : "absolute",
+          resizeMode :  "stretch",
+        }}
+        source={require("../../assets/images/button/button-wood.png")}/>
+        <Text style={[styles.sectionTitle,{backgroundColor : "transparent",marginTop: height*0.01}]}>BDE</Text>
+        <View style={[styles.row,{backgroundColor : "transparent",justifyContent:"center"}]}>
           <RNBounceable style={styles.smallButton}>
             <Text style={styles.smallButtonText}>WEL</Text>
           </RNBounceable>
-          <RNBounceable style={styles.smallButton}>
+          <RNBounceable onPress={()=>{navigation.navigate("SOS")}} style={styles.smallButton}>
             <Text style={styles.smallButtonText}>SOS</Text>
           </RNBounceable>
           <RNBounceable style={styles.smallButton}>
@@ -114,27 +124,37 @@ export default function Acceuil() {
       </View>
     </View> 
       {/* BDA and BDS Sections */}
-      <View style={[styles.row, styles.sectionContainer,{width : "95%"}]}>
-        <View style={[styles.bdaBdsSection, { width: width * 0.45,backgroundColor : lightTheme.brown }]}>
-            <Text style={styles.sectionTitle}>BDA</Text>
+      <View style={[styles.row, styles.sectionContainer,{ backgroundColor : "transparent",width : "90%"}]}>
+      <Image 
+        style={{
+          top : height*0.005,
+          height : 0.2*height,
+          width : width*0.98,
+          position : "absolute",
+          resizeMode :  "stretch",
+        }}
+        source={require("../../assets/images/button/button-wood.png")}/>
+
+        <View style={[styles.bdaBdsSection, { width: width * 0.4,}]}>
+            <Text style={[styles.sectionTitle,]}>BDA</Text>
             <View style={styles.row}>
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Soirée{"\n"}Zik</Text>
             </RNBounceable>
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Aprem{"\n"}BDA</Text>
             </RNBounceable>
             </View>
         </View>
 
-        <View style={[styles.bdaBdsSection, { width: width * 0.4,backgroundColor : lightTheme.lightGreen }]}>
+        <View style={[styles.bdaBdsSection, { width: width * 0.4 }]}>
             <Text style={styles.sectionTitle}>BDS</Text>
             <View style={styles.row}>
 
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>MINP</Text>
             </RNBounceable>
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.08 }]}>
+            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Event{"\n"}Sport</Text>
             </RNBounceable>
             </View>
@@ -155,13 +175,43 @@ export default function Acceuil() {
         </RNBounceable>
       </View>
     </View>
+    <View pointerEvents="none"
+     style={{
+      flex : 0.1}}
+    />
+
+    <View pointerEvents="none"
+          
+          style={{
+          height : height * 0.15,
+          width : width * 0.6,
+          position: "absolute",
+          bottom: 0, // Aligné en bas
+          left: width * 0.25, // Centré horizontalement
+          zIndex: 1,
+        
+          }}
+          >
+          <Image source={require("../../assets/images/temple/crypt-2.png")}
+          style={{
+        height : width * 0.4,
+        width : width * 0.5,
+        resizeMode :  "stretch",
+        bottom : height * 0.07,
+        right : 0,
+        zIndex : 1,
+        transform : [{rotate : "0deg"}],
+          }}
+          />
+
+    </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.9,
     justifyContent: "flex-start",
     alignItems: "center",
     width : "100%",
@@ -171,15 +221,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     //marginHorizontal: 50,
-    marginBottom: 20,
+    marginBottom: 0,
     width : "100%",
   },
   section: {
-    marginBottom: 20,
+    //marginBottom: 20,
     alignItems: "center",
   },
   sectionTitle: {
-    fontSize: 0.03*height,
+    fontSize: 0.04*height,
     fontFamily : "JungleBold",
     color: "black",
     //marginBottom: 10,
@@ -187,8 +237,8 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     justifyContent: "space-evenly", // Répartit uniformément les espaces
-    alignItems: "center",
-    marginBottom: height * 0.02,
+    alignItems: "flex-end",
+    //marginBottom: height * 0.02,
     width: "100%", // Adapte la largeur de la rangée
     
   },
@@ -212,31 +262,37 @@ const styles = StyleSheet.create({
     alignSelf : "center",
   },
   smallButton: {
-    backgroundColor: lightTheme.lightBackground,
+    backgroundColor: "rgb(164,104,68)",
     paddingVertical: height * 0.017,
-    paddingHorizontal: width * 0.05,
+    paddingHorizontal: width * 0.04,
     borderRadius: 5,
     marginHorizontal: width * 0.01,
-    borderWidth: 1,
-    borderColor: "#000",
+    borderWidth: 1.5,
+    //borderColor: "rgb(81,28,59)",
+    borderColor: "rgb(164,81,57)",
+    marginBottom: height * 0.01,
+
   },
     rowSmallButton: {
-        backgroundColor: lightTheme.lightBackground,
         //paddingVertical: 10,
-        marginTop: height * 0.015,
-        paddingHorizontal: width * 0.03,
+        marginTop: height * 0.01,
+        paddingHorizontal: width * 0.025,
         borderRadius: 5,
-        marginHorizontal: width * 0.01,
-        borderWidth: 1,
-        borderColor: "#000",
+        //marginHorizontal: width * 0.01,
+        borderWidth: 1.5,
+        // backgroundColor: "rgb(164,101,55)",
+        //backgroundColor: "rgb(137,64,56)",
+        backgroundColor: "rgb(164,104,68)",
+        borderColor: "rgb(164,81,57)",
+        //borderColor: "rgb(164,101,55)",
         justifyContent : "center",
         
         alignItems : "center",
     },
   smallButtonText: {
-    fontSize: width * 0.03,
+    fontSize: width * 0.035,
     fontFamily : "Black",
-    color: "#000",
+    color: "black",
     textAlign: "center",
   },
   
@@ -252,7 +308,6 @@ const styles = StyleSheet.create({
   },
   tiltedButtonText: {
     fontSize: 14,
-    fontWeight: "bold",
     color: "#000",
     textAlign: "center",
   },
@@ -263,22 +318,23 @@ const styles = StyleSheet.create({
     textAlign : "center"
     },
   bdaBdsSection: {
-    padding: height * 0.01,
+    //padding: height * 0.01,
     borderRadius: 10,
     alignItems: "center",
-    marginHorizontal: 10,
-    borderWidth: 1,
-    borderColor: "#000",
-    flex : 1
+    //marginHorizontal: 10,
+    // borderWidth: 1,
+    // borderColor: "#000",
+    flex : 1,
+    zIndex : 1,
   },
   bdeSection: {
-    backgroundColor: lightTheme.darkGreen, // Couleur verte foncée pour BDE
+    //backgroundColor: lightTheme.darkGreen, // Couleur verte foncée pour BDE
    // paddingVertical: 0.04*height,
    height : 0.15*height,
     width: "80%",
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#000",
+    // borderWidth: 1,
+    // borderColor: "#000",
     justifyContent : "space-evenly",
     alignItems : "center",
   },

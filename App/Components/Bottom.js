@@ -11,12 +11,12 @@ export default function Bottom() {
     return (
         <View pointerEvents='none'>
         <Image
-          source={require("../../assets/images/liane/leaf-frame.png")}
+          source={require("../../assets/images/liane/leaf-frame-3.png")}
           style={{
-            height: height * 0.15,
+            height: height * 0.45,
             width: width,
             position: "absolute",
-            bottom: 0,
+            bottom: -width * 0.05,
             zIndex: 1,
           }}
         />
