@@ -41,7 +41,6 @@ const TabSelector = ({ titles, components }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent : "flex-start",
   },
   tabContainer: {
@@ -70,10 +69,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   componentContainer: {
-    flex: 1,
-    padding: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    marginTop: height * 0.02,
+    justifyContent: "flex-start",
+   
   },
 });
 
