@@ -138,10 +138,10 @@ export default function Acceuil() {
         <View style={[styles.bdaBdsSection, { width: width * 0.4,}]}>
             <Text style={[styles.sectionTitle,]}>BDA</Text>
             <View style={styles.row}>
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            <RNBounceable onPress={() => {navigation.navigate("SoireeZik")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Soirée{"\n"}Zik</Text>
             </RNBounceable>
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            <RNBounceable onPress={() => {navigation.navigate("ApremBDA")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Aprem{"\n"}BDA</Text>
             </RNBounceable>
             </View>
@@ -151,10 +151,10 @@ export default function Acceuil() {
             <Text style={styles.sectionTitle}>BDS</Text>
             <View style={styles.row}>
 
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            <RNBounceable onPress={() => {navigation.navigate("MINP")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>MINP</Text>
             </RNBounceable>
-            <RNBounceable style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            <RNBounceable onPress={() => {navigation.navigate("EventSportif")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Event{"\n"}Sport</Text>
             </RNBounceable>
             </View>
@@ -163,12 +163,12 @@ export default function Acceuil() {
 
       {/* Carte de la liste et Les défis */}
       <View style={[styles.row,styles.sectionContainer,]}>
-        <RNBounceable >
+        <RNBounceable onPress={() => {navigation.navigate("Carte")}} >
           <View style={[styles.cardButton,{transform: [{ rotate: "-8deg" },{translateY : -10}]}]}>
           <Text style={styles.titledCard}>CARTE DE{"\n"}LA LISTE</Text>
           </View>
         </RNBounceable>
-        <RNBounceable > 
+        <RNBounceable onPress={() => {navigation.navigate("Defis")}}  > 
         <View style={[styles.cardButton,{transform: [{ rotate: "8deg"},{translateY : -20 }],}]}>
           <Text style={styles.titledCard}>LES DEFIS !</Text>
         </View>

@@ -9,10 +9,10 @@ import Entete from './App/Components/Entete';
 import Bottom from './App/Components/Bottom';
 import Calendrier from './App/Pages/Calendrier';
 import SOS from './App/Pages/SOS';
-import SoireeBDE from './App/Pages/SoireeBDE';
-
-
-
+import {SoireeBDE} from './App/Pages/BDE';
+import { SoireeZik,ApremBDA,MINP,EventSportif } from './App/Components/BDABDS';
+import Defis from './App/Pages/Defis';
+import Carte from './App/Pages/Carte';
 
 import { useFonts } from 'expo-font';
 
@@ -52,6 +52,12 @@ export default function App() {
           <Stack.Screen name="Calendrier" component={Calendrier} />
           <Stack.Screen name="SOS" component={SOS} />
           <Stack.Screen name="SoireeBDE" component={SoireeBDE} />
+          <Stack.Screen name="SoireeZik" component={SoireeZik} />
+          <Stack.Screen name="ApremBDA" component={ApremBDA} />
+          <Stack.Screen name="MINP" component={MINP} />
+          <Stack.Screen name="EventSportif" component={EventSportif} />
+          <Stack.Screen name="Defis" component={Defis} />
+          <Stack.Screen name="Carte" component={Carte} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>
