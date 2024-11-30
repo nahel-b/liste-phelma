@@ -40,31 +40,28 @@ const data =
 
     SoireeBDE : 
     {
-        info_pratique :{
-            theme : "Jungle",
-            jour : "mardi 3 septembre",
-            horraire : " 19h-3h",
-            lieu : "2 colombes",
-            prix : "8 phelma, 10 exte",
-            lien_lieu_google : "https://www.google.com/maps",
-            transport_aller : "Metro..... \nBus..... \nVelo..... \nVoiture.....",
-            transport_retour : "Navette \nVelo \nVoiture",},
+        infoPratique: [
+            { type: "ligne", emoji: "🎉", titre: "Thème", description: "Jungle" },
+            { type: "ligne", emoji: "📅", titre: "Date", description: "Mardi 3 septembre" },
+            { type: "ligne", emoji: "🪩", titre: "Lieu", description: "2 colombes", lien: "https://www.google.com/maps" },
+            { type: "ligne", emoji: "💸", titre: "Prix", description: "8 phelma, 10 exte" },
+            { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
+            { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
+          ],
 
         au_programme : 
         [
-            {titre : "20h-minuit", emoji : "🪩",items : 
+            { type : "liste", titre : "20h-minuit", emoji : "🪩",items : 
                 [   { titre : "Groupe 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
                     { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
                     { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
             },
-            {
-                titre : "Showcase", emoji : "🎤", items :
+            { type : "liste", titre : "Showcase", emoji : "🎤", items :
                 [   { titre : "Showcase 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
                     { titre : "Showcase 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
                     { titre : "Showcase 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
             },
-            {
-                titre : "After DJ",emoji : "📀", items :
+            { type : "liste", titre : "After DJ",emoji : "📀", items :
                 [   { titre : "DJ 1 :",description : "nom DJ 1", lien_insta : "https://www.instagram.com" },
                     { titre : "DJ 2 :",description : "nom DJ 2", lien_insta : "https://www.instagram.com" },
                     { titre : "DJ 3 :",description : "nom DJ 3", lien_insta : "https://www.instagram.com" }
@@ -73,18 +70,23 @@ const data =
         ],
         
         au_menu : 
-        {
-            manger : [
+        [   
+            {   type : "double",
+                titre : "manger",
+                items : [
                 { nom : "Salade césare chevre miel pignon...",  emoji : "🥗" },
                 { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
                 { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
-            ],
-            boire : [
+            ]},
+            {
+                type : "double",
+                titre : "manger",
+                items :  [
                 { nom : "Bière : chouffe, blonde, ...", emoji : "🍺" },
                 { nom : "Cocktail spécial surprise", emoji : "🍷" },
                 { nom : "Eau bénite", emoji : "💧" },
-            ],
-        }
+            ]},
+        ]
     }
 
 
