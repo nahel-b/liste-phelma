@@ -8,6 +8,45 @@ const { width, height } = Dimensions.get("window");
 const TabSelector = ({ titles, components }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  const w = titles.length === 3 ? width * 0.31 : width * 0.25;
+
+  const styles = StyleSheet.create({
+    container: {
+      justifyContent : "flex-start",
+    },
+    tabContainer: {
+      flexDirection: "row",
+      //paddingVertical: 1,
+      alignItems: "flex-start",
+    },
+    tabButton: {
+      alignItems: "center",
+      marginHorizontal: 5,
+      width : w,
+      height: width * 0.14,
+      justifyContent: "center",
+  
+    },
+    tabImage: {
+      width: w,
+      height: width * 0.14,
+      resizeMode: "stretch",
+    },
+    tabText: {
+      position: "absolute",
+      //top: width * 0.042,
+      fontSize: width * 0.048,
+      fontFamily: "JungleBold",
+      color: "rgb(95,49,17)",
+      textAlign: "center",
+    },
+    componentContainer: {
+      marginTop: height * 0.02,
+      justifyContent: "flex-start",
+     
+    },
+  });
+
   return (
     <View style={styles.container}>
       {/* Scroll View Horizontale pour les titres */}
@@ -39,40 +78,6 @@ const TabSelector = ({ titles, components }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    justifyContent : "flex-start",
-  },
-  tabContainer: {
-    flexDirection: "row",
-    //paddingVertical: 1,
-    alignItems: "flex-start",
-  },
-  tabButton: {
-    alignItems: "center",
-    marginHorizontal: 5,
-    width : width * 0.25,
-    height: width * 0.14,
 
-  },
-  tabImage: {
-    width: width * 0.25,
-    height: width * 0.14,
-    resizeMode: "stretch",
-  },
-  tabText: {
-    position: "absolute",
-    top: width * 0.042,
-    fontSize: width * 0.048,
-    fontFamily: "JungleBold",
-    color: "rgb(95,49,17)",
-    textAlign: "center",
-  },
-  componentContainer: {
-    marginTop: height * 0.02,
-    justifyContent: "flex-start",
-   
-  },
-});
 
 export default TabSelector;

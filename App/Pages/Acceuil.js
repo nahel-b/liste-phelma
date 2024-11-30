@@ -117,7 +117,7 @@ export default function Acceuil() {
           <RNBounceable onPress={()=>{navigation.navigate("SOS")}} style={styles.smallButton}>
             <Text style={styles.smallButtonText}>SOS</Text>
           </RNBounceable>
-          <RNBounceable style={styles.smallButton}>
+          <RNBounceable onPress={()=>{navigation.navigate("SoireeBDE")}} style={styles.smallButton}>
             <Text style={styles.smallButtonText}>soirée BDE</Text>
           </RNBounceable>
         </View>

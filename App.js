@@ -9,6 +9,11 @@ import Entete from './App/Components/Entete';
 import Bottom from './App/Components/Bottom';
 import Calendrier from './App/Pages/Calendrier';
 import SOS from './App/Pages/SOS';
+import SoireeBDE from './App/Pages/SoireeBDE';
+
+
+
+
 import { useFonts } from 'expo-font';
 
 
@@ -32,6 +37,9 @@ export default function App() {
     'Bold': require('./assets/fonts/Inter-Bold.ttf'),
     'Black': require('./assets/fonts/Inter-Black.ttf'),
     'SemiBold': require('./assets/fonts/Inter-SemiBold.ttf'),
+    'Regular': require('./assets/fonts/Inter-Regular.ttf'),
+    'Medium': require('./assets/fonts/Inter-Medium.ttf'),
+
   });
 
   return (
@@ -43,6 +51,7 @@ export default function App() {
           <Stack.Screen name="Acceuil" component={Acceuil} />
           <Stack.Screen name="Calendrier" component={Calendrier} />
           <Stack.Screen name="SOS" component={SOS} />
+          <Stack.Screen name="SoireeBDE" component={SoireeBDE} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>
