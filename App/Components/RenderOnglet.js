@@ -3,10 +3,12 @@ import { View, Text, StyleSheet } from "react-native";
 import lightTheme from "../Colors";
 import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
-import Data from "../Data";
 import { Dimensions } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 import { ScrollView } from "react-native-gesture-handler";
+import { MurFeuillesDroite,MurFeuillesGauche,MurFeuillesHaut,HautLiane } from "../Components/Decoration";
+
+import { Linking } from "react-native";
 
 const { height,width } = Dimensions.get("window");
 
@@ -45,7 +47,12 @@ function RenderOnglet(data){
 
 return (
 
-<View style={[styles.PageCompContainer,{paddingVertical : height*0.03,paddingHorizontal : width* 0.04}]}>
+<View style={[styles.PageCompContainer,{paddingVertical : height*0.03,paddingHorizontal : width* 0.07}]}>
+    
+    {/* <MurFeuillesDroite/>
+    <MurFeuillesGauche/>
+    <MurFeuillesHaut/>
+    <HautLiane/> */}
     <ScrollView contentContainerStyle={{width : "100%"}} showsVerticalScrollIndicator={false}>
         <View contentContainerStyle={{backgroundColor : "transparent",alignItems : "flex-start",justifyContent : "flex-start",height : height}}>
         
@@ -123,7 +130,7 @@ return(
         <Text style={[styles.textPage,{marginLeft : 20,marginBottom : 0, fontSize :  height * 0.023,opacity : 0.7}]}>{item.titre}</Text>
         <Text  style={[styles.textPage,{marginLeft : 0,marginBottom : 0, fontSize :  height * 0.023,opacity : 0.7}]}>{" "}{item.description}</Text>
         {item.lien_insta && 
-        <RNBounceable onPress={() => { Linking.openURL(item.lien) }} style={{ }}>
+        <RNBounceable onPress={() => { Linking.openURL(item.lien_insta) }} style={{ }}>
             <Text style={[styles.textPage,{opacity : 0.8,marginBottom : 0, fontSize :  height * 0.023,opacity : 0.5, color : "blue"}]}>{"  (lien)"}</Text>
         </RNBounceable>
         }

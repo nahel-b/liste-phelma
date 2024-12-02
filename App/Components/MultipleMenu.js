@@ -31,6 +31,7 @@ const TabSelector = ({ titles, components }) => {
       width: w,
       height: width * 0.14,
       resizeMode: "stretch",
+      zIndex: 1,
     },
     tabText: {
       position: "absolute",
@@ -39,6 +40,8 @@ const TabSelector = ({ titles, components }) => {
       fontFamily: "JungleBold",
       color: "rgb(95,49,17)",
       textAlign: "center",
+      zIndex: 2 
+      ,
     },
     componentContainer: {
       marginTop: height * 0.02,

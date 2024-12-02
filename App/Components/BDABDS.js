@@ -9,7 +9,7 @@ import RNBounceable from "@freakycoder/react-native-bounceable";
 import { ScrollView } from "react-native-gesture-handler";
 import RenderOnglet from "../Components/RenderOnglet";
 const { height,width } = Dimensions.get("window");
-
+import { MurFeuillesDroite,MurFeuillesGauche,MurFeuillesHaut,HautLiane } from "../Components/Decoration";
 
 
 export function SoireeZik() {
@@ -18,6 +18,10 @@ export function SoireeZik() {
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="Soirée Zik" />
+            <MurFeuillesHaut/>
+            <MurFeuillesDroite petit={true}/>
+            <MurFeuillesGauche petit={true}/>
+            <HautLiane/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
@@ -39,6 +43,10 @@ export function ApremBDA() {
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="Aprem BDA" />
+            <MurFeuillesHaut/>
+            <MurFeuillesDroite petit={true}/>
+            <MurFeuillesGauche petit={true}/>
+            <HautLiane/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
@@ -60,6 +68,10 @@ export function MINP() {
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="MINP" />
+            <MurFeuillesHaut/>
+            <MurFeuillesDroite petit={true}/>
+            <MurFeuillesGauche petit={true}/>
+            <HautLiane/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
@@ -82,8 +94,12 @@ export function EventSportif() {
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="Event Sportif" />
+            <MurFeuillesHaut/>
+            <MurFeuillesDroite petit={true}/>
+            <MurFeuillesGauche petit={true}/>
+            <HautLiane/>
             <View style={{ height: height * 0.01 }} />
-
+            
             <MultipleMenu
                 titles={titres_base}
                 components={[

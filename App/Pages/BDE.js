@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,Image } from "react-native";
 import lightTheme from "../Colors";
 import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
@@ -9,7 +9,7 @@ import RNBounceable from "@freakycoder/react-native-bounceable";
 import { ScrollView } from "react-native-gesture-handler";
 import RenderOnglet from "../Components/RenderOnglet";
 const { height,width } = Dimensions.get("window");
-
+import { MurFeuillesDroite,MurFeuillesGauche,MurFeuillesHaut,HautLiane } from "../Components/Decoration";
 
 
 export function SoireeBDE() {
@@ -18,8 +18,17 @@ export function SoireeBDE() {
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="Soirée BDE" />
-            <View style={{ height: height * 0.01 }} />
+            <MurFeuillesGauche/>
+            <MurFeuillesDroite/>
+            <MurFeuillesHaut/>
+            <HautLiane/>
 
+            <View style={{ height: height * 0.01 }} />
+            
+            
+
+      
+            <View style={{height : height*0.01}}/>
             <MultipleMenu
                 titles={titres_base}
                 components={[

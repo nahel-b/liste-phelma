@@ -1,16 +1,27 @@
 
 import lightTheme  from './Colors'
-import SoireeBDE from './Pages/BDE';
 
 const data = 
 {
+    lien_liste_insta : "https://www.instagram.com",
+    lien_liste_facebook : "https://www.facebook.com",
+    lien_liste_youtube : "https://www.youtube.com",
     catégories_missions : ["Tout", "Livraison", "Ménage", "Jardinage"],
     missions : [
-        { nom_mission: "Mission 1", type_mission: "Livraison", description: "Description de la mission 1" },
-        { nom_mission: "Mission 2", type_mission: "Ménage", description: "Description de la mission 2" },
-        { nom_mission: "Mission 3", type_mission: "Livraison", description: "Description de la mission 3" },
-        { nom_mission: "Mission 4", type_mission: "Jardinage", description: "Description de la mission 4" },
-        { nom_mission: "Mission 5", type_mission: "Ménage", description: "Description de la mission 5" },
+        { nom: "Mission 1", categorie: "Livraison", description: "Description de la mission 1" },
+        { nom: "Mission 2", categorie: "Ménage", description: "Description de la mission 2" },
+        { nom: "Mission 3", categorie: "Livraison", description: "Description de la mission 3" },
+        { nom: "Mission 4", categorie: "Jardinage", description: "Description de la mission 4" },
+        { nom: "Mission 5", categorie: "Ménage", description: "Description de la mission 5" },
+    ],
+    catégories_défis : ["Tout", "Sport", "Culture", "Cuisine"],
+    date_fin_defi : '2024-12-25T00:00:00Z',
+    defis : [
+        { nom: "Défi 1", categorie: "Sport", description: "Description du défi 1", points : 2 },
+        { nom: "Défi 2", categorie: "Culture", description: "Description du défi 2", points : 5 },
+        { nom: "Défi 3", categorie: "Sport", description: "Description du défi 3", points : 1 },
+        { nom: "Défi 4", categorie: "Cuisine", description: "Description du défi 4", points : 2 },
+        { nom: "Défi 5", categorie: "Culture", description: "Description du défi 5", points : 3 },
     ],
     calendrier_data : [
         { nomJour: "1 sep", title: "Kfet ouverture",  description: "La soirée d'ouverture de la Kfet.",  textColor: "black", backgroundColor: lightTheme.lightGreen  },

@@ -13,13 +13,19 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nahelb.listephelma",
+      "buildNumber": "3",
+       
+       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "googleServicesFile": "./google-services.json"
+
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -29,19 +35,34 @@
         "expo-font",
         {
           "fonts": [
-              "./App/assets/fonts/Inter-Black.ttf",
-              "./App/assets/fonts/Inter-Bold.ttf",
-              "./App/assets/fonts/Inter-ExtraBold.ttf",
-              "./App/assets/fonts/Inter-Light.ttf",
-              "./App/assets/fonts/Inter-Medium.ttf",
-              "./App/assets/fonts/Inter-Regular.ttf",
-              "./App/assets/fonts/Inter-SemiBold.ttf",
-              "./App/assets/fonts/Inter-Thin.ttf",
-              "./App/assets/fonts/Inter-ExtraLight.ttf",
-              "./App/assets/fonts/Jungle-View.ttf",
-              "./App/assets/fonts/Jungle-Regular.otf"
-            ]
-        }]
-    ]
+            "./assets/fonts/Inter-Black.ttf",
+            "./assets/fonts/Inter-Bold.ttf",
+            "./assets/fonts/Inter-ExtraBold.ttf",
+            "./assets/fonts/Inter-Light.ttf",
+            "./assets/fonts/Inter-Medium.ttf",
+            "./assets/fonts/Inter-Regular.ttf",
+            "./assets/fonts/Inter-SemiBold.ttf",
+            "./assets/fonts/Inter-Thin.ttf",
+            "./assets/fonts/Inter-ExtraLight.ttf",
+            "./assets/fonts/Jungle-Bold.ttf",
+            "./assets/fonts/Jungle-Regular.otf"
+          ]
+        }
+      ],
+      "@react-native-firebase/app",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dade7171-1968-48b9-b2ae-609712624831"
+      }
+    }
   }
 }

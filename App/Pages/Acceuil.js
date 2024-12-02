@@ -23,6 +23,46 @@ export default function Acceuil() {
     <View style={styles.container}>
       
       {/* Event du jour et Calendrier */}
+      <View pointerEvents="none" 
+       style={{
+        
+        height : width * 0.8,
+        width : width * 0.8,
+        position: "absolute",
+        right : 0, // Aligné à droite
+        zIndex: 1,
+        //bottom: height * 0.5, // Centré verticalement
+        transform: [{ rotateY: "0deg"},{rotateZ : "0deg" }],
+        
+          }} >
+      <Image  source={require("../../assets/images/liane/leave-frame-right.png")} 
+      style={{
+        
+        height : width * 0.8,
+        width : width * 0.8,
+        
+          }}/>
+      </View>
+      <View pointerEvents="none" 
+       style={{
+        
+        height : width * 0.5,
+        width : width * 0.5,
+        position: "absolute",
+        left : 0, // Aligné à droite
+        zIndex: 2,
+        //bottom: height * 0.5, // Centré verticalement
+        transform: [{ rotateY: "0deg"},{rotateZ : "0deg" }],
+        
+          }} >
+      <Image  source={require("../../assets/images/liane/leave-frame-left.png")} 
+      style={{
+        
+        height : width * 0.5,
+        width : width * 0.5,
+        
+          }}/>
+      </View>
 
 
 <View pointerEvents="none"
@@ -52,7 +92,7 @@ export default function Acceuil() {
             height : width * 0.4,
         width : width * 0.2,
             position: "absolute",
-            top: height*0.1, // Aligné en haut
+            top: width*0.45, // Aligné en haut
             left: 0, // Aligné à droite
             zIndex: 1,
             transform: [{ rotate: "0deg" }],
@@ -67,27 +107,27 @@ export default function Acceuil() {
 
       }}/>
       </View>
-      <View pointerEvents="none" 
+      {/* <View pointerEvents="none" 
        style={{
         
         height : width * 0.6,
         width : width * 0.4,
         position: "absolute",
-        right : 0, // Aligné à droite
+        right : -width*0.05, // Aligné à droite
         zIndex: 1,
         bottom: height * 0.5, // Centré verticalement
-        transform: [{ rotateY: "180deg" }],
+        transform: [{ rotateY: "180deg"},{rotateZ : "-50deg" }],
         
           }} >
-      <Image  source={require("../../assets/images/liane/leaf-tree.png")} 
+      <Image  source={require("../../assets/images/liane/liane-4.png")} 
       style={{
         
         height : width * 0.6,
-        width : width * 0.3,
+        width : width * 0.6,
         
           }}/>
-      </View>
-      
+      </View> */}
+        <View style={{height : height*0.02}}/>
       <View style={[styles.section,styles.sectionContainer,{backgroundColor : "transparent",flex : 0.9} ]}>
         <RNBounceable style={styles.largeButton}>
           <Text style={styles.largeButtonText}>EVENT DU JOUR</Text>

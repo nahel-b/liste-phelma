@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553978967439",
+    "project_id": "liste-phelma",
+    "storage_bucket": "liste-phelma.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553978967439:android:20da1418b1bc4699e547fa",
+        "android_client_info": {
+          "package_name": "com.nahelb.listephelma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvBdHcw7l6uaUW92akDN923lLTVeXbGIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

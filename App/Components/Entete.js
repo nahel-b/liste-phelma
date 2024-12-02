@@ -3,9 +3,10 @@ import { View, Text } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import lightTheme from "../Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-
-  
-
+import Data from "../Data";  
+import RNBounceable from "@freakycoder/react-native-bounceable";
+import { Linking } from "react-native";
+const { lien_liste_facebook,lien_liste_insta,lien_liste_youtube } = Data;
 
 
 export default function Entete() {
@@ -33,9 +34,16 @@ export default function Entete() {
                 }}
             >
   
+                
+            <RNBounceable onPress={()=>{Linking.openURL(lien_liste_facebook)}}>
             <Entypo name="facebook" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            </RNBounceable>
+            <RNBounceable onPress={()=>{Linking.openURL(lien_liste_insta)}}>
             <Entypo name="instagram" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            </RNBounceable>
+            <RNBounceable onPress={()=>{Linking.openURL(lien_liste_youtube)}}>
             <Entypo name="youtube" size={30} color={lightTheme.lightGreen} style={{ margin: 8 }} />
+            </RNBounceable>
             </View>
             
             <View style={{ alignItems : "center", justifyContent : "center",flex:1

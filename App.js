@@ -13,6 +13,7 @@ import {SoireeBDE} from './App/Pages/BDE';
 import { SoireeZik,ApremBDA,MINP,EventSportif } from './App/Components/BDABDS';
 import Defis from './App/Pages/Defis';
 import Carte from './App/Pages/Carte';
+import ListeDefis from './App/Pages/ListeDefis';
 
 import { useFonts } from 'expo-font';
 
@@ -42,6 +43,10 @@ export default function App() {
 
   });
 
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <SafeAreaProvider>
           <Entete />
@@ -58,6 +63,7 @@ export default function App() {
           <Stack.Screen name="EventSportif" component={EventSportif} />
           <Stack.Screen name="Defis" component={Defis} />
           <Stack.Screen name="Carte" component={Carte} />
+          <Stack.Screen name="ListeDefis" component={ListeDefis} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>
