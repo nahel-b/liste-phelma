@@ -65,22 +65,9 @@ const renderItem = ({ item, index,data }) => {
     
   
     return (
-        <View style={styles.rectangle}>
+        <View key={index} style={styles.rectangle}>
         <View style={[styles.leftColumn,]}>
-                {/* <View style={styles.medalContainer}>
-            <Image
-                source={require('../../assets/images/button/medaille-gold.png')} // Remplacez par le chemin de votre image
-                style={styles.medalImage}
-            />
-            </View> */}
-            {/* <Image source={require('../../assets/images/button/medaille-gold.png')} 
-            style={{
-            width : "100%", 
-            position: 'absolute',
-            alignSelf   : 'center',
-            zIndex: 1,
-            resizeMode : 'contain',
-            height : "100%"}}/> */}
+         
 
             <ColorCircle color={color1} taille={width * 0.13}>
                 <ColorCircle color={color2} taille={width * 0.11}>
@@ -90,14 +77,26 @@ const renderItem = ({ item, index,data }) => {
                 </ColorCircle>
             </ColorCircle>
 
-          {/* <View style={styles.redCircle}>
-            
-            <Text style={styles.position}>{index + 1}</Text>
-          </View> */}
         </View>
         <View style={styles.rightColumn}>
-          <Text style={styles.textNom}>{item.prenom} {item.nom}</Text>
-          <Text style={styles.textPoint}>Points : {item.point}</Text>
+        {item.prenom != "" ?
+        <><Text style={styles.textNom}>{item.prenom} {item.nom}</Text>
+         <Text style={styles.textPoint}>Points : {item.point}</Text></> 
+        
+        :
+
+        //skeleton for both lines
+
+        <>
+        <View style={{width : width * 0.3 ,borderRadius : 5,opacity : 0.5, backgroundColor : lightTheme.midBackground}}>
+        <Text style={styles.textPoint}>{" "} </Text>
+        </View>
+        <View style={{width : width * 0.1,marginTop : height*0.01,opacity : 0.5,borderRadius : 5,backgroundColor : lightTheme.midBackground}}>
+        <Text style={styles.textPoint}>{" "} </Text>
+        </View>
+        </>
+        }
+         
         </View>
       </View>
     );
@@ -196,30 +195,43 @@ const renderItem = ({ item, index,data }) => {
     
 
     
-    //   if (!loaded || loading) {
-    //     const dataNull = [
-    //       { prenom: "Chargement", nom: "--", point: "0" },
-    //       { prenom: "Chargement", nom: "--", point: "0" },
-    //       { prenom: "Chargement", nom: "--", point: "0" },
-    //       { prenom: "Chargement", nom: "--", point: "0" },
-    //       { prenom: "Chargement", nom: "--", point: "0" },
-    //       { prenom: "Chargement", nom: "--", point: "0" }
-    //     ];
-    //     return (
-    //     <View>
-    //     <Text style={{marginTop : 10, fontSize: 40, alignSelf: 'center',fontFamily:'JungleBold' }}>Chargement...</Text>
-    //     <Text style={{margin : 0, fontSize: 20, alignSelf: 'center',fontFamily:'JungleBold' }}>Vérifie ta connexion</Text>
-    //     </View>
-    //     );
-    //   }
+      if ( loading) {
+        const dataNull = [
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+          { prenom: "", nom: "", point: "" },
+        ];
+        return (
+        // <View>
+        // <Text style={{marginTop : 10, fontSize: 40, alignSelf: 'center',fontFamily:'JungleBold' }}>Chargement...</Text>
+        // <Text style={{margin : 0, fontSize: 20, alignSelf: 'center',fontFamily:'JungleBold' }}>Vérifie ta connexion</Text>
+        // </View>
+        <View style={styles.container}>
+          <FlatList
+            data={dataNull}
+            renderItem={({ item, index }) => renderItem({ item, index, data })}
+            style={{ height: '100%' }}
+            />
+          
+        </View>
+        );
+      }
     
       return (
         <View style={styles.container}>
           <FlatList
             data={data}
-            keyExtractor={(item) => item.username}
             renderItem={({ item, index }) => renderItem({ item, index, data })}
             style={{ height: '100%' }}
+            showsVerticalScrollIndicator={false}
             />
           
         </View>
