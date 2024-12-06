@@ -14,6 +14,7 @@ import { SoireeZik,ApremBDA,MINP,EventSportif } from './App/Components/BDABDS';
 import Defis from './App/Pages/Defis';
 import Carte from './App/Pages/Carte';
 import ListeDefis from './App/Pages/ListeDefis';
+import ClassementDefis from './App/Pages/ClassementDefis';
 
 import { useFonts } from 'expo-font';
 
@@ -64,6 +65,7 @@ export default function App() {
           <Stack.Screen name="Defis" component={Defis} />
           <Stack.Screen name="Carte" component={Carte} />
           <Stack.Screen name="ListeDefis" component={ListeDefis} />
+          <Stack.Screen name="ClassementDefis" component={ClassementDefis} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>

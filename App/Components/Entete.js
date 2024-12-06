@@ -8,6 +8,8 @@ import RNBounceable from "@freakycoder/react-native-bounceable";
 import { Linking } from "react-native";
 const { lien_liste_facebook,lien_liste_insta,lien_liste_youtube } = Data;
 
+import data from "../Data";
+
 
 export default function Entete() {
 
@@ -49,7 +51,7 @@ export default function Entete() {
             <View style={{ alignItems : "center", justifyContent : "center",flex:1
   }}>
   
-            <Text style={{ color: "black",fontSize : 22, marginRight: 10,fontFamily : "JungleBold", }}>Nom de la liste</Text>
+            <Text style={{ color: "black",fontSize : 22, marginRight: 10,fontFamily : "JungleBold", }}>{data.nom_de_la_liste}</Text>
             </View>
         </View>
         </View>

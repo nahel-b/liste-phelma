@@ -77,7 +77,7 @@ export function MurFeuillesGauche({petit})
     );
 }
 
-export function MurFeuillesDroite({petit})
+export function MurFeuillesDroite({petit,monter})
 {
 
     return (
@@ -92,7 +92,7 @@ export function MurFeuillesDroite({petit})
                 position: "absolute",
                 left : !petit ? width * 0.7 : width * 0.75, // Aligné à droite
                 zIndex: 2,
-                top : width * 0.25,
+                top : monter ? width * 0.25 : width * 0.25,
 
                 //bottom: height * 0.5, // Centré verticalement
                 transform: [{ rotateY: "180deg"},{rotateZ : "10deg" }],
@@ -142,7 +142,7 @@ export function MurFeuillesDroite({petit})
     </View>);
 }
 
-export function MurFeuillesHaut({fg})
+export function MurFeuillesHaut({fg,monter})
 {
     return (
            
@@ -158,6 +158,7 @@ export function MurFeuillesHaut({fg})
         position: "absolute",
         right : 0, // Aligné à droite
         zIndex : 3,
+        top : monter ? -height*0.05 : 0,
         //bottom: height * 0.5, // Centré verticalement
         transform: [{ rotateY: "180deg"},{rotateZ : "0deg" }],
         

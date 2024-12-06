@@ -3,6 +3,7 @@ import lightTheme  from './Colors'
 
 const data = 
 {
+    nom_de_la_liste : "Nom de la liste",
     lien_liste_insta : "https://www.instagram.com",
     lien_liste_facebook : "https://www.facebook.com",
     lien_liste_youtube : "https://www.youtube.com",

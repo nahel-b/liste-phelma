@@ -14,7 +14,7 @@ import { FlatList } from 'react-native';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, { useAnimatedGestureHandler, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
-
+import { MurFeuillesDroite,MurFeuillesGauche,MurFeuillesHaut } from '../Components/Decoration';
 import data from '../Data';
 
 const Event = ({ title,backgroundColor,textColor, description,onPress }) => {
@@ -33,46 +33,7 @@ export default function Calendrier() {
 
     const { calendrier_data } = data;
 
-        
-    // const events = [
-    //     { 
-    //         nomJour: "1 sep", 
-    //         title: "Kfet ouverture", 
-    //         description: "La soirée d'ouverture de la Kfet.", 
-    //         textColor: "black", 
-    //         backgroundColor: lightTheme.lightGreen 
-    //     },
-    //     { 
-    //         nomJour: "2 sep", 
-    //         title: "Soirée 2c", 
-    //         description: "Une soirée conviviale pour tous les 2C.", 
-    //         textColor: "black", 
-    //         backgroundColor: lightTheme.brown 
-    //     },
-    //     { nomJour: "3 sep" },
-    //     { nomJour: "4 sep", title: "Aprem Sportive", description: "Une après-midi de sport.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-    //     { nomJour: "5 sep", title: "Soirée 8c", description: "La soirée des 8C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-    //     { nomJour: "6 sep", title: "Soirée 9c", description: "La soirée des 9C.", textColor: "black", backgroundColor: lightTheme.brown },
-    //     { nomJour: "7 sep", title: "Soirée 12c", description: "La soirée des 12C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-    //     { nomJour: "8 sep" },
-    //     { nomJour: "9 sep" },
-    //     { nomJour: "10 sep", title: "Soirée 1c", description: "La soirée des 1C.", textColor: "black", backgroundColor: lightTheme.brown },
-    //     { nomJour: "11 sep" },
-    //     { nomJour: "12 sep" },
-    //     { nomJour: "13 sep", title: "Soirée 3c", description: "La soirée des 3C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-    //     { nomJour: "14 sep" },
-    //     { nomJour: "15 sep" },
-    //     { nomJour: "16 sep", title: "Soirée 4c", description: "La soirée des 4C.", textColor: "black", backgroundColor: lightTheme.brown },
-    //     { nomJour: "17 sep" },
-    //     { nomJour: "18 sep" },
-    //     { nomJour: "19 sep", title: "Soirée 5c", description: "La soirée des 5C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-    //     { nomJour: "20 sep" },
-    //     { nomJour: "21 sep" },
-        
-      
-        
-        
-    // ];
+    
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isModalVisible, setIsModalVisible] = useState(true); // Toujours visible mais en bas
     const modalHeight = height * 0.35;
@@ -124,6 +85,9 @@ export default function Calendrier() {
     return (
         <View style={{ flex: 1, backgroundColor: lightTheme.background }}>
             <EntetePage Titre={"Calendrier"} />
+            <MurFeuillesHaut fg={false} monter={true}/>
+            <MurFeuillesDroite monter={true} petit={true} />
+            <MurFeuillesGauche  petit={true} />
             <View pointerEvents="none"
         style={{
             
@@ -132,7 +96,7 @@ export default function Calendrier() {
             position: "absolute",
             top: -20, // Aligné en haut
             left: -10, // Aligné à droite
-            zIndex: 1,
+            zIndex: 0,
             transform: [{ rotate: "0deg" }],
     
         }} >
@@ -148,8 +112,8 @@ export default function Calendrier() {
         
 
  
-        <View style={{ flex: 1 }}>
-            <CalendrierComp events={calendrier_data} onEventPress={setSelectedEvent} />
+        <View style={{ flex: 1,zIndex : 1 }}>
+            <CalendrierComp events={calendrier_data} onEventPress={(event) => {setSelectedEvent(event); withSpring(0, { damping: 20, stiffness: 200 })}} />
         </View>
 
 
@@ -168,7 +132,7 @@ export default function Calendrier() {
                         <Text style={styles.modalContent}>
                             {selectedEvent.description}                      
                           </Text>
-                        <TouchableOpacity style={styles.button} onPress={() => translateY.value = withSpring(collapsedHeight)}>
+                        <TouchableOpacity style={styles.button} onPress={() => {translateY.value = withSpring(collapsedHeight)}}>
                             <Text style={{color : lightTheme.background,fontSize : 13,fontFamily : "JungleBold"}}>FERMER</Text>
                         </TouchableOpacity>
                         <View style={{height : insets.bottom + height*0.1}} />
@@ -218,6 +182,7 @@ const CalendrierComp = ({ events,onEventPress }) => {
             scrollEnabled={false}
                 data={events}
                 numColumns={7}
+
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={renderCell}
                 contentContainerStyle={styles.grid}
@@ -241,7 +206,7 @@ const styles = StyleSheet.create({
         fontFamily : "SemiBold",
     },
     calendarContainer: {
-        
+        zIndex: 1,
         //padding: 10,
         backgroundColor: "transparent",
         
@@ -251,6 +216,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginBottom: 5,
         marginTop : height*0.05,
+        zIndex: 1,
     },
     headerCell: {
         flex: 1,
@@ -260,10 +226,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily : "JungleBold",
         color: '#5d4037',
+        zIndex: 3,
+        
     },
     grid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        // flexDirection: 'row',
+        // flexWrap: 'wrap',
     },
     cell: {
         width: width/7 - width*0.01, // Divise l'écran en 7 colonnes
@@ -299,6 +267,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         position: 'absolute',
         bottom: 0,
+        zIndex: 1,
         width: '100%',
         height: height * 0.35, // Assurez-vous que la hauteur correspond au nouveau modalHeight
         overflow: 'hidden', // Empêcher le contenu de déborder

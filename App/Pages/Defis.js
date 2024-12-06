@@ -32,7 +32,7 @@ const Defis = () => {
         <Countdown targetDate={targetDate} />
 
 
-                <RNBounceable style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
+                <RNBounceable onPress={()=>{navigation.navigate("ClassementDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
                 <Image source={require('../../assets/images/button/button-wood.png')} style={{
                     width: width * 0.7, height: width * 0.3, resizeMode: 'stretch',
                     position: "absolute",

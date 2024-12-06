@@ -16,16 +16,15 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.nahelb.listephelma",
       "buildNumber": "3",
-       
-       "googleServicesFile": "./GoogleService-Info.plist"
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "googleServicesFile": "./google-services.json"
-
+      "googleServicesFile": "./google-services.json",
+      "package": "com.nahelb.listephelma"
     },
     "web": {
       "favicon": "./assets/favicon.png"
