@@ -8,6 +8,7 @@ const data =
     lien_liste_facebook : "https://www.facebook.com",
     lien_liste_youtube : "https://www.youtube.com",
     catégories_missions : ["Tout", "Livraison", "Ménage", "Jardinage"],
+    lien_commande_mission : "https://www.google.com",
     missions : [
         { nom: "Mission 1", categorie: "Livraison", description: "Description de la mission 1" },
         { nom: "Mission 2", categorie: "Ménage", description: "Description de la mission 2" },
@@ -24,6 +25,8 @@ const data =
         { nom: "Défi 4", categorie: "Cuisine", description: "Description du défi 4", points : 2 },
         { nom: "Défi 5", categorie: "Culture", description: "Description du défi 5", points : 3 },
     ],
+    
+    nom_mois : ["jan", "fev", "mar", "avr", "mai", "jun", "jul", "aou", "sep", "oct", "nov", "dec"],
     calendrier_data : [
         { nomJour: "1 sep", title: "Kfet ouverture",  description: "La soirée d'ouverture de la Kfet.",  textColor: "black", backgroundColor: lightTheme.lightGreen  },
         { nomJour: "2 sep",  title: "Soirée 2c",  description: "Une soirée conviviale pour tous les 2C.",  textColor: "black",  backgroundColor: lightTheme.brown  },
@@ -54,10 +57,15 @@ const data =
     {
         info_pratique: [
             { type: "ligne", emoji: "🎉", titre: "Thème", description: "Jungle" },
+            { type : "separation"},
             { type: "ligne", emoji: "📅", titre: "Date", description: "Mardi 3 septembre" },
+            { type : "separation"},
             { type: "ligne", emoji: "🪩", titre: "Lieu", description: "2 colombes", lien: "https://www.google.com/maps" },
+            { type : "separation"},
             { type: "ligne", emoji: "💸", titre: "Prix", description: "8 phelma, 10 exte" },
+            { type : "separation"},
             { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
+            { type : "separation"},
             { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
           ],
 
@@ -68,11 +76,13 @@ const data =
                     { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
                     { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
             },
+            { type : "separation"},
             { type : "liste", titre : "Showcase", emoji : "🎤", items :
                 [   { titre : "Showcase 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
                     { titre : "Showcase 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
                     { titre : "Showcase 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
             },
+            { type : "separation"},
             { type : "liste", titre : "After DJ",emoji : "📀", items :
                 [   { titre : "DJ 1 :",description : "nom DJ 1", lien_insta : "https://www.instagram.com" },
                     { titre : "DJ 2 :",description : "nom DJ 2", lien_insta : "https://www.instagram.com" },
@@ -91,6 +101,7 @@ const data =
                 { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
                 { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "A boire",
@@ -107,10 +118,15 @@ const data =
     {
         info_pratique: [
             { type: "ligne", emoji: "🎉", titre: "Thème", description: "troubadour carrement" },
+            { type : "separation"},
             { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type : "separation"},
             { type: "ligne", emoji: "🪩", titre: "Lieu", description: "l'alpha", lien: "https://www.google.com/maps" },
+            { type : "separation"},
             { type: "ligne", emoji: "💸", titre: "Prix", description: "10 phelma, 12 exte" },
+            { type : "separation"},
             { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
+            { type : "separation"},
             { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
           ],
 
@@ -121,11 +137,13 @@ const data =
                     { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
                     { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
             },
+            { type : "separation"},
             { type : "liste", titre : "Showcase", emoji : "🎤", items :
                 [   { titre : "Showcase 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
                     { titre : "Showcase 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
                     { titre : "Showcase 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
             },
+            { type : "separation"},
             { type : "liste", titre : "After DJ",emoji : "📀", items :
                 [   { titre : "DJ 1 :",description : "nom DJ 1", lien_insta : "https://www.instagram.com" },
                     { titre : "DJ 2 :",description : "nom DJ 2", lien_insta : "https://www.instagram.com" },
@@ -144,6 +162,7 @@ const data =
                 { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
                 { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "A boire",
@@ -159,10 +178,15 @@ const data =
     {
         info_pratique: [
             { type: "ligne", emoji: "🎲", titre: "Jeux de BDA en pleine air", description: "" },
+            { type : "separation"},
             { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type : "separation"},
             { type: "ligne", emoji: "🎡", titre: "Lieu", description: "parc asterix", lien: "https://www.google.com/maps" },
+            { type : "separation"},
             { type: "ligne", emoji: "💸", titre: "Prix", description: "5 phelma, 6 exte" },
+            { type : "separation"},
             { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
+            { type : "separation"},
             { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
           ],
 
@@ -176,6 +200,7 @@ const data =
                 { nom : "Poulet braisé curry oignon ", emoji : "🃏" },
                 { nom : "Un autre jeu", emoji : "🥧" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "Jeux en plein air",
@@ -185,6 +210,7 @@ const data =
                 { nom : "Pétanque", emoji : "🎯" },
                 { nom : "Chasse au trésor", emoji : "🔍" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "Jeux de réflexion",
@@ -207,6 +233,7 @@ const data =
                 { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
                 { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "A boire",
@@ -222,8 +249,11 @@ const data =
     {
         info_pratique: [
             { type: "ligne", emoji: "🕺", titre: "Theme", description: "Schrek" },
+            { type : "separation"},
             { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type : "separation"},
             { type: "ligne", emoji: "🎡", titre: "Lieu", description: "MINP", lien: "https://www.google.com/maps" },
+            { type : "separation"},
             { type: "ligne", emoji: "💸", titre: "Prix", description: "5 phelma, 6 exte" },
           ],
 
@@ -238,6 +268,7 @@ const data =
                 { nom : "Basket", emoji : "🏀" }
                 ,
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "Jeux à boire",
@@ -260,6 +291,7 @@ const data =
                 { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
                 { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "A boire",
@@ -276,8 +308,11 @@ const data =
     {
         info_pratique: [
             { type: "ligne", emoji: "🪂", titre: "Trampoline park", description: "" },
+            { type : "separation"},
             { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type : "separation"},
             { type: "ligne", emoji: "🎡", titre: "Lieu", description: "Jump in park", lien: "https://www.google.com/maps" },
+            { type : "separation"},
             { type: "ligne", emoji: "💸", titre: "Prix", description: "5 phelma, 6 exte" },
           ],
 
@@ -292,6 +327,7 @@ const data =
                 { nom : "Basket", emoji : "🏀" }
                 ,
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "Places à gagner",
@@ -313,6 +349,7 @@ const data =
                 { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
                 { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
             ]},
+            { type : "separation"},
             {
                 type : "double",
                 titre : "A boire",
@@ -325,7 +362,14 @@ const data =
         ]
     },
 
+    avantage_carte : 
+    [
+        { commerce : "🍹 Buble Tea", promotion :"1 acheté = 1 offert" },
+        { commerce : "🥙 Kebab", promotion :"2 acheté = 1 offert" },
+        { commerce : "🍟 McDo", promotion :"1 acheté = 1 offert" },
+        
 
+    ]
 
 
 }

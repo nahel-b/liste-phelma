@@ -4,7 +4,7 @@ import lightTheme from "../Colors";
 import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
 import { Dimensions } from "react-native";
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
 import { ScrollView } from "react-native-gesture-handler";
 import { MurFeuillesDroite,MurFeuillesGauche,MurFeuillesHaut,HautLiane } from "../Components/Decoration";
 
@@ -38,6 +38,13 @@ function RenderOnglet(data){
         } else if (item.type === "double") {
             return (
             <Double data={item} />
+            );
+        }
+        else if (item.type === "separation") {
+            return (
+                <View style={{width : width*0.76,justifyContent : "center"}}>
+            <View style={styles.separationItem}/>
+            </View>
             );
         }
         return null;
@@ -77,12 +84,12 @@ return items.map((item, index) => (
    
     <View
         key={index}
-        style={{
+        style={[{
             flexDirection: "row",
             alignItems: "center",
-            marginBottom: height * 0.006,
+ 
             marginLeft : width * 0.06,
-        }}
+        }]}
     >
         <Text style={{color : "white",fontFamily : "JungleBold", fontSize: width * 0.05,height : "100%" }}>{item.emoji}
 
@@ -119,20 +126,20 @@ function Liste(element,index1){
     
 console.log(element);
 return(
-<View key={index1} style={{marginBottom : height*0.04, flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" }}>
-    <Text style={{height : "100%",fontSize : width * 0.05}}>{element.element.emoji}{" "}</Text> 
+<View key={index1} style={[{ flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" },styles.seperation]}>
+    <Text style={{height : "100%",fontSize : width * 0.05}}>{element.element.emoji}{}</Text> 
     <View style={{flexDirection : "column"}}>
-    <Text style={[styles.textPage,{marginBottom : height*0.02, fontSize :  height * 0.026,opacity : 0.9}]}>{element.element.titre}</Text>
+    <Text style={[styles.textPage,{marginBottom : height*0.0002, fontSize :  height * 0.026,opacity : 0.9}]}>{element.element.titre}</Text>
     {element.element.items.map((item,index) => {
         return (
-        <View key={index} style={{marginBottom : height*0.008, flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" }}>
+        <View key={index} style={{marginBottom : height*0.00, flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" }}>
 
         <Text style={[styles.textPage,{marginLeft : 20,marginBottom : 0, fontSize :  height * 0.023,opacity : 0.7}]}>{item.titre}</Text>
         <Text  style={[styles.textPage,{marginLeft : 0,marginBottom : 0, fontSize :  height * 0.023,opacity : 0.7}]}>{" "}{item.description}</Text>
         {item.lien_insta && 
-        <RNBounceable onPress={() => { Linking.openURL(item.lien_insta) }} style={{ }}>
+        <HapticBounceable onPress={() => { Linking.openURL(item.lien_insta) }} style={{ }}>
             <Text style={[styles.textPage,{opacity : 0.8,marginBottom : 0, fontSize :  height * 0.023,opacity : 0.5, color : "blue"}]}>{"  (lien)"}</Text>
-        </RNBounceable>
+        </HapticBounceable>
         }
         </View>
     )   
@@ -146,13 +153,13 @@ return(
 
 function Ligne ({text, emoji,lien}) {
 return(
-    <View style={{ flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" }}>
-        <Text style={{height : "100%",fontSize : width * 0.05}}>{emoji}</Text>
+    <View style={[{ flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" },styles.seperation]}>
+        <Text style={{ height : "100%",fontSize : width * 0.05}}>{emoji}</Text>
         <Text style={[styles.textPage,{ fontSize :  height * 0.026,opacity : 0.9}]}>{" "}{text}</Text>
         {lien && 
-        <RNBounceable onPress={() => { Linking.openURL(lien) }} style={{  alignItems : "center"}}>
+        <HapticBounceable onPress={() => { Linking.openURL(lien) }} style={{  alignItems : "center"}}>
         <Text style={[styles.textPage,{alignSelf : "center", fontSize :  height * 0.022,opacity : 0.6, color : "blue"}]}>{"  (maps)"}</Text>
-        </RNBounceable>
+        </HapticBounceable>
         }
     </View>
 )
@@ -162,10 +169,10 @@ function Paragraphe({titre, text , emoji}) {
 
 
 return (
-    <View style={{ flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" }}>
-        <Text style={{height : "100%",fontSize : width * 0.05}}>{emoji}</Text>
-        <View style={{flexDirection : "column"}}>
-        <Text style={[styles.textPage,{marginBottom : 5, fontSize :  height * 0.026,opacity : 0.9}]}>{" "}{titre}</Text>
+    <View style={[{ flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" },styles.seperation]}>
+        <Text style={{fontSize : width * 0.05,marginTop : height * 0.004}}>{emoji}</Text>
+        <View style={[{flexDirection : "column"}]}>
+        <Text style={[styles.textPage,{ fontSize :  height * 0.026,opacity : 0.9}]}>{" "}{titre}</Text>
         <Text style={[styles.textPage,{marginLeft : 12, fontSize :  height * 0.023,opacity : 0.7}]}>{text}</Text>
         </View>
     </View>
@@ -194,8 +201,18 @@ textPage : {
     fontSize : width * 0.05,
     fontFamily : "JungleBold",
     textAlign : "left",
-    marginBottom : height * 0.04,
-}
+    //marginBottom : height * 0.01,
+    marginTop : height * 0.01,
+},
+seperation : 
+{
+    marginBottom: height * 0.022,
+    marginTop : height * 0.02,
+},
+separationItem : { alignSelf : "center", 
+    height : height * 0.005,borderRadius : 100,
+    opacity : 0.3,
+    width : width*0.7,backgroundColor : lightTheme.background}
 });
 
 

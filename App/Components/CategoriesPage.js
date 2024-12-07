@@ -5,9 +5,11 @@ import { PanGestureHandler } from "react-native-gesture-handler";
 import lightTheme from "../Colors";
 import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
 import { MurFeuillesHaut ,HautLiane, MurFeuillesDroite, MurFeuillesGauche} from "../Components/Decoration";
 
+import { Linking } from "react-native";
+import data from "../Data";
 
 
 const { width, height } = Dimensions.get("window");
@@ -53,7 +55,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
         
           <ScrollView contentContainerStyle={styles.missionContainer}>
             {filteredItems.map((item, index) => (
-              <RNBounceable
+              <HapticBounceable
                 key={index}
                 style={styles.missionCard}
                 onPress={() => {
@@ -62,7 +64,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                 }}
               >
                 <Text style={styles.missionText}>{item.nom}</Text>
-              </RNBounceable>
+              </HapticBounceable>
             ))}
           </ScrollView>
         );
@@ -94,31 +96,31 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                             </View>
 
                             {commander_button ?(
-                            <RNBounceable style={{zIndex : 2}}>
+                            <HapticBounceable onPress={()=>Linking.openURL(data.lien_commande_mission)} style={{zIndex : 2}}>
                                 <View style={{alignItems : "flex-end",zIndex : 2,backgroundColor : lightTheme.lightBackground,padding : 10,borderRadius : 20}}>
                                 <Image source={require("../../assets/images/animaux/tigre.png")} style={{height : width * 0.2,zIndex : 2,width : width * 0.2}} />
                             <Text style={{color : "black",fontFamily : "JungleBold",fontSize : 15}}>Commander</Text>
                                 </View>
-                            </RNBounceable>)
+                            </HapticBounceable>)
                             :
                             ( selectedItem.points &&
-                                <RNBounceable>
+                                <HapticBounceable>
                                 <View style={{aspectRatio : 1,zIndex  : 2,alignItems : "center",backgroundColor : lightTheme.lightBackground,padding : 10,borderRadius : 20}}>
                                 <Text style={{textAlign : "center",color : lightTheme.background,fontSize : width*0.15,fontFamily : "JungleBold"}} >{selectedItem.points}</Text>
                                 <Text style={{color : lightTheme.background,fontFamily : "JungleBold",fontSize : 15}}>points</Text>
                                 </View>
-                            </RNBounceable>
+                            </HapticBounceable>
                             )
 }
 
                             </View>
                             <Text style={styles.modalDescription}>{selectedItem.description}</Text>
-                            <RNBounceable
+                            <HapticBounceable
                                 style={styles.closeButton}
                                 onPress={() => translateY.value = withSpring(collapsedHeight)}
                             >
                                 <Text style={styles.closeButtonText}>FERMER</Text>
-                            </RNBounceable>
+                            </HapticBounceable>
                         </View>
                     )}
                 </Animated.View>

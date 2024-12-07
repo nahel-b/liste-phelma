@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import lightTheme from '../Colors';
 import EntetePage from "../Components/EntetePage"; 
 import { Dimensions } from 'react-native';
-import RNBounceable from '@freakycoder/react-native-bounceable';
+import HapticBounceable from "../Components/HapticBounceable";
 import { useNavigation } from "@react-navigation/native";
 const { height,width } = Dimensions.get('window');
 import { MurFeuillesDroite, MurFeuillesGauche,HautLiane,MurFeuillesHaut } from '../Components/Decoration';
@@ -32,22 +32,22 @@ const Defis = () => {
         <Countdown targetDate={targetDate} />
 
 
-                <RNBounceable onPress={()=>{navigation.navigate("ClassementDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
+                <HapticBounceable onPress={()=>{navigation.navigate("ClassementDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
                 <Image source={require('../../assets/images/button/button-wood.png')} style={{
                     width: width * 0.7, height: width * 0.3, resizeMode: 'stretch',
                     position: "absolute",
                     }} />
                 <Text style={{fontFamily : "JungleBold",color : lightTheme.barBackground,textAlign : "center",fontSize : width * 0.08}}>Classements</Text>
 
-            </RNBounceable>
-            <RNBounceable onPress={()=>{navigation.navigate("ListeDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
+            </HapticBounceable>
+            <HapticBounceable onPress={()=>{navigation.navigate("ListeDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
                 <Image source={require('../../assets/images/button/button-wood.png')} style={{
                     width: width * 0.7, height: width * 0.3, resizeMode: 'stretch',
                     position: "absolute",
                     }} />
                 <Text style={{fontFamily : "JungleBold",color : lightTheme.barBackground,textAlign : "center",fontSize : width * 0.08}}>Liste des {"\n"}Défis</Text>
 
-            </RNBounceable>
+            </HapticBounceable>
             </View>
             <View style={{ height: height * 0.25 }} />
         </View>

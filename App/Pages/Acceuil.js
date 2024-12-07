@@ -6,9 +6,13 @@ import lightTheme from "../Colors";
 import Entete from "../Components/Entete";
 import { useNavigation } from "@react-navigation/native";
 
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
+import data from "../Data";
 
 
+
+
+import * as Haptics from 'expo-haptics';
 
 
 
@@ -128,13 +132,18 @@ export default function Acceuil() {
           }}/>
       </View> */}
         <View style={{height : height*0.02}}/>
+
+        
       <View style={[styles.section,styles.sectionContainer,{backgroundColor : "transparent",flex : 0.9} ]}>
-        <RNBounceable style={styles.largeButton}>
-          <Text style={styles.largeButtonText}>EVENT DU JOUR</Text>
-        </RNBounceable>
-        <RNBounceable onPress={()=>{navigation.navigate("Calendrier")}} style={styles.largeButton}>
+
+        
+        <HapticBounceable onPress={() => eventDuJourClick(navigation)} style={styles.largeButton}>
+          <Text style={styles.largeButtonText}>EVENT DU JOUR </Text>
+        </HapticBounceable>
+        
+        <HapticBounceable onPress={()=>{navigation.navigate("Calendrier")}} style={styles.largeButton}>
           <Text style={styles.largeButtonText}>CALENDRIER</Text>
-        </RNBounceable>
+        </HapticBounceable>
       </View>
 
       {/* BDE Section */}
@@ -151,15 +160,15 @@ export default function Acceuil() {
         source={require("../../assets/images/button/button-wood.png")}/>
         <Text style={[styles.sectionTitle,{backgroundColor : "transparent",marginTop: height*0.01}]}>BDE</Text>
         <View style={[styles.row,{backgroundColor : "transparent",justifyContent:"center"}]}>
-          <RNBounceable style={styles.smallButton}>
+          <HapticBounceable style={styles.smallButton}>
             <Text style={styles.smallButtonText}>WEL</Text>
-          </RNBounceable>
-          <RNBounceable onPress={()=>{navigation.navigate("SOS")}} style={styles.smallButton}>
+          </HapticBounceable>
+          <HapticBounceable onPress={()=>{navigation.navigate("SOS")}} style={styles.smallButton}>
             <Text style={styles.smallButtonText}>SOS</Text>
-          </RNBounceable>
-          <RNBounceable onPress={()=>{navigation.navigate("SoireeBDE")}} style={styles.smallButton}>
+          </HapticBounceable>
+          <HapticBounceable onPress={()=>{navigation.navigate("SoireeBDE")}} style={styles.smallButton}>
             <Text style={styles.smallButtonText}>soirée BDE</Text>
-          </RNBounceable>
+          </HapticBounceable>
         </View>
       </View>
     </View> 
@@ -178,12 +187,12 @@ export default function Acceuil() {
         <View style={[styles.bdaBdsSection, { width: width * 0.4,}]}>
             <Text style={[styles.sectionTitle,]}>BDA</Text>
             <View style={styles.row}>
-            <RNBounceable onPress={() => {navigation.navigate("SoireeZik")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            <HapticBounceable onPress={() => {navigation.navigate("SoireeZik")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Soirée{"\n"}Zik</Text>
-            </RNBounceable>
-            <RNBounceable onPress={() => {navigation.navigate("ApremBDA")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            </HapticBounceable>
+            <HapticBounceable onPress={() => {navigation.navigate("ApremBDA")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Aprem{"\n"}BDA</Text>
-            </RNBounceable>
+            </HapticBounceable>
             </View>
         </View>
 
@@ -191,28 +200,28 @@ export default function Acceuil() {
             <Text style={styles.sectionTitle}>BDS</Text>
             <View style={styles.row}>
 
-            <RNBounceable onPress={() => {navigation.navigate("MINP")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            <HapticBounceable onPress={() => {navigation.navigate("MINP")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>MINP</Text>
-            </RNBounceable>
-            <RNBounceable onPress={() => {navigation.navigate("EventSportif")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
+            </HapticBounceable>
+            <HapticBounceable onPress={() => {navigation.navigate("EventSportif")}} style={[styles.rowSmallButton, { height: height * 0.07 }]}>
             <Text style={styles.smallButtonText}>Event{"\n"}Sport</Text>
-            </RNBounceable>
+            </HapticBounceable>
             </View>
         </View>
         </View>
 
       {/* Carte de la liste et Les défis */}
       <View style={[styles.row,styles.sectionContainer,]}>
-        <RNBounceable onPress={() => {navigation.navigate("Carte")}} >
+        <HapticBounceable onPress={() => {navigation.navigate("Carte")}} >
           <View style={[styles.cardButton,{transform: [{ rotate: "-8deg" },{translateY : -10}]}]}>
           <Text style={styles.titledCard}>CARTE DE{"\n"}LA LISTE</Text>
           </View>
-        </RNBounceable>
-        <RNBounceable onPress={() => {navigation.navigate("Defis")}}  > 
+        </HapticBounceable>
+        <HapticBounceable onPress={() => {navigation.navigate("Defis")}}  > 
         <View style={[styles.cardButton,{transform: [{ rotate: "8deg"},{translateY : -20 }],}]}>
           <Text style={styles.titledCard}>LES DEFIS !</Text>
         </View>
-        </RNBounceable>
+        </HapticBounceable>
       </View>
     </View>
     <View pointerEvents="none"
@@ -248,6 +257,51 @@ export default function Acceuil() {
     </View>
   );
 }
+
+const eventDuJourClick = (navigation) => {
+
+
+  const today = new Date();
+  const day = today.getDate(); 
+  const monthNames = data.nom_mois;
+  const month = monthNames[today.getMonth()]; // Mois abrégé
+
+  const todayFormatted = `${day} ${month}`;
+
+  const event = data.calendrier_data.find(event => event.nomJour === todayFormatted);
+
+  if (event) {
+
+    if(event.title == "WEL"){
+      navigation.navigate("WEL");
+  }
+  else if(event.title == "SOS"){
+    navigation.navigate("SOS");
+  }
+  else if(event.title == "Soirée BDE"){
+    navigation.navigate("SoireeBDE");
+  }
+  else if(event.title == "Soirée Zik"){
+    navigation.navigate("SoireeZik");
+  }
+  else if(event.title == "Aprem BDA"){
+    navigation.navigate("ApremBDA");
+  }
+  else if(event.title == "MINP"){
+    navigation.navigate("MINP");
+  }
+  else if(event.title == "Event Sportif"){
+    navigation.navigate("EventSportif");
+  }
+  else
+  {
+
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+
+  }
+}
+  
+};
 
 const styles = StyleSheet.create({
   container: {

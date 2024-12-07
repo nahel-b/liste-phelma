@@ -5,7 +5,7 @@ import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
 import Data from "../Data";
 import { Dimensions } from "react-native";
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
 import { ScrollView } from "react-native-gesture-handler";
 import RenderOnglet from "../Components/RenderOnglet";
 const { height,width } = Dimensions.get("window");

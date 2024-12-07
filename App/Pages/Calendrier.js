@@ -4,7 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import lightTheme from "../Colors";
 import { useFonts } from 'expo-font';
 import { Entypo } from '@expo/vector-icons';
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
 import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from 'react-native';
 const { width, height } = Dimensions.get("window");
@@ -19,11 +19,11 @@ import data from '../Data';
 
 const Event = ({ title,backgroundColor,textColor, description,onPress }) => {
     return (
-        <RNBounceable onPress={onPress}>
+        <HapticBounceable onPress={onPress}>
         <View style={[styles.eventContainer,{backgroundColor : backgroundColor}]}>
             <Text style={[styles.eventTitle,{color : textColor}]}>{title}</Text>
         </View>
-        </RNBounceable>
+        </HapticBounceable>
     );
 };
 
@@ -43,16 +43,16 @@ export default function Calendrier() {
     const translateY = useSharedValue(10); // Position initiale du modal (fermé)
 
 
-    useEffect(() => {
-        if (selectedEvent) {
-            translateY.value = withSpring(0, { damping: 20, stiffness: 200 }); // Animer l'ouverture avec moins de rebond
-        }
-        else {
-            translateY.value = withSpring(collapsedHeight); // Animer la fermeture
-        }
-    }
+    // useEffect(() => {
+    //     if (selectedEvent) {
+    //         translateY.value = withSpring(0, { damping: 20, stiffness: 200 }); // Animer l'ouverture avec moins de rebond
+    //     }
+    //     else {
+    //         translateY.value = withSpring(collapsedHeight); // Animer la fermeture
+    //     }
+    // }
     
-    , [selectedEvent]);
+    // , [selectedEvent]);
 
 
 
@@ -113,7 +113,7 @@ export default function Calendrier() {
 
  
         <View style={{ flex: 1,zIndex : 1 }}>
-            <CalendrierComp events={calendrier_data} onEventPress={(event) => {setSelectedEvent(event); withSpring(0, { damping: 20, stiffness: 200 })}} />
+            <CalendrierComp events={calendrier_data} onEventPress={(event) => {setSelectedEvent(event);translateY.value = withSpring(0, { damping: 20, stiffness: 200 })}} />
         </View>
 
 
@@ -132,9 +132,9 @@ export default function Calendrier() {
                         <Text style={styles.modalContent}>
                             {selectedEvent.description}                      
                           </Text>
-                        <TouchableOpacity style={styles.button} onPress={() => {translateY.value = withSpring(collapsedHeight)}}>
+                        <HapticBounceable style={styles.button} onPress={() => {translateY.value = withSpring(collapsedHeight)}}>
                             <Text style={{color : lightTheme.background,fontSize : 13,fontFamily : "JungleBold"}}>FERMER</Text>
-                        </TouchableOpacity>
+                        </HapticBounceable>
                         <View style={{height : insets.bottom + height*0.1}} />
                     </Animated.View>
                 </PanGestureHandler>

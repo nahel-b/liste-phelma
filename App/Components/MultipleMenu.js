@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from "react-native";
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
 import { Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("window");
@@ -55,7 +55,7 @@ const TabSelector = ({ titles, components }) => {
       {/* Scroll View Horizontale pour les titres */}
       <ScrollView horizontal contentContainerStyle={styles.tabContainer} showsHorizontalScrollIndicator={false}>
         {titles.map((title, index) => (
-          <RNBounceable
+          <HapticBounceable
             key={index}
             onPress={() => setSelectedIndex(index)}
             style={styles.tabButton}
@@ -69,7 +69,7 @@ const TabSelector = ({ titles, components }) => {
               }
             />
             <Text style={styles.tabText}>{title}</Text>
-          </RNBounceable>
+          </HapticBounceable>
         ))}
       </ScrollView>
 

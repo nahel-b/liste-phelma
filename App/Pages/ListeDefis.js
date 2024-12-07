@@ -5,7 +5,7 @@ import { PanGestureHandler } from "react-native-gesture-handler";
 import lightTheme from "../Colors";
 import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "../Components/HapticBounceable";
 import CategoriesPage from "../Components/CategoriesPage";
 import Data from "../Data";
 

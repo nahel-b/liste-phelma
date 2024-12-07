@@ -6,7 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import lightTheme from "../Colors";
 import { useFonts } from 'expo-font';
 import { Entypo } from '@expo/vector-icons';
-import RNBounceable from "@freakycoder/react-native-bounceable";
+import HapticBounceable from "./HapticBounceable";
 import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from 'react-native';
 const { width, height } = Dimensions.get("window");
@@ -32,10 +32,10 @@ export default function EntetePage({Titre}) {
 
 
                     <View style={{ position : "absolute", left : 0,bottom : height * 0.0025 }}>
-                    <RNBounceable onPress={() => { navigation.goBack() }} style={{ }}>
+                    <HapticBounceable onPress={() => { navigation.goBack() }} style={{ }}>
 
                         <Entypo name="chevron-left" size={35} color="black" style={{ margin: 0 }} />
-                        </RNBounceable>
+                        </HapticBounceable>
 
                     </View>
                 <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
