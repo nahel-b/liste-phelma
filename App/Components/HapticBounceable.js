@@ -9,7 +9,7 @@ const HapticBounceable = ({ onPress, hapticType = Haptics.ImpactFeedbackStyle.Ri
     if (onPress) onPress(); // Appelle la fonction onPress d'origine
   };
 
-  return <RNBounceable {...props} onPress={handlePress} />;
+  return <RNBounceable  {...props} onPress={handlePress} />;
 };
 
 export default HapticBounceable;

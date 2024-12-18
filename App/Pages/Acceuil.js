@@ -19,6 +19,8 @@ import * as Haptics from 'expo-haptics';
 export default function Acceuil() {
 
   const navigation = useNavigation();
+
+  const eventDuJourTitle = getEventDuJourTitle();
     
   
   return (
@@ -96,7 +98,7 @@ export default function Acceuil() {
             height : width * 0.4,
         width : width * 0.2,
             position: "absolute",
-            top: width*0.45, // Aligné en haut
+            top: height*0.3, // Aligné en haut
             left: 0, // Aligné à droite
             zIndex: 1,
             transform: [{ rotate: "0deg" }],
@@ -107,8 +109,7 @@ export default function Acceuil() {
         
         height : width * 0.4,
         width : width * 0.2,
-        
-
+      
       }}/>
       </View>
       {/* <View pointerEvents="none" 
@@ -119,7 +120,7 @@ export default function Acceuil() {
         position: "absolute",
         right : -width*0.05, // Aligné à droite
         zIndex: 1,
-        bottom: height * 0.5, // Centré verticalement
+        bottom: height * 0.5, //I Centré verticalement
         transform: [{ rotateY: "180deg"},{rotateZ : "-50deg" }],
         
           }} >
@@ -136,12 +137,23 @@ export default function Acceuil() {
         
       <View style={[styles.section,styles.sectionContainer,{backgroundColor : "transparent",flex : 0.9} ]}>
 
-        
-        <HapticBounceable onPress={() => eventDuJourClick(navigation)} style={styles.largeButton}>
-          <Text style={styles.largeButtonText}>EVENT DU JOUR </Text>
+        <View style={{opacity : eventDuJourTitle ? 1 : 0.5}} >
+
+          <View style={{
+            opacity : eventDuJourTitle ? 1 : 0,
+            top : -height*0.006,
+            position : "absolute",alignSelf : "center",zIndex : 2,backgroundColor : lightTheme.darkGreen,padding : 5,borderRadius : 10}} >
+            <Text style={{
+              fontSize: width * 0.05, // Taille de police relative à la largeur de l'écran
+              fontFamily : "JungleBold",
+              color: "white",
+              alignSelf : "center", }}>{eventDuJourTitle} !!</Text>
+          </View>
+        <HapticBounceable disabled={eventDuJourTitle == null ? true : false} onPress={() => eventDuJourClick(navigation)} style={[styles.largeButton,]}>
+          <Text style={[styles.largeButtonText,{marginTop : height*0.01}]}>EVENT DU JOUR </Text>
         </HapticBounceable>
-        
-        <HapticBounceable onPress={()=>{navigation.navigate("Calendrier")}} style={styles.largeButton}>
+        </View>
+        <HapticBounceable  onPress={()=>{navigation.navigate("Calendrier")}} style={styles.largeButton}>
           <Text style={styles.largeButtonText}>CALENDRIER</Text>
         </HapticBounceable>
       </View>
@@ -152,15 +164,15 @@ export default function Acceuil() {
         <Image 
         style={{
           top : 0,
-          height : 0.17*height,
-          width : 0.8*width,
+          height : 0.175*height,
+          width : 0.92*width,
           position : "absolute",
           resizeMode :  "stretch",
         }}
         source={require("../../assets/images/button/button-wood.png")}/>
         <Text style={[styles.sectionTitle,{backgroundColor : "transparent",marginTop: height*0.01}]}>BDE</Text>
         <View style={[styles.row,{backgroundColor : "transparent",justifyContent:"center"}]}>
-          <HapticBounceable style={styles.smallButton}>
+          <HapticBounceable onPress={()=>navigation.navigate("WEL")}  style={styles.smallButton}>
             <Text style={styles.smallButtonText}>WEL</Text>
           </HapticBounceable>
           <HapticBounceable onPress={()=>{navigation.navigate("SOS")}} style={styles.smallButton}>
@@ -168,6 +180,9 @@ export default function Acceuil() {
           </HapticBounceable>
           <HapticBounceable onPress={()=>{navigation.navigate("SoireeBDE")}} style={styles.smallButton}>
             <Text style={styles.smallButtonText}>soirée BDE</Text>
+          </HapticBounceable>
+          <HapticBounceable onPress={()=>{navigation.navigate("DD")}} style={styles.smallButton}>
+            <Text style={styles.smallButtonText}>DD</Text>
           </HapticBounceable>
         </View>
       </View>
@@ -257,6 +272,19 @@ export default function Acceuil() {
     </View>
   );
 }
+
+
+const getEventDuJourTitle = () => {
+  const today = new Date();
+  const day = today.getDate();
+  const monthNames = data.nom_mois;
+  const month = monthNames[today.getMonth()]; // Mois abrégé
+
+  const todayFormatted = `${day} ${month}`;
+  const event = data.calendrier_data.find(event => event.nomJour === todayFormatted);
+
+  return event ? event.title : null;
+};
 
 const eventDuJourClick = (navigation) => {
 

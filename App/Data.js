@@ -3,7 +3,7 @@ import lightTheme  from './Colors'
 
 const data = 
 {
-    nom_de_la_liste : "Nom de la liste",
+    nom_de_la_liste : "La CRYPT",
     lien_liste_insta : "https://www.instagram.com",
     lien_liste_facebook : "https://www.facebook.com",
     lien_liste_youtube : "https://www.youtube.com",
@@ -49,6 +49,7 @@ const data =
         { nomJour: "19 sep", title: "Soirée 5c", description: "La soirée des 5C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
         { nomJour: "20 sep" },
         { nomJour: "21 sep" },
+        // { nomJour : "18 dec", title : "SOS", description : "La soirée de noel", textColor : "black", backgroundColor : lightTheme.lightGreen }
     ],
 
     titres_base : ["Info pratique", "Au programme", "Au menue"],
@@ -113,7 +114,7 @@ const data =
             ]},
         ]
     },
-
+    
     SoireeZik : 
     {
         info_pratique: [
@@ -151,7 +152,7 @@ const data =
                 ]
             }
         ],
-        
+       
         au_menu : 
         [   
             {   type : "double",
@@ -174,6 +175,62 @@ const data =
             ]},
         ]
     },
+    DD : 
+    {
+   info_pratique: [
+       { type: "ligne", emoji: "🎉", titre: "Thème", description: "jsppp" },
+       { type : "separation"},
+       { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+       { type : "separation"},
+       { type: "ligne", emoji: "🪩", titre: "Lieu", description: "l'alpha", lien: "https://www.google.com/maps" },
+       { type : "separation"},
+       { type: "ligne", emoji: "💸", titre: "Prix", description: "10 phelma, 12 exte" },
+     ],
+
+   au_programme : 
+   [
+       { type : "liste", titre : "20h-minuit", emoji : "🪩",items : 
+           [   { titre : "Groupe 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
+               { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
+               { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
+       },
+       { type : "separation"},
+       { type : "liste", titre : "Showcase", emoji : "🎤", items :
+           [   { titre : "Showcase 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
+               { titre : "Showcase 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
+               { titre : "Showcase 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
+       },
+       { type : "separation"},
+       { type : "liste", titre : "After DJ",emoji : "📀", items :
+           [   { titre : "DJ 1 :",description : "nom DJ 1", lien_insta : "https://www.instagram.com" },
+               { titre : "DJ 2 :",description : "nom DJ 2", lien_insta : "https://www.instagram.com" },
+               { titre : "DJ 3 :",description : "nom DJ 3", lien_insta : "https://www.instagram.com" }
+           ]
+       }
+   ],
+   
+   au_menu : 
+   [   
+       {   type : "double",
+           titre : "A manger",
+           emoji : "🍽️",
+           items : [
+           { nom : "Salade césare chevre miel pignon...",  emoji : "🥗" },
+           { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
+           { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
+       ]},
+       { type : "separation"},
+       {
+           type : "double",
+           titre : "A boire",
+           emoji : "🍹",
+           items :  [
+           { nom : "Bière : chouffe, blonde, ...", emoji : "🍺" },
+           { nom : "Cocktail spécial surprise", emoji : "🍷" },
+           { nom : "Eau bénite", emoji : "💧" },
+       ]},
+   ]
+},
     ApremBDA : 
     {
         info_pratique: [
@@ -361,6 +418,65 @@ const data =
             ]},
         ]
     },
+
+    WEL : 
+    [
+        { titre : 'Jour 1',
+
+            items : 
+            [
+                {
+                    titre : "Menu 1",
+                    photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+
+                    items : 
+                    [
+                        {   nom : "Burger", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 5,
+                            commander_lien : "https://www.google.com",
+                            ingredients : " Pain, steak, tomate, salade, fromage, ketchup, moutarde, oignon, cornichon, frite",
+                         },
+                        {   nom : "Muffin", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "Farine, oeuf, sucre, lait, beurre, levure, chocolat",
+                         },
+                    ]
+                },
+                {
+                    titre : "Shotgun",
+                    photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+
+                    items : 
+                    [
+                        {   nom : "Burger", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 5,
+                            commander_lien : "https://www.google.com",
+                            ingredients : " Pain, steak, tomate, salade, fromage, ketchup, moutarde, oignon, cornichon, frite",
+                         },
+                        {   nom : "Muffin", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "Farine, oeuf, sucre, lait, beurre, levure, chocolat",
+                         },
+                    ]
+                }
+
+            ]
+
+            
+        },
+        { titre : 'Jour 2'
+
+            
+        },
+        { titre : 'Jour 3'
+
+            
+        },
+       
+
+    ],
 
     avantage_carte : 
     [

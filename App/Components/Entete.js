@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import lightTheme from "../Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -7,6 +7,9 @@ import Data from "../Data";
 import HapticBounceable from "../Components/HapticBounceable";
 import { Linking } from "react-native";
 const { lien_liste_facebook,lien_liste_insta,lien_liste_youtube } = Data;
+
+import { Dimensions } from "react-native";
+const { height,width } = Dimensions.get("window");
 
 import data from "../Data";
 
@@ -51,9 +54,24 @@ export default function Entete() {
             <View style={{ alignItems : "center", justifyContent : "center",flex:1
   }}>
   
-            <Text style={{ color: "black",fontSize : 22, marginRight: 10,fontFamily : "JungleBold", }}>{data.nom_de_la_liste}</Text>
+            
+           <Text style={{ color: "black",fontSize : 22, marginLeft: 12,marginRight : 20,fontFamily : "JungleBold", }}>{data.nom_de_la_liste}</Text>
+           
+           
+           
             </View>
+            <View>
+        <Image source={require("../../assets/images/logo-liste.png")} 
+           
+           style={{
+            marginRight : 10,
+            height : height * 0.04,
+            width : height * 0.04,
+           }}/>
         </View>
+        </View>
+
+        
         </View>
 
     );

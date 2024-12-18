@@ -9,12 +9,13 @@ import Entete from './App/Components/Entete';
 import Bottom from './App/Components/Bottom';
 import Calendrier from './App/Pages/Calendrier';
 import SOS from './App/Pages/SOS';
-import {SoireeBDE} from './App/Pages/BDE';
+import {SoireeBDE,DD} from './App/Pages/BDE';
 import { SoireeZik,ApremBDA,MINP,EventSportif } from './App/Components/BDABDS';
 import Defis from './App/Pages/Defis';
 import Carte from './App/Pages/Carte';
 import ListeDefis from './App/Pages/ListeDefis';
 import ClassementDefis from './App/Pages/ClassementDefis';
+import WEL,{WELMenuPage,WELDescriptionMenuPage} from './App/Pages/WEL';
 
 import { useFonts } from 'expo-font';
 
@@ -66,6 +67,10 @@ export default function App() {
           <Stack.Screen name="Carte" component={Carte} />
           <Stack.Screen name="ListeDefis" component={ListeDefis} />
           <Stack.Screen name="ClassementDefis" component={ClassementDefis} />
+          <Stack.Screen name="WEL" component={WEL} />
+          <Stack.Screen name="WELMenuPage" component={WELMenuPage} />
+          <Stack.Screen name="WELDescriptionMenuPage" component={WELDescriptionMenuPage} />
+          <Stack.Screen name="DD" component={DD} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>

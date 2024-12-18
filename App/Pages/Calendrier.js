@@ -276,8 +276,10 @@ const styles = StyleSheet.create({
         width: '90%',
         backgroundColor: 'white',
         borderRadius: 10,
+        fontFamily : "JungleBold",
         padding: 20,
         alignItems: 'center',
+        opacity : 0.7,
     },
     modalTitle: {
         fontSize: 23,
@@ -286,7 +288,7 @@ const styles = StyleSheet.create({
     },
     modalDescription: {
         fontSize: 14,
-        fontFamily: 'JungleRegular',
+        fontFamily: 'JungleBold',
         textAlign: 'center',
         marginBottom: 20,
     },

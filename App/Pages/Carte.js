@@ -1,9 +1,17 @@
 
 
-import React from "react";
+import React,{useState} from "react";
 import { Text, View, StyleSheet, Dimensions,Image } from "react-native";
 import EntetePage from "../Components/EntetePage";
 import { MurFeuillesHaut ,HautLiane, MurFeuillesDroite, MurFeuillesGauche} from "../Components/Decoration";
+
+import Animated, { 
+    useSharedValue, 
+    useAnimatedStyle, 
+    withTiming, 
+    useDerivedValue, 
+    runOnJS 
+} from "react-native-reanimated";
 
 import data from "../Data";
 
@@ -13,6 +21,30 @@ import HapticBounceable from "../Components/HapticBounceable";
 import { ScrollView } from "react-native";
 
 export default function Carte() {
+
+    const [isBack, setIsBack] = useState(false); // État pour suivre si on est sur le verso
+    const rotation = useSharedValue(0); // Valeur animée pour la rotation
+
+    // Déclencher le changement d'état à la moitié de l'animation
+    useDerivedValue(() => {
+        if (rotation.value >= 90 && !isBack) {
+            runOnJS(setIsBack)(true); // Utilise runOnJS pour exécuter une fonction JavaScript dans un thread JS
+        } else if (rotation.value < 90 && isBack) {
+            runOnJS(setIsBack)(false);
+        }
+    }, [isBack]);
+
+    // Style animé basé sur la rotation
+    const animatedStyle = useAnimatedStyle(() => ({
+        transform: [{ rotateY: `${rotation.value}deg` }],
+    }));
+
+    // Fonction pour gérer le clic sur la carte
+    const handlePress = () => {
+        // Alterner entre 0 et 180 degrés
+        rotation.value = withTiming(isBack ? 0 : 180, { duration: 500 });
+    };
+
     return (
         <View style={styles.container}>
         <EntetePage Titre={"La carte"} />
@@ -31,10 +63,26 @@ export default function Carte() {
             shadowOpacity: 0.2,
             shadowRadius: 5,
         }}>
-            <HapticBounceable>
+            {/* <HapticBounceable>
         <Image source={require("../../assets/images/carte.png")} 
         style={{width : width * 0.7, height : width*0.4, resizeMode : "stretch",  borderRadius : 7,
         }} />
+        </HapticBounceable> */}
+
+        <HapticBounceable onPress={handlePress}>
+                        <Animated.View style={[styles.cardContainer, animatedStyle]}>
+                            {isBack ? (
+                                <Image
+                                    source={require("../../assets/images/carte.png")} // Remplace avec ton verso
+                                    style={{width : width * 0.7,transform: [{ scaleX: -1 }] ,  height : width*0.4, resizeMode : "stretch",  borderRadius : 7,}}
+                                        />
+                            ) : (
+                                <Image
+                                    source={require("../../assets/images/carte.png")} // Recto
+                                    style={{width : width * 0.7, height : width*0.4, resizeMode : "stretch",  borderRadius : 7,}}
+                                        />
+                            )}
+                        </Animated.View>
         </HapticBounceable>
         </View>
 

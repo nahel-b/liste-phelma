@@ -44,6 +44,32 @@ export function SoireeBDE() {
 
 
 
+export function DD() {
+    const { titres_base } = Data;
+
+    return (
+        <View style={{flex : 1, backgroundColor : lightTheme.background}}>
+            <EntetePage Titre="Event DD" />
+            <MurFeuillesHaut/>
+            <MurFeuillesDroite petit={true}/>
+            <MurFeuillesGauche petit={true}/>
+            <HautLiane/>
+            <View style={{ height: height * 0.01 }} />
+
+            <MultipleMenu
+                titles={titres_base}
+                components={[
+                    <RenderOnglet data={Data.DD.info_pratique} />,
+                    <RenderOnglet data={Data.DD.au_programme} />,
+                    <RenderOnglet data={Data.DD.au_menu} />
+                ]}
+            />
+        </View>
+        
+    );
+}
+
+
 
 const styles = StyleSheet.create({
 

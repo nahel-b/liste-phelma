@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "phlow-app",
+  "private_key_id": "e4526510a3b512ab8bc59bfdebd3f4ba09d7683a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCerhjsmMd4MVMq\niIfT2VI5kHBbKrlpT0Rx/BWO23F9DMBCAtD9yce6Yj13tE1eRnDlbWiodWI0g7K/\nwdNCfCkZp/4+Q4LDSYHfsAUMXDFDzse5hSgccZksn9t/bwFfVh0e3VhxY8hfy8iD\nGoomKQvMYxrky/5VnWfq7rq5Z1fSM3uBSUQoqXWZI5AbwHFY5oI5dANH0V+FT+jV\nq7Fb/eYgbS7u9KOe16dntdgOKp0W9VaDwyImniq2YzV5IU2qxCa25AbDexHVU4Za\nV4NO8rLpDQ6SF4u9CFPGojiBt574ShEeqEgRGC310rWIqKm0KW2rkNucC6MHvQHU\nhMI1kZ8LAgMBAAECggEAM243OtxL7puCGquU5qet/GVh3VKsNMNR6mXrsNlUX9UV\nrW+PQGq5tyHnTVidqPxI1DvRa6RcN6wl7/wJFqf6hEvMXm7wP46gLxm0kSyCdTlc\nx7cuaIWzQWDwuk2G0tks6BeS9nGCfPYmX8Pm2fZ80fqfOWAa57H0gBNvZu9lagXu\nD0Q/SQN5cFE2IDHjMikFJ8XciR3vC2mvuuzm2CjkhaaWlYXZZyGHpXjj6SvIGuac\n7QxYHkcRkrUfwYDYB0BePAP6zyE34cGmT7ro6L2JMn5MK0HYvLkgqfdQ0FRGwiGg\np7Dibnsan7NaR4O2BOB7Xj69Y3Bin07wczVmUYraEQKBgQDKJN6rBQpvzGgVpu8y\nOhxVVbUU8fAXv8u5X2sA7llNdetpHacdrDSeYLX717a4wS/eJ/CRLqWx9cMyGgFW\nKct+6KW69PvmJOQPSwDFg5a18QWmakOKn5Ojy13+3vH7AzTR7M7ZQaaXbeTzafIy\ntGbzbvm7/Uvq4f6NxXmlV+k5cQKBgQDI9MpnbAgiOgLNU3/yJn6Lxs2TivsfqKGY\npj3fLs01gK320bag6gO5YemQzajHPVbusbNyQkxd2vfUYsNp/U5HOrOfj1IK0Wiy\ndw+H+x2Vk0+6bVTF0ag6iOmZACep0ltcehmSTHgvZjztZNMeJsuzQ3DF1/ATpiTZ\nWmAgWwaCOwKBgQCnwK8098rweo6KIW3xnb3zp1vOVPUtkFJNtPzE2ggsO0awhhYw\njr9gC9wacqrFajUCRNzkbvS82boycthXG/oviHw4yaPeGxFUC6dJQmmo9ar9rsP8\nX2+Th2qq33OrHr8P01jZfRz2IBHXWz3OjF2/eYIwWwVMmF26Y34PFASNUQKBgDvZ\n5HqfC2EeQ/1hVCcL3f7FbC74YsjQEakEQkM5jjbUJ3vug+UzLX7GMalGB3GnzD91\nP4vVQSdm8w8XhzoHDoxaaGsqZXYBXpxgp4iJews0f7d3npr4UZF1e5VtHWMP2tQV\nLY6MJfOAEL9nmxVM2rh+apUSNlez0R/HMgAQ/ERHAoGAbxf51uSPbsuZIORRwv3q\nEWW46iCCmJ2+1rB57T9mom8hZu3ImaBVNCdvDhH6CoSD1U63Lt9KKRAHj1CkD9sG\n1g+0xe1BK81yD+eBup40pCQo78dKVNoI6Jujq0Xg6KR7nFKpZqxOpb3PtlzR/mQ8\nj52fImYPXCpf8Gb/Gfu1mnA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "phlow-417@phlow-app.iam.gserviceaccount.com",
+  "client_id": "112213469056665820541",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/phlow-417%40phlow-app.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
