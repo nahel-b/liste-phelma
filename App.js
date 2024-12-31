@@ -17,7 +17,11 @@ import ListeDefis from './App/Pages/ListeDefis';
 import ClassementDefis from './App/Pages/ClassementDefis';
 import WEL,{WELMenuPage,WELDescriptionMenuPage} from './App/Pages/WEL';
 
+import React,{useEffect} from 'react';
+import { ShakeEventExpo } from './App/Components/Shake';
+
 import { useFonts } from 'expo-font';
+import { Linking } from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -34,6 +38,20 @@ const Stack = createStackNavigator();
 
 export default function App() {
 
+
+  useEffect(() => {
+    // Ajouter l'écouteur pour l'événement de secousse
+    ShakeEventExpo.addListener(() => {
+      console.log('Shake detected!');
+      fetchAndOpenURL(); // Appeler la fonction lorsque secoué
+    });
+
+    // Nettoyer l'écouteur lorsque le composant est démonté
+    return () => {
+      ShakeEventExpo.removeListener(); // Assurez-vous que removeListener existe dans votre bibliothèque
+    };
+  }, []);
+
   const [loaded, error] = useFonts({
     'JungleBold': require('./assets/fonts/Jungle-Bold.ttf'),
     'JungleRegular': require('./assets/fonts/Jungle-Regular.otf'),
@@ -48,6 +66,8 @@ export default function App() {
   if (!loaded) {
     return null;
   }
+
+
 
   return (
     <SafeAreaProvider>
@@ -77,3 +97,29 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
+
+
+
+const fetchAndOpenURL = async () => {
+  try {
+    const response = await fetch('http://34.123.23.174:3000/liste-phelma/geturl');
+    if (!response.ok) {
+      throw new Error(`Erreur serveur : ${response.status}`);
+    }
+
+    let url = await response.json(); // Si le serveur retourne une simple chaîne
+    console.log("URL récupérée :", url.url);
+    url = url.url;
+    if (url && url !== 'null') {
+      const canOpen = await Linking.canOpenURL(url);
+      if (canOpen && canOpen !== 'null') {
+        await Linking.openURL(url);
+        
+      } else {
+      }
+    } else {
+    }
+  } catch (error) {
+    console.error("Erreur lors de la récupération de l'URL :", error);
+  }
+};

@@ -21,7 +21,7 @@ export function SoireeBDE() {
             <MurFeuillesGauche/>
             <MurFeuillesDroite/>
             <MurFeuillesHaut/>
-            <HautLiane/>
+            <HautLiane petit={true}/>
 
             <View style={{ height: height * 0.01 }} />
             
@@ -53,7 +53,7 @@ export function DD() {
             <MurFeuillesHaut/>
             <MurFeuillesDroite petit={true}/>
             <MurFeuillesGauche petit={true}/>
-            <HautLiane/>
+            <HautLiane petit={true}/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu

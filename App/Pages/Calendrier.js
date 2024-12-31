@@ -119,7 +119,7 @@ export default function Calendrier() {
 
 
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Image source={require("../../assets/images/logo-liste.png")} style={{ width: width * 0.5, height: width * 0.5 }} />
+            <Image source={require("../../assets/images/logo-liste-transparent.png")} style={{ width: width * 0.5, height: width * 0.5,resizeMode : "contain" }} />
         </View>
     
     
@@ -179,7 +179,7 @@ const CalendrierComp = ({ events,onEventPress }) => {
             
             {/* Corps du calendrier */}
             <FlatList
-            scrollEnabled={false}
+                scrollEnabled={false}
                 data={events}
                 numColumns={7}
 
@@ -198,6 +198,12 @@ const styles = StyleSheet.create({
         padding: 5,
         marginTop: 4,
         alignItems: 'center',
+        shadowColor: 'black',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.5,
+        shadowRadius: 3,
+        borderColor : lightTheme.darkGreen,
+        borderWidth: 1,
     },
     eventTitle: {
         fontSize: 12,
@@ -232,6 +238,7 @@ const styles = StyleSheet.create({
     grid: {
         // flexDirection: 'row',
         // flexWrap: 'wrap',
+        paddingBottom: height*0.1,
     },
     cell: {
         width: width/7 - width*0.01, // Divise l'écran en 7 colonnes
@@ -243,6 +250,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#d8e9d0',
         alignItems: 'center',
         justifyContent: 'center',
+        shadowColor: 'black',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 1,
+        shadowRadius: 3,
+        borderColor: "black",
+        borderWidth: 1,
     },
     dayTitle: {
         fontSize: 12,

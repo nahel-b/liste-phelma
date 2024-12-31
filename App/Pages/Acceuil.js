@@ -21,7 +21,7 @@ export default function Acceuil() {
   const navigation = useNavigation();
 
   const eventDuJourTitle = getEventDuJourTitle();
-    
+     
   
   return (
 
@@ -228,13 +228,17 @@ export default function Acceuil() {
       {/* Carte de la liste et Les défis */}
       <View style={[styles.row,styles.sectionContainer,]}>
         <HapticBounceable onPress={() => {navigation.navigate("Carte")}} >
-          <View style={[styles.cardButton,{transform: [{ rotate: "-8deg" },{translateY : -10}]}]}>
+          <View style={{transform: [{ rotate: "-8deg" },{translateY : -10}]}}>
+          <View style={[styles.cardButton,{backgroundColor: lightTheme.lightBackground, }]}>
           <Text style={styles.titledCard}>CARTE DE{"\n"}LA LISTE</Text>
+          </View>
           </View>
         </HapticBounceable>
         <HapticBounceable onPress={() => {navigation.navigate("Defis")}}  > 
-        <View style={[styles.cardButton,{transform: [{ rotate: "8deg"},{translateY : -20 }],}]}>
+          <View style={{transform: [{ rotate: "8deg"},{translateY : -20 }]}}>
+          <View style={[styles.cardButton,{backgroundColor: lightTheme.lightBackground, }]}>
           <Text style={styles.titledCard}>LES DEFIS !</Text>
+        </View>
         </View>
         </HapticBounceable>
       </View>
@@ -318,8 +322,11 @@ const eventDuJourClick = (navigation) => {
   else if(event.title == "MINP"){
     navigation.navigate("MINP");
   }
-  else if(event.title == "Event Sportif"){
+  else if(event.title == "Event Sportif" || event.title == "Event sport"){
     navigation.navigate("EventSportif");
+  }
+  else if(event.title == "DD" || event.title == "Evenement DD"){
+    navigation.navigate("DD");
   }
   else
   {
@@ -371,11 +378,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: width * 0.8,
     // border black
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: "#000",
     justifyContent : "center",
     alignItems : "center",
     marginVertical: height * 0.01,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 1,
+    shadowRadius: 3,
   },
   largeButtonText: {
     fontSize: width * 0.05, // Taille de police relative à la largeur de l'écran
@@ -419,14 +430,18 @@ const styles = StyleSheet.create({
   },
   
   cardButton : {
-    backgroundColor: "transparent",
+    
     paddingVertical: height * 0.02,
     paddingHorizontal: width * 0.05,
-    
+   
     borderRadius: 5,
     marginHorizontal: width * 0.05,
     borderWidth: 1.5,
     borderColor: "#000",
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 1,
+    shadowRadius: 3,
   },
   tiltedButtonText: {
     fontSize: 14,
@@ -437,7 +452,8 @@ const styles = StyleSheet.create({
     fontSize : 0.06*width,
     fontFamily : "JungleBold",
     color : "#000",
-    textAlign : "center"
+    textAlign : "center",
+    
     },
   bdaBdsSection: {
     //padding: height * 0.01,

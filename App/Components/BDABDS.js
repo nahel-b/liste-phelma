@@ -18,10 +18,10 @@ export function SoireeZik() {
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="Soirée Zik" />
-            <MurFeuillesHaut/>
+            <MurFeuillesHaut />
             <MurFeuillesDroite petit={true}/>
             <MurFeuillesGauche petit={true}/>
-            <HautLiane/>
+            <HautLiane petit={true}/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
@@ -46,7 +46,7 @@ export function ApremBDA() {
             <MurFeuillesHaut/>
             <MurFeuillesDroite petit={true}/>
             <MurFeuillesGauche petit={true}/>
-            <HautLiane/>
+            <HautLiane petit={true}/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
@@ -71,7 +71,7 @@ export function MINP() {
             <MurFeuillesHaut/>
             <MurFeuillesDroite petit={true}/>
             <MurFeuillesGauche petit={true}/>
-            <HautLiane/>
+            <HautLiane petit={true}/>
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
@@ -97,7 +97,7 @@ export function EventSportif() {
             <MurFeuillesHaut/>
             <MurFeuillesDroite petit={true}/>
             <MurFeuillesGauche petit={true}/>
-            <HautLiane/>
+            <HautLiane petit={true}/>
             <View style={{ height: height * 0.01 }} />
             
             <MultipleMenu

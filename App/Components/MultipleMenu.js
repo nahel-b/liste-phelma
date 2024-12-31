@@ -25,6 +25,7 @@ const TabSelector = ({ titles, components }) => {
       width : w,
       height: width * 0.14,
       justifyContent: "center",
+      
   
     },
     tabImage: {
@@ -58,8 +59,9 @@ const TabSelector = ({ titles, components }) => {
           <HapticBounceable
             key={index}
             onPress={() => setSelectedIndex(index)}
-            style={styles.tabButton}
+            
           >
+            <View style={styles.tabButton}>
             <Image
               style={styles.tabImage}
               source={
@@ -69,6 +71,7 @@ const TabSelector = ({ titles, components }) => {
               }
             />
             <Text style={styles.tabText}>{title}</Text>
+            </View>
           </HapticBounceable>
         ))}
       </ScrollView>

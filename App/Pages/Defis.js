@@ -33,20 +33,22 @@ const Defis = () => {
 
 
                 <HapticBounceable onPress={()=>{navigation.navigate("ClassementDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
+                  <View style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
                 <Image source={require('../../assets/images/button/button-wood.png')} style={{
                     width: width * 0.7, height: width * 0.3, resizeMode: 'stretch',
                     position: "absolute",
                     }} />
                 <Text style={{fontFamily : "JungleBold",color : lightTheme.barBackground,textAlign : "center",fontSize : width * 0.08}}>Classements</Text>
-
+                </View>
             </HapticBounceable>
             <HapticBounceable onPress={()=>{navigation.navigate("ListeDefis")}} style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
+               <View style={{ flex : 1, width : "100%",justifyContent : "center",alignItems : "center",backgroundColor : "transparent"}}>
                 <Image source={require('../../assets/images/button/button-wood.png')} style={{
                     width: width * 0.7, height: width * 0.3, resizeMode: 'stretch',
                     position: "absolute",
                     }} />
                 <Text style={{fontFamily : "JungleBold",color : lightTheme.barBackground,textAlign : "center",fontSize : width * 0.08}}>Liste des {"\n"}Défis</Text>
-
+                </View>
             </HapticBounceable>
             </View>
             <View style={{ height: height * 0.25 }} />

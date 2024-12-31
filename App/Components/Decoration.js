@@ -200,7 +200,7 @@ export function MurFeuillesHaut({fg,monter})
     )
 }
 
-export function HautLiane()
+export function HautLiane({petit})
 {
 
 
@@ -214,7 +214,7 @@ export function HautLiane()
             height : height * 0.18,
             width : width * 0.7,
             position: "absolute",
-            top: -width * 0.23, // Aligné en haut
+            top: petit ? -width * 0.25 :  -width * 0.23, // Aligné en haut
             left: width*0.2, // Aligné à droite
             zIndex: 3,
             transform: [{ rotate: "-20deg" }],

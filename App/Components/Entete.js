@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image,StyleSheet } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import lightTheme from "../Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -41,17 +41,23 @@ export default function Entete() {
   
                 
             <HapticBounceable onPress={()=>{Linking.openURL(lien_liste_facebook)}}>
-            <Entypo name="facebook" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            <View style={styles.shadow}>
+                <Entypo name="facebook" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            </View>
             </HapticBounceable>
             <HapticBounceable onPress={()=>{Linking.openURL(lien_liste_insta)}}>
+            <View style={styles.shadow}>
             <Entypo name="instagram" size={30} color={lightTheme.lightGreen} style={{ margin: 10 }} />
+            </View>
             </HapticBounceable>
             <HapticBounceable onPress={()=>{Linking.openURL(lien_liste_youtube)}}>
+            <View style={styles.shadow}>
             <Entypo name="youtube" size={30} color={lightTheme.lightGreen} style={{ margin: 8 }} />
+            </View>
             </HapticBounceable>
             </View>
             
-            <View style={{ alignItems : "center", justifyContent : "center",flex:1
+            {/* <View style={{ alignItems : "center", justifyContent : "center",flex:1
   }}>
   
             
@@ -59,14 +65,14 @@ export default function Entete() {
            
            
            
-            </View>
-            <View>
-        <Image source={require("../../assets/images/logo-liste.png")} 
+            </View> */}
+            <View style={{flex : 1,alignItems : "flex-end",justifyContent : "flex-end"}}>
+        <Image source={require("../../assets/images/lettre_crypt.png")} 
            
            style={{
-            marginRight : 10,
-            height : height * 0.04,
-            width : height * 0.04,
+            marginRight : 0,
+            height : height * 0.055,
+            width : height * 0.13,
            }}/>
         </View>
         </View>
@@ -76,3 +82,17 @@ export default function Entete() {
 
     );
   }
+
+
+
+
+const styles = StyleSheet.create({ 
+
+
+    shadow : {
+        shadowColor: 'black',
+                    shadowOffset: {width: 2, height: 2},
+                    shadowOpacity: 0.8,
+                    shadowRadius: 3,
+    }
+});

@@ -34,7 +34,7 @@ export default function EntetePage({Titre}) {
                     <View style={{ position : "absolute", left : 0,bottom : height * 0.0025 }}>
                     <HapticBounceable onPress={() => { navigation.goBack() }} style={{ }}>
 
-                        <Entypo name="chevron-left" size={35} color="black" style={{ margin: 0 }} />
+                        <Entypo name="chevron-left" size={35} color={lightTheme.lightGreen} style={{ margin: 0 }} />
                         </HapticBounceable>
 
                     </View>

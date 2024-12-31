@@ -76,7 +76,8 @@ export default function CategoriesPage({items,categories_item,commander_button,n
         <MurFeuillesHaut/>
         <MurFeuillesDroite petit={true}/>
         <MurFeuillesGauche petit={true}/>
-        <HautLiane/>
+        
+        <HautLiane petit={true}/>
         <View style={{ height: height * 0.03 }} />
       <MultipleMenu
         titles={categories_item}
@@ -149,6 +150,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 10,
+        shadowColor: 'black',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 1,
+        shadowRadius: 3,
+        borderColor: "black",
+        borderWidth: 1,
     },
     missionText: {
         color: "#fff",

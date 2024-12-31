@@ -55,7 +55,12 @@ const RenderBouton = ({item,right,navigation}) => {
 
     return (
 
-        <View  style={{flex : 1,backgroundColor : "transparent", justifyContent : "center",width : width*0.7,alignSelf : "center" }}>
+        <View  style={{flex : 1,backgroundColor : "transparent", justifyContent : "center",width : width*0.7,alignSelf : "center",
+            shadowColor: "#000",
+            shadowOffset: { width: 2, height: 10 },
+            shadowOpacity: 0.5,
+            shadowRadius: 5,
+         }}>
         <HapticBounceable
             onPress={() => {
                 navigation.navigate('WELMenuPage', { data: item });
@@ -78,6 +83,7 @@ const RenderBouton = ({item,right,navigation}) => {
                    require("../../assets/images/button/button-wood.png")
               }
             />
+            <View style={{width : largeur,height : hauteur/2,alignItems : "center",justifyContent : "center"}}>
             <Text style={{
                 fontSize: width * 0.048,
                 fontFamily: "JungleBold",
@@ -86,6 +92,7 @@ const RenderBouton = ({item,right,navigation}) => {
                 zIndex: 2,
                 width : largeur
             }}>{item.titre}</Text>
+            </View>
           </HapticBounceable>
 
           </View>
@@ -111,6 +118,13 @@ export const WELMenuPage = ({ route, navigation }) => {
                     
                 }}
               >
+                <View  style={{
+                    justifyContent : 'center',
+                    width : width*0.8,
+                    marginVertical : width*0.03,
+                    alignItems : "center",
+                    
+                }}>
                 <Image
                   style={{
                     width : "100%",
@@ -139,7 +153,7 @@ export const WELMenuPage = ({ route, navigation }) => {
                     borderRadius : 10,
                     width:  width*0.4, height: width*0.2, resizeMode: "cover" }} 
                 />
-
+                </View>     
               </HapticBounceable>
         )
     }
