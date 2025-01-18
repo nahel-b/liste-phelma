@@ -14,7 +14,7 @@ import data from "../Data";
 
 const { width, height } = Dimensions.get("window");
 
-export default function CategoriesPage({items,categories_item,commander_button,nom}) {
+export default function CategoriesPage({items,categories_item,commander_button,nom,head_item}) {
 
   
 
@@ -50,6 +50,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
     const renderItemList = (filter) => {
         const filteredItems = filter === "Tout" ? items : items.filter((item) => item.categorie === filter);
     
+      
         return (
 
         
@@ -70,6 +71,38 @@ export default function CategoriesPage({items,categories_item,commander_button,n
         );
       };
 
+      const renderHead = (filter) => {
+
+
+        const filteredItems = filter === "Tout" ? items : items.filter((item) => item.categorie === filter);
+        
+        const filteredIndex = categories_item.indexOf(filter);
+        let text = data.description_mission_catégorie[filteredIndex];
+        
+        return (
+
+        <View style={[{alignItems : "center",justifyContent : "center",
+            backgroundColor : lightTheme.lightBackground,
+
+            width : width * 0.7,
+            alignSelf : "center",
+            marginTop : height * 0.02,
+            borderRadius : width * 0.03,
+            shadowColor: 'black',
+            shadowOffset: {width: 0, height: 1},
+            shadowOpacity: 1,
+            shadowRadius: 3,
+            borderColor: "black",
+            borderWidth: 0,
+        }]}>
+          <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : 20,margin : 10}}>
+            {text}
+            </Text>
+        </View>
+
+        );
+      };
+
     return (
         <View style={styles.container}>
         <EntetePage Titre={nom} />
@@ -82,6 +115,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
       <MultipleMenu
         titles={categories_item}
         components={categories_item.map((title) => renderItemList(title))}
+        head_item={ head_item ? categories_item.map((title) => renderHead(title)) : null}
       />
 
       
@@ -140,7 +174,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "space-between",
-        padding: 10,
+        paddingHorizontal: 10,
     },
     missionCard: {
         width: width / 2 - 20,

@@ -7,7 +7,16 @@ const data =
     lien_liste_insta : "https://www.instagram.com",
     lien_liste_facebook : "https://www.facebook.com",
     lien_liste_youtube : "https://www.youtube.com",
-    catégories_missions : ["Tout", "Livraison", "Ménage", "Jardinage"],
+    catégories_missions : [ "Tout", "Livraison", "Ménage", "Jardinage"],
+
+    description_mission_catégorie : 
+    [
+        "Toutes les missions",
+        "Livraison de colis, de repas, de courses",
+        "Ménage, nettoyage, rangement",
+        "Jardinage, tonte de pelouse, taille de haie",
+    ],
+
     lien_commande_mission : "https://www.google.com",
     missions : [
         { nom: "Mission 1", categorie: "Livraison", description: "Description de la mission 1" },
@@ -37,7 +46,7 @@ const data =
         { nomJour: "7 sep", title: "Aprem BDA", description: "La soirée des 12C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
         { nomJour: "8 sep" },
         { nomJour: "9 sep" },
-        { nomJour: "10 sep", title: "WEL", description: "La soirée des 1C.", textColor: "black", backgroundColor: lightTheme.brown },
+        { nomJour: "10 sep", title: "WELm", description: "La soirée des 1C.", textColor: "black", backgroundColor: lightTheme.brown },
         { nomJour: "11 sep" },
         { nomJour: "12 sep" },
         { nomJour: "13 sep", title: "MINP", description: "La soirée des 3C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
@@ -49,6 +58,7 @@ const data =
         { nomJour: "19 sep", title: "Event sport", description: "La soirée des 5C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
         { nomJour: "20 sep" },
         { nomJour: "21 sep" },
+
 
         // { nomJour : "18 dec", title : "SOS", description : "La soirée de noel", textColor : "black", backgroundColor : lightTheme.lightGreen }
     ],
@@ -429,12 +439,12 @@ const data =
                 {
                     titre : "Menu 1",
                     photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
-
+                    commander_lien : "tel:0781885377",
                     items : 
                     [ 
                         {   nom : "Burgerr", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 5,
-                            commander_lien : "https://www.google.com",
+                            
                             ingredients : " Pain au graine, steak, tomate, salade, fromage, ketchup, moutarde, oignon, cornichon, frite",
                          },
                         {   nom : "Muffinoo", photo : require('../assets/images/WEL/jour1/menu1.png'),

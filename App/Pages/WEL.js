@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, Dimensions,Image, FlatList } from "react-native
 import EntetePage from "../Components/EntetePage";
 import { MurFeuillesHaut ,HautLiane, MurFeuillesDroite, MurFeuillesGauche} from "../Components/Decoration";
 import { useNavigation } from "@react-navigation/native";
-
+import { Linking } from "react-native";
 import data from "../Data";
 
 const { height, width } = Dimensions.get("window");
@@ -182,7 +182,6 @@ export const WELMenuPage = ({ route, navigation }) => {
                         height : height*0.6
                     }}
                 />
-
             </View>
 
             
@@ -265,9 +264,18 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
             {/* <ScrollView scrollEnabled={false} > */}
             <View style={{ height: height * 0.12,alignItems : "center" }} />
 
+            <View style={{width : width*0.7,alignSelf : "center", flexDirection : "row", alignItems: "center", justifyContent: "space-around", }}>
                 <Text style={{ fontSize: width * 0.08, fontFamily: "JungleBold", color: lightTheme.text, textAlign: "center" }}>
                     { data.titre }
                 </Text>
+
+                <HapticBounceable onPress={()=>Linking.openURL(data.commander_lien)} style={{zIndex : 2,justifyContent : "center",alignItems : "center"}}>
+                                <View style={{alignItems : "center",zIndex : 2,backgroundColor : lightTheme.lightBackground,padding : 10,borderRadius : 20}}>
+                                <Image source={require("../../assets/images/animaux/tigre.png")} style={{height : width * 0.15,zIndex : 2,width : width * 0.15}} />
+                            <Text style={{color : "black",fontFamily : "JungleBold",fontSize : width*0.035}}>Commander</Text>
+                                </View>
+                </HapticBounceable>
+            </View>
 
 
             {/* <View style={{ height: height * 0.02,alignItems : "center" }} /> */}
@@ -285,6 +293,8 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                         height : height*0.6
                     }}
                 />
+
+                
 
             {/* </ScrollView> */}
         </View>

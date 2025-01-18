@@ -5,7 +5,7 @@ import { Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
-const TabSelector = ({ titles, components }) => {
+const TabSelector = ({ titles, components,head_item }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const w = titles.length === 3 ? width * 0.31 : width * 0.25;
@@ -76,6 +76,7 @@ const TabSelector = ({ titles, components }) => {
         ))}
       </ScrollView>
 
+      {head_item != null && head_item[selectedIndex]}
       {/* Composant affiché */}
       <View style={styles.componentContainer}>
         {components[selectedIndex]}
@@ -83,6 +84,8 @@ const TabSelector = ({ titles, components }) => {
     </View>
   );
 };
+
+
 
 
 

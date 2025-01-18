@@ -47,7 +47,7 @@ export default function SOS() {
                 
                 }}/>
             </View> */}
-        <CategoriesPage items={missions} categories_item={catégories_missions} commander_button={true} nom={"SOS"}/>
+        <CategoriesPage items={missions} head_item={true} categories_item={catégories_missions} commander_button={true} nom={"SOS"}/>
         
        
       
@@ -57,6 +57,8 @@ export default function SOS() {
         </View>
     )
 }
+
+
 
 
 const style = StyleSheet.create(
