@@ -7,8 +7,7 @@ import EntetePage from "../Components/EntetePage";
 import MultipleMenu from "../Components/MultipleMenu";
 import HapticBounceable from "../Components/HapticBounceable";
 import { MurFeuillesHaut ,HautLiane, MurFeuillesDroite, MurFeuillesGauche} from "../Components/Decoration";
-
-import { Linking } from "react-native";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';import { Linking } from "react-native";
 import data from "../Data";
 
 
@@ -24,6 +23,10 @@ export default function CategoriesPage({items,categories_item,commander_button,n
     const modalHeight = height * 0.4; // Hauteur du modal ouvert
     const translateY = useSharedValue(collapsedHeight); // Position verticale animée du modal
     const [modalVisible, setModalVisible] = useState(false);
+
+    const collapsedHeight2 = height; // Position de départ du modal (bas)
+    const modalHeight2 = height * 0.4; // Hauteur du modal ouvert
+    const translateY2 = useSharedValue(collapsedHeight2); // Position verticale animée du modal
 
 
     const gestureHandler = useAnimatedGestureHandler({
@@ -43,9 +46,32 @@ export default function CategoriesPage({items,categories_item,commander_button,n
         },
     });
 
+    const gestureHandler2 = useAnimatedGestureHandler({
+        onStart: (_, ctx) => {
+            ctx.startY = translateY2.value;
+        },
+        onActive: (event, ctx) => {
+            translateY2.value = ctx.startY + event.translationY;
+            if (translateY2.value < 0) translateY2.value = 0; // Empêche de dépasser le haut
+        },
+        onEnd: () => {
+            if (translateY2.value > modalHeight2 / 2) {
+                translateY2.value = withSpring(collapsedHeight2); // Fermer le modal
+            } else {
+                translateY2.value = withSpring(0); // Ouvrir le modal
+            }
+        },
+    });
+
+    const modalStyle2 = useAnimatedStyle(() => ({
+        transform: [{ translateY: translateY2.value }],
+    }));
+
     const modalStyle = useAnimatedStyle(() => ({
         transform: [{ translateY: translateY.value }],
     }));
+
+    
 
     const renderItemList = (filter) => {
         const filteredItems = filter === "Tout" ? items : items.filter((item) => item.categorie === filter);
@@ -81,10 +107,14 @@ export default function CategoriesPage({items,categories_item,commander_button,n
         
         return (
 
+
+            <HapticBounceable onPress={() => {
+                translateY2.value = withSpring(0, { damping: 150, stiffness: 500 });
+            }}  >
         <View style={[{alignItems : "center",justifyContent : "center",
             backgroundColor : lightTheme.lightBackground,
 
-            width : width * 0.7,
+           
             alignSelf : "center",
             marginTop : height * 0.02,
             borderRadius : width * 0.03,
@@ -94,12 +124,16 @@ export default function CategoriesPage({items,categories_item,commander_button,n
             shadowRadius: 3,
             borderColor: "black",
             borderWidth: 0,
+            flexDirection : "row",
+            paddingLeft : width*0.02
         }]}>
-          <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : 20,margin : 10}}>
-            {text}
+          
+            <FontAwesome5 name="map-marked-alt" size={24} color="black" />
+            <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : 20,margin : 10}}>
+            Carte
             </Text>
         </View>
-
+        </HapticBounceable>
         );
       };
 
@@ -160,6 +194,34 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     )}
                 </Animated.View>
             </PanGestureHandler>
+
+            
+
+            <PanGestureHandler onGestureEvent={gestureHandler2}>
+                <Animated.View style={[styles.modal, modalStyle2,{ zIndex: 1 } ]}>
+                    <View style={styles.handleBar} />
+
+                    <Image source={require("../../assets/images/carte-zone.png")} 
+
+                    style={{height : width * 0.5,zIndex : 2,width : width * 0.9,
+                        borderRadius : 10,
+                        alignSelf : "center"
+                    }} />
+
+                    <Text style={{alignSelf : "center",marginTop : height*0.03, color : lightTheme.background,fontFamily : "JungleBold",fontSize : width*0.05}}>
+                        Vendredi : 17h - 18h{"\n"}
+                        Samedi : 8h - 18h{"\n"}
+                        Dimanche : 8h - 0h{"\n"}
+                    </Text>
+                        <View
+                            style={{height : height*0.5}}
+                        >
+
+
+                        </View>
+                </Animated.View>
+            </PanGestureHandler>
+
         </View>
     );
 }

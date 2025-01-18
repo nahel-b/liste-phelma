@@ -7,6 +7,9 @@ import { MurFeuillesHaut ,HautLiane, MurFeuillesDroite, MurFeuillesGauche} from 
 import { useNavigation } from "@react-navigation/native";
 import { Linking } from "react-native";
 import data from "../Data";
+import { PanGestureHandler } from "react-native-gesture-handler";
+import Animated, { useSharedValue, useAnimatedGestureHandler, useAnimatedStyle, withSpring } from "react-native-reanimated";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const { height, width } = Dimensions.get("window");
 import lightTheme from "../Colors";
@@ -17,6 +20,33 @@ export default function WEL() {
 
 
     const navigation = useNavigation();
+
+    const collapsedHeight2 = height; // Position de départ du modal (bas)
+        const modalHeight2 = height * 0.4; // Hauteur du modal ouvert
+        const translateY2 = useSharedValue(collapsedHeight2); // Position verticale animée du modal
+    
+
+    const gestureHandler2 = useAnimatedGestureHandler({
+            onStart: (_, ctx) => {
+                ctx.startY = translateY2.value;
+            },
+            onActive: (event, ctx) => {
+                translateY2.value = ctx.startY + event.translationY;
+                if (translateY2.value < 0) translateY2.value = 0; // Empêche de dépasser le haut
+            },
+            onEnd: () => {
+                if (translateY2.value > modalHeight2 / 2) {
+                    translateY2.value = withSpring(collapsedHeight2); // Fermer le modal
+                } else {
+                    translateY2.value = withSpring(0); // Ouvrir le modal
+                }
+            },
+        });
+    
+        const modalStyle2 = useAnimatedStyle(() => ({
+            transform: [{ translateY: translateY2.value }],
+        }));
+
 
 
     const RenderMenu = (data) => {
@@ -35,13 +65,73 @@ export default function WEL() {
         <MurFeuillesDroite petit={false}/>
         <MurFeuillesGauche petit={false}/>
         <HautLiane/>
+
+
+        <HapticBounceable onPress={() => {
+                translateY2.value = withSpring(0, { damping: 150, stiffness: 500 });
+            }}  >
+        <View style={[{alignItems : "center",justifyContent : "center",
+            backgroundColor : lightTheme.lightBackground,
+
+           
+            alignSelf : "center",
+            
+            borderRadius : width * 0.03,
+            shadowColor: 'black',
+            shadowOffset: {width: 0, height: 1},
+            shadowOpacity: 1,
+            shadowRadius: 3,
+            borderColor: "black",
+            borderWidth: 0,
+            flexDirection : "row",
+            top : height*0.03,
+            position : "absolute",
+            paddingLeft : width*0.02
+        }]}>
+          
+            <FontAwesome5 name="map-marked-alt" size={24} color="black" />
+            <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : 20,margin : 10}}>
+            Carte
+            </Text>
+        </View>
+        </HapticBounceable>
+
+
         <View style={{ height: height * 0.09,alignItems : "center" }} />
+
+        
+
 
             <RenderMenu data={data.WEL} />
 
+            
+
 
         <View style={{ height: height * 0.18,alignItems : "center" }} />
+        <PanGestureHandler onGestureEvent={gestureHandler2}>
+                <Animated.View style={[styles.modal, modalStyle2,{ zIndex: 1 } ]}>
+                    <View style={styles.handleBar} />
 
+                    <Image source={require("../../assets/images/carte-zone.png")} 
+
+                    style={{height : width * 0.5,zIndex : 2,width : width * 0.9,
+                        borderRadius : 10,
+                        alignSelf : "center"
+                    }} />
+
+                    <Text style={{alignSelf : "center",marginTop : height*0.03, color : lightTheme.background,fontFamily : "JungleBold",fontSize : width*0.05}}>
+                        Jeudi : 12h30 - 18h{"\n"}
+                        Samedi : 9h - 17h{"\n"}
+                        Dimanche : 9h - 0h{"\n"}
+                    </Text>
+                        <View
+                            style={{height : height*0.5}}
+                        >
+
+
+                        </View>
+                </Animated.View>
+            </PanGestureHandler>
         </View>
     );
 }
@@ -102,6 +192,9 @@ const RenderBouton = ({item,right,navigation}) => {
 
 export const WELMenuPage = ({ route, navigation }) => {
     const { data } = route.params;
+
+
+    
 
 
     const RenderBouton = ({item,navigation}) => {
@@ -194,7 +287,7 @@ export const WELMenuPage = ({ route, navigation }) => {
 export const WELDescriptionMenuPage = ({ route, navigation }) => {
     const { data } = route.params;
 
-
+     
     console.log(data);
 
     const RenderItems = ({item}) => {
@@ -293,10 +386,12 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                         height : height*0.6
                     }}
                 />
-
+           
                 
 
             {/* </ScrollView> */}
+
+            
         </View>
     );
 }
@@ -311,7 +406,64 @@ const styles = StyleSheet.create(
         {
             flex: 1,
             backgroundColor: lightTheme.background,
-        }
+        },
+        modal: {
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: height * 0.6, // Ajuster selon les besoins
+            backgroundColor: "#fff",
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: -2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 5,
+            elevation: 5,
+        },
+        handleBar: {
+            width: 60,
+            height: 5,
+            backgroundColor: "#ccc",
+            borderRadius: 2.5,
+            alignSelf: "center",
+            marginVertical: 10,
+        },
+        modalContent: {
+            flex: 1,
+            paddingHorizontal: width * 0.05,
+            paddingVertical: width * 0.02,
+            zIndex  : 2,
+        },
+        modalTitle: {
+            fontSize: 27,
+            fontFamily: "JungleBold",
+            marginBottom: 10,
+            color: "#333",
+        },
+        modalType: {
+            fontSize: 14,
+            marginBottom: 10,
+            fontFamily: "Medium",
+            color: "#666",
+        },
+        modalDescription: {
+            fontSize: 17,
+            color: "#888",
+            fontFamily: "SemiBold",
+        },
+        closeButton: {
+            marginTop: 20,
+           // backgroundColor: lightTheme.brown,
+            padding: 10,
+            borderRadius: 10,
+            alignItems: "center",
+        },
+        closeButtonText: {
+            color: lightTheme.brown,
+            fontFamily : "JungleBold",
+            fontSize: 16,
+        },
        
     }
     )
