@@ -1,6 +1,6 @@
 
 
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { Text, View, StyleSheet, Dimensions,Image, FlatList } from "react-native";
 import EntetePage from "../Components/EntetePage";
 import { MurFeuillesHaut ,HautLiane, MurFeuillesDroite, MurFeuillesGauche} from "../Components/Decoration";
@@ -53,7 +53,10 @@ export default function WEL() {
 
 
         return data.data.map((item, index) => (
+
             <RenderBouton key={index} item={item} right={index % 2 === 1} navigation={navigation} />
+       
+       
         ));
     };
 
@@ -140,9 +143,61 @@ export default function WEL() {
 const RenderBouton = ({item,right,navigation}) => {
 
 
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      });
+
     const hauteur = width * 1.6 / data.WEL.length;
     const largeur = width * 0.45;
 
+    const lock = item.date_debut ? new Date(item.date_debut) > new Date() : false;
+    const opacity = lock ? 0.5 : 1;
+
+    const targetDate = item.date_debut ? item.date_debut : new Date();
+
+    useEffect(() => {
+        const now = new Date();
+          const target = new Date(targetDate);
+          const difference = target - now;
+    
+          if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+            setTimeLeft({ days, hours, minutes, seconds });
+          } else {
+            clearInterval(interval);
+            setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+          }
+        const interval = setInterval(() => {
+            
+          const now = new Date();
+          const target = new Date(targetDate);
+          const difference = target - now;
+    
+          if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+            setTimeLeft({ days, hours, minutes, seconds });
+          } else {
+            clearInterval(interval);
+            setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+          }
+        }, 1000);
+    
+        return () => clearInterval(interval); // Nettoyage de l'intervalle
+      }, [targetDate]);
+
+
+    console.log(lock);
     return (
 
         <View  style={{flex : 1,backgroundColor : "transparent", justifyContent : "center",width : width*0.7,alignSelf : "center",
@@ -151,7 +206,9 @@ const RenderBouton = ({item,right,navigation}) => {
             shadowOpacity: 0.5,
             shadowRadius: 5,
          }}>
+            
         <HapticBounceable
+            disabled={lock}
             onPress={() => {
                 navigation.navigate('WELMenuPage', { data: item });
             }}            
@@ -166,7 +223,8 @@ const RenderBouton = ({item,right,navigation}) => {
                 width : largeur,
                 height : hauteur/2,
                 resizeMode : "stretch",
-                position : "absolute"
+                position : "absolute",
+                opacity : opacity
               }}
               source={
                 //   ? require("../../assets/images/button/button-wood-pressed.png")
@@ -180,8 +238,14 @@ const RenderBouton = ({item,right,navigation}) => {
                 color: "rgb(95,49,17)",
                 textAlign: "center",
                 zIndex: 2,
-                width : largeur
-            }}>{item.titre}</Text>
+                width : largeur,
+                //opacity : opacity*1.5
+            }}>{lock ? "🔐" : item.titre}
+            {lock ? "\n" + timeLeft.days + "j " + timeLeft.hours + "h " + timeLeft.minutes + "m "  : ""}
+            
+            
+
+            </Text>
             </View>
           </HapticBounceable>
 

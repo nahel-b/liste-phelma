@@ -433,7 +433,7 @@ const data =
     WEL : 
     [
         { titre : 'Jour 1',
-
+            date_debut : '2025-01-20T00:00:00Z',
             items : 
             [
                 {
@@ -477,11 +477,13 @@ const data =
 
             
         },
-        { titre : 'Jour 2'
+        { titre : 'Jour 2',
+            date_debut : '2025-01-25T00:00:00Z',
 
             
         },
-        { titre : 'Jour 3'
+        { titre : 'Jour 3',
+            date_debut : '2025-01-25T00:00:00Z',
 
             
         },
