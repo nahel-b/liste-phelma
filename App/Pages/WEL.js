@@ -100,7 +100,7 @@ export default function WEL() {
         </HapticBounceable>
 
 
-        <View style={{ height: height * 0.09,alignItems : "center" }} />
+        <View style={{ height: height * 0.13,alignItems : "center" }} />
 
         
 
@@ -110,7 +110,7 @@ export default function WEL() {
             
 
 
-        <View style={{ height: height * 0.18,alignItems : "center" }} />
+        <View style={{ height: height * 0.16,alignItems : "center" }} />
         <PanGestureHandler onGestureEvent={gestureHandler2}>
                 <Animated.View style={[styles.modal, modalStyle2,{ zIndex: 1 } ]}>
                     <View style={styles.handleBar} />
@@ -197,7 +197,6 @@ const RenderBouton = ({item,right,navigation}) => {
       }, [targetDate]);
 
 
-    console.log(lock);
     return (
 
         <View  style={{flex : 1,backgroundColor : "transparent", justifyContent : "center",width : width*0.7,alignSelf : "center",
@@ -210,7 +209,15 @@ const RenderBouton = ({item,right,navigation}) => {
         <HapticBounceable
             disabled={lock}
             onPress={() => {
+
+                if(item.titre === "Packs")
+                {
+                    navigation.navigate('WELDescriptionMenuPage', { data: item });
+                }
+                else{
                 navigation.navigate('WELMenuPage', { data: item });
+}
+
             }}            
             
             style={{
@@ -280,7 +287,7 @@ export const WELMenuPage = ({ route, navigation }) => {
                     width : width*0.8,
                     marginVertical : width*0.03,
                     alignItems : "center",
-                    
+                    height: width*0.3
                 }}>
                 <Image
                   style={{
@@ -300,16 +307,10 @@ export const WELMenuPage = ({ route, navigation }) => {
                     color: "rgb(95,49,17)",
                     textAlign: "center",
                     zIndex: 2,
-                    marginTop : width*0.04
+                    // marginTop : width*0.04
                 }}>{item.titre}</Text>
 
-                <Image source={item.photo_principale} 
-                style={{ 
-                    marginBottom : width*0.1,
-                    marginTop : width*0.01,
-                    borderRadius : 10,
-                    width:  width*0.4, height: width*0.2, resizeMode: "cover" }} 
-                />
+                
                 </View>     
               </HapticBounceable>
         )
@@ -360,19 +361,25 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                 
                 <View style={{flexDirection : "row", width : "100%", backgroundColor : "transparent",alignItems : "center",justifyContent : "space-around" }} >
                 <View >
-                <Text style={{ fontSize: width * 0.06, fontFamily: "JungleBold", color: lightTheme.text, textAlign: "center" }}>
+                <Text style={{marginLeft : 0.02*width, width : width*0.35, fontSize: width * 0.06, fontFamily: "JungleBold", color: lightTheme.text, textAlign: "left" }}>
                     {item.nom}
                     <Text style={{  fontFamily: "JungleBold", color: lightTheme.text, textAlign: "center",
                         color : "#D3B206"
                         // color2 = "#D3B206";
                      }}>
-                        {" paf: "}
+                       
                     </Text>
+                    {
+                        item.vege &&
+                    <FontAwesome5 name="leaf" size={20} color="green" />}
                 </Text>
+                
                 </View>
+                
                 <View style={{backgroundColor : "#D3B206",paddingHorizontal : width*0.02,padding : width*0.01,borderRadius : 10}}>
                         <Text style={{ fontSize: width * 0.07, fontFamily: "JungleBold", color: "white", textAlign: "center" }}>
-                              {item.prix}
+                              {item.prix + ""}
+                              <FontAwesome5 name="euro-sign" size={20} color="white" />
                             </Text>
                         </View>
                 <View style={{backgroundColor : "transparent"}}>
@@ -447,10 +454,10 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                     contentContainerStyle={{
                         alignItems: "center", backgroundColor : "transparent" ,
                         justifyContent : "flex-start",
-                        height : height*0.6
+                        //height : height*0.6
                     }}
                 />
-           
+            <View style={{ height: height * 0.13,alignItems : "center" }} />
                 
 
             {/* </ScrollView> */}

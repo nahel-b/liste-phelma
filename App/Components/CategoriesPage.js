@@ -93,6 +93,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                 <Text style={styles.missionText}>{item.nom}</Text>
               </HapticBounceable>
             ))}
+            <View style={{ height: height * 0.3 }} />
           </ScrollView>
         );
       };
@@ -159,7 +160,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     {selectedItem && (
                         <View style={[styles.modalContent,{ zIndex: 3 }]}>
                             <View style={{alignItems : "center",justifyContent : "space-between",flexDirection : "row"}}>
-                            <View style={{}}>
+                            <View style={{width : width * 0.6}}>
                             <Text style={styles.modalTitle}>{selectedItem.nom}</Text>
                             <Text style={styles.modalType}>{selectedItem.categorie}</Text>
                             </View>
@@ -175,8 +176,14 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                             ( selectedItem.points &&
                                 <HapticBounceable>
                                 <View style={{aspectRatio : 1,zIndex  : 2,alignItems : "center",backgroundColor : lightTheme.lightBackground,padding : 10,borderRadius : 20}}>
-                                <Text style={{textAlign : "center",color : lightTheme.background,fontSize : width*0.15,fontFamily : "JungleBold"}} >{selectedItem.points}</Text>
-                                <Text style={{color : lightTheme.background,fontFamily : "JungleBold",fontSize : 15}}>points</Text>
+                                <Text style={{textAlign : "center",color : lightTheme.background,fontSize : width*0.15,fontFamily : "JungleBold"}} >
+                                    {typeof selectedItem.points === 'string' && selectedItem.points.includes('/') ? selectedItem.points.split('/')[0] : selectedItem.points}
+                                    
+                                    </Text>
+                                <Text style={{color : lightTheme.background,fontFamily : "JungleBold",fontSize : 15}}>
+                                    
+                                    {typeof selectedItem.points === 'string' && selectedItem.points && selectedItem.points.includes('/') ? "/" + selectedItem.points.split('/')[1] : 'points'}
+                                    </Text>
                                 </View>
                             </HapticBounceable>
                             )
@@ -252,11 +259,14 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
         borderColor: "black",
         borderWidth: 1,
+        paddingHorizontal : width * 0.05,
     },
     missionText: {
         color: "#fff",
         fontSize: 20,
         fontFamily: "JungleBold",
+        alignSelf : "center",
+        textAlign : "center",
     },
     modal: {
         position: "absolute",

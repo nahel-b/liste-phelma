@@ -173,7 +173,7 @@ return (
         <Text style={{fontSize : width * 0.05,marginTop : height * 0.004}}>{emoji}</Text>
         <View style={[{flexDirection : "column"}]}>
         <Text style={[styles.textPage,{ fontSize :  height * 0.026,opacity : 0.9}]}>{" "}{titre}</Text>
-        <Text style={[styles.textPage,{marginLeft : 12, fontSize :  height * 0.023,opacity : 0.7}]}>{text}</Text>
+        <Text style={[styles.textPage,{fontFamily : "Black", marginLeft :width*0.04, fontSize :  height * 0.02,opacity : 0.7,width :width*0.65}]}>{text}</Text>
         </View>
     </View>
 );

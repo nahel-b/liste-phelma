@@ -273,6 +273,26 @@ export default function Acceuil() {
           />
 
     </View>
+
+          <HapticBounceable 
+            onPress={() => {navigation.navigate("DefisCache")}}
+          >
+        <View 
+              style={{
+              height : height * 0.1,
+              width : width * 0.3,
+              position: "absolute",
+              bottom: 10, // Aligné en bas
+              left: width * 0.35, // Centré horizontalement
+              zIndex: 1,
+            
+              }}
+              >
+            
+           
+        </View>
+        </HapticBounceable>
+    
     </View>
   );
 }

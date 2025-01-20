@@ -7,7 +7,10 @@ const data =
     lien_liste_insta : "https://www.instagram.com",
     lien_liste_facebook : "https://www.facebook.com",
     lien_liste_youtube : "https://www.youtube.com",
-    catégories_missions : [ "Tout", "Livraison", "Ménage", "Jardinage"],
+    catégories_missions : ["Tout", "Corvées", "Bien être", "Divertissements", "Packs" ],
+         
+    lien_commande_mission : "tel:0666666666",
+        
 
     description_mission_catégorie : 
     [
@@ -17,53 +20,147 @@ const data =
         "Jardinage, tonte de pelouse, taille de haie",
     ],
 
-    lien_commande_mission : "https://www.google.com",
     missions : [
-        { nom: "Mission 1", categorie: "Livraison", description: "Description de la mission 1" },
-        { nom: "Mission 2", categorie: "Ménage", description: "Description de la mission 2" },
-        { nom: "Mission 3", categorie: "Livraison", description: "Description de la mission 3" },
-        { nom: "Mission 4", categorie: "Jardinage", description: "Description de la mission 4" },
-        { nom: "Mission 5", categorie: "Ménage", description: "Description de la mission 5" },
+        { nom: "Nettoyage de mousson", categorie: "Corvées", description: "on assure vaisselle, ménage, rangement…" },
+        { nom: "Mission sauuuce", categorie: "Corvées", description: "Un aventurier vient te faire à manger chez toi" },
+        { nom: "Jeep Deluxe", categorie: "Corvées", description: "La. Flemme de pédaler pour te déplacer ? Un aventurier intrépide te châle où tu veux bravant la jungle et son humidité tropicale" },
+        { nom: "Drive de la jungle ", categorie: "Corvées", description: "Livraison de courses à domicile" },
+        { nom: "Clopin clopant ", categorie: "Corvées", description: "Livraison de clopes à domicile" },
+        { nom: "Coupe de cheveux", categorie: "Bien être", description: "Un aventurier vient dompter ta crinière sauvage" },
+        { nom: "Camouflage", categorie: "Bien être", description: "Tu as toujours rêvé d’une coloration verte pour te cacher des dangereux animaux de la jungle ? Ce SOS est exactement ce qu’il te faut !" },
+        { nom: "Détente tropicale", categorie: "Bien être", description: "On vient te faire un massage pour te détendre après toutes tes aventures de. la journée" },
+        { nom: "Griffes félines", categorie: "Bien être", description: "On te fait une manucure aux petits oignons" },
+        { nom: "Coach Love", categorie: "Bien être", description: "On vient te donner des conseils pour trouver (enfin) liane à ton pied !" },
+        { nom: "Talkie vert", categorie: "Bien être", description: "On t’offre un safari sensuel plein de frissons au téléphone (Grrrr)" },
+        { nom: "Spa", categorie: "Bien être", description: "Soin du visage exotique" },
+        { nom: "Soin au choix", categorie: "Bien être", description: "Hésite pas à nous faire part de tes désirs les plus fous !" },
+        { nom: "Hugo déCRYPT", categorie: "Divertissements", description: "On vient parler potins avec toi et te mettre à la page de tous les dramas du moment" },
+        { nom: "Le venin", categorie: "Divertissements", description: "Dégustation de sauces épicées plus hot que la chaleur des tropiques " },
+        { nom: "Temple run Bastille", categorie: "Divertissements", description: "Run avec toi à la bastille : pulvérisation de RP garantie" },
+        { nom: "As de la jungle", categorie: "Divertissements", description: "On vient faire des jeux de cartes avec toi pour chasser ton ennui comme on chasse le tigre" },
+        { nom: "Marsupilattaque", categorie: "Divertissements", description: "Un véritable marsupilami vient jouer à la bagarre avec toi. Offre limitée : un seul marsupilami est disponible !" },
+        { nom: "Symphonie de la jungle", categorie: "Divertissements", description: "Un orchestre vient te ravir tes petites oreilles d’aventurier" },
+        { nom: "Projection film", categorie: "Divertissements", description: "On se fera un plaisir de regarder avec toi nos films préférés comme indiana Jones; Tarzan ou Madagascar mais on est ouvert à tes propositions ! Offre (très) limitée ! " },
+        { nom: "Au choix", categorie: "Divertissements", description: "Hésite pas à nous faire part de tes désirs les plus fous" },
+        { nom: "P’tit dej après une soirée tropicale humide 3€", categorie: "Packs", description: "une boisson chaude (café ou chocolat), une viennoiserie, 2 crêpes et une boisson (jus de fruit ou red bull) t’attendent pour seulement 3€ ! " },
+        { nom: "Goûter 2€", categorie: "Packs", description: "Livraison de courses à domicile" },
+        { nom: "Apéro 12€ pour 4", categorie: "Packs", description: "Livraison de courses à domicile" },
+        { nom: "Chocotropic 10€ pour 10", categorie: "Packs", description: "Livraison de courses à domicile" },
+        { nom: "Anniversaire", categorie: "Packs", description: "Livraison de courses à domicile" },
+        { nom: "Cookie tisane 3€", categorie: "Packs", description: "Pour un goûter détente" },
     ],
-    catégories_défis : ["Tout", "Sport", "Culture", "Cuisine"],
-    date_fin_defi : '2025-01-25T00:00:00Z',
+
+    catégories_défis : ["Tout", "DD", "Crypt", "Membres de la Crypt", "Bob marliste",  "Hard Core"],
+    date_fin_defi : '2025-02-16T00:00:00Z',
     defis : [
-        { nom: "Défi 1", categorie: "Sport", description: "Description du défi 1", points : 2 },
-        { nom: "Défi 2", categorie: "Culture", description: "Description du défi 2", points : 5 },
-        { nom: "Défi 3", categorie: "Sport", description: "Description du défi 3", points : 1 },
-        { nom: "Défi 4", categorie: "Cuisine", description: "Description du défi 4", points : 2 },
-        { nom: "Défi 5", categorie: "Culture", description: "Description du défi 5", points : 3 },
+        { nom: "Fumer tue", categorie: "DD", description: "Fais une campagne de prévention à un fumeur", points : 20 },
+        { nom: "Montre au chef que t'es végé", categorie: "DD", description: "Prendre une assiette végé à la cantine en regardant le chef droit dans les yeux en lui disant \"je mange végétarien pour sauver la planète\"", points : 20 },
+        { nom: "C'est pas Versailles ici", categorie: "DD", description: "Éteindre la lumière en cours pour sauver la planète (de préférence quand il n'y a pas assez de lumière dans la pièce) en disant \"C'est pas Versailles ici\"", points : 20 },
+        { nom: "La main verte", categorie: "DD", description: "Planter une plante/pisser dessus pour favoriser sa croissance", points : 10 },
+        { nom: "Shot végé", categorie: "DD", description: "Demander un shot végé au pharaon", points : 15 },
+        { nom: "Event DD", categorie: "DD", description: "Aller à l'event DD", points : 20 },
+        { nom: "Dessert vegan", categorie: "DD", description: "faire un dessert végan", points : 2 }, 
+        { nom: "Harmoniser avec la nature", categorie: "DD", description: "Faire un câlin à un arbre pour harmoniser avec la nature", points : 10 },
+        { nom: "L'As du volant", categorie: "DD", description: "Chaler qqun sans les mains", points : 20 },
+        { nom: "L’As de la jungle", categorie: "Crypt", description: "Faire un générique des as de la jungle ", points : 15 },
+        { nom: "Au lasso", categorie: "Crypt", description: "Attrape quelqu'un au lasso au chalet ", points : 10 },
+        { nom: "Jungle Speed", categorie: "Crypt", description: "Faire un jungle Speed en amphi", points : 15 },
+        { nom: "Temple Run", categorie: "Crypt", description: "Gagner 3000 pièces au Temple Run ", points : 10 },
+        { nom: "Outfit d'aventurier", categorie: "Crypt", description: "Venir en cours avec une chemise d'aventurier, un short et un chapeau d'aventurier ", points : 15  },
+        { nom: "Trouver un trésor", categorie: "Crypt", description: "Trouver un trésor insolite au ski / en montagne", points : 10 },
+        { nom: "Temple Run IRL", categorie: "Crypt", description: "Faire un Temple Run en réel dans les couloirs de Phelma", points : 15 },
+
+
+        { nom: "Il en faut peu pour être heureux", categorie: "Crypt", description: "Refaire la musique \"il en faut peu pour être heureux\" acapella et par groupe (refaire les instruments avec la voix)", points : 10 },
+        { nom: "Danseur pro", categorie: "Crypt", description: "Faire la danse de la liste", points : 15 },
+        { nom: "Chanteur pro", categorie: "Crypt", description: "Chanter le refrain de la liste ", points : 15 },
+        { nom: "Merci pour la force", categorie: "Crypt", description: "Partager le compte insta en story", points : 15 },
+        { nom: "L'instant parfait", categorie: "Crypt", description: "Prendre une photo avec un goodies de la liste ", points : 15 },
+        { nom: "Stickers", categorie: "Crypt", description: "Coller nos stickers dans un endroit improbable", points : "5/Stickers" },
+        { nom: "Tableau Crypt", categorie: "Crypt", description: "Ecrire Crypt sur le plus de tableau dans Phelma ", points : "5/Tableau" },
+        { nom: "Bandeur de Crypt", categorie: "Crypt", description: "Avoir le mot Crypt dans son nom FB pendant les campagnes ", points : 25 },
+        { nom: "Fan de Crypt", categorie: "Crypt", description: "Avoir la photo de profil Crypt pendant les campagnes", points : 25 },
+        { nom: "Réveille le King Julian qui sommeille en toi", categorie: "Crypt", description: "Venir déguisé en king Julian à un event de la crypt", points : 40 },
+        { nom: "Petit Gourmand ", categorie: "Membres de la Crypt", description: "Donne ton dessert à Emili2/Respoubelle de table", points : "5/dessert" },
+        { nom: "Brawler", categorie: "Membres de la Crypt", description: "Faire une partie Brawl Stars avec Jeff/Resplot ou le claqueur de joue/Respo Daronne", points : 15 },
+        { nom: "Putaiiing", categorie: "Membres de la Crypt", description: "Tenir une conversation avec Gossip Man XOXO ou Emiliano/Trez Ruiné en forçant excessivement l'accent toulousain", points : 15 },
+        { nom: "Gotaga ", categorie: "Membres de la Crypt", description: "Full box en réalité Kinstaar/Respo Fortnite ", points : 15 },
+        { nom: "BTP", categorie: "Membres de la Crypt", description: "Donner une truelle au portugais sexy/respo truelle", points :15},
+        { nom: "Star ", categorie: "Membres de la Crypt", description: "Prendre une photo avec les 3 Prez de la Crypt en même temps", points : 20 },
+        { nom: "FanBase", categorie: "Membres de la Crypt", description: "Faire une photo avec des membres de la crypt ", points : "5/personne" },
+        { nom: "Neymar Prime ", categorie: "Membres de la Crypt", description: "Metre un ptit pont a lisaaaaaaaaaa et ilanninho ", points :20 },
+        { nom: "Razmo ", categorie: "Membres de la Crypt", description: "Gratter une clope aux ratz ", points :15 },
+        { nom: "Rp schomacher/Tout schuss", categorie: "Membres de la Crypt", description: "Battre le respo ski sur la descente d'une piste ", points :20 },
+        { nom: "La queu tremblante ", categorie: "Membres de la Crypt", description: "Jouer et gagner contre jeff et claqueur de joue au billard ", points :10 },
+        { nom: "Dieu de la danse ", categorie: "Membres de la Crypt", description: "Danser la chorée avec ella en apnée chorégraphique preuve video ", points :25 },
+        { nom: "Grande star ", categorie: "Membres de la Crypt", description: "Faire un tapis de Cannes devant le tapis/rapido", points : 20 },
+        { nom: "Essaye pour voir ", categorie: "Membres de la Crypt", description: "Boire un pichet plus vite que le respieds ", points : 25 },
+        { nom: "Violence gratuite ", categorie: "Membres de la Crypt", description: "Taper la respOB sur la tête avec une bouteille (vide) ", points : 10 },
+        { nom: "Rp squatteur ", categorie: "Membres de la Crypt", description: "Dormir sur le canapé de la prez ", points :30 },
+        { nom: "Aigri de fou ", categorie: "Membres de la Crypt", description: "Faire rire le prez BDAigri ", points :15 },
+        { nom: "Pas volé celle là ", categorie: "Membres de la Crypt", description: "Tacler (littéralement) la prez BDéesse ", points : 30 },
+        { nom: "Masterclass Lou ", categorie: "Membres de la Crypt", description: "Féliciter Lou pour son logo", points : 10 },
+        { nom: "Monstre ", categorie: "Membres de la Crypt", description: "Bench le respoDéfis", points : 15 },
+        { nom: "Bougie Bomb ", categorie: "Membres de la Crypt", description: "Bougie des membres de la crypt ", points :"5/membre" },
+        { nom: "Sacré Bob ", categorie: "Bob Marliste", description: "Jouer et chanter en même temps \"One love\" de Bob Marley dans le hall ", points : 15 },
+        { nom: "Danse reggae ", categorie: "Bob Marliste", description: "Faire une danse reggae dans le hall de Phelma ", points : 15 },
+        { nom: "Lover ", categorie: "Bob Marliste", description: "Faire un câlin aux membres de la crypt en disant \"peace and love\"", points : "5/personne" },
+        { nom: "Ricard reggae lover ", categorie: "Bob Marliste", description: "Jouer et chanter en même temps \"One love\" de Bob Marley dans le hall ", points : 15 },
+        { nom: "Stickers Bob Marliste ", categorie: "Bob Marliste", description: "Coller des stickers bob Marliste", points : "5/stickers" },
+          { nom: "Ça rapproche", categorie: "Hard Core", description: "Chanter du Bob Marley à un inconnu", points : 25 },
+        { nom: "Concert ", categorie: "Hard Core", description: "Faire un concert de Reggae à un inconnu", points : 25 },
+        { nom: "Gros bg des pistes va ", categorie: "Hard Core", description: "Faire du ski habillé en Tarzan (slip léopard)", points : 25 },
+        { nom: "Marsu Marsu", categorie: " Hard Core", description: "Viens en cours en Marsupilami", points : 25 },
+        { nom: "Animal ", categorie: " Hard Core", description: "Faire le crie de Tarzan au châlet debout sur une table ", points : 25 },
+        { nom: "Event addict ", categorie: " Hard Core", description: "Faire tous les évènements de La Crypt", points : 50 },
+
+
+],
+
+    defis_cache : [
+        { nom: "As des As", categorie: "Défis Cachés", description: "Dire en face d'un prof : \"Je fais partie des As de la jungle\"", points : 20 },
+        { nom: "Acrobate du chalet ", categorie: "Défis Cachés", description: "Faire le poirier au châlet en criant \"jungle\"", points : 20 },
+        { nom: "L’after au R37", categorie: "Défis Cachés", description: "Pécho quelqu'un du r37 ", points : 20 },
+        { nom: "Banane présidentielle ", categorie: "Défis Cachés", description: "Offrir une banane aux trois prez", points : 20 },
+        { nom: "Grand fan ", categorie: "Défis Cachés", description: "Demander l'autographe d'un aventurier célèbre ", points : 20 },
+        { nom: "En mode chasse", categorie: "Défis Cachés", description: "Voler la queue du marsupilami ", points : 20 },
+        { nom: "Chasseur chassé ", categorie: "Défis Cachés", description: "Partir à la chasse du chasseur de la liste ", points : 20 },
+        { nom: "1v1 Régis", categorie: " Hard Core", description: "serrer la main de régis plus fort que lui ne la sert ", points : 75 },
+        { nom: "C'est juste un daron chill", categorie: " Hard Core", description: "Fumé un gros teh avec Régis ", points : 75 },
+
     ],
     
     nom_mois : ["jan", "fev", "mar", "avr", "mai", "jun", "jul", "aout", "sep", "oct", "nov", "dec"],
     calendrier_data : [
-        { nomJour: "1 sep", title: "Kfet ouverture",  description: "La soirée d'ouverture de la Kfet.",  textColor: "black", backgroundColor: lightTheme.lightGreen  },
-        { nomJour: "2 sep",  title: "SOS",  description: "Une soirée conviviale pour tous les 2C.",  textColor: "black",  backgroundColor: lightTheme.brown  },
-        { nomJour: "3 sep" },
-        { nomJour: "4 sep", title: "Soirée Zik", description: "Une après-midi de sport.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-        { nomJour: "5 sep", title: "SOS", description: "La soirée des 8C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-        { nomJour: "6 sep", title: "SOS", description: "La soirée des 9C.", textColor: "black", backgroundColor: lightTheme.brown },
-        { nomJour: "7 sep", title: "Aprem BDA", description: "La soirée des 12C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-        { nomJour: "8 sep" },
-        { nomJour: "9 sep" },
-        { nomJour: "10 sep", title: "WELm", description: "La soirée des 1C.", textColor: "black", backgroundColor: lightTheme.brown },
-        { nomJour: "11 sep" },
-        { nomJour: "12 sep" },
-        { nomJour: "13 sep", title: "MINP", description: "La soirée des 3C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-        { nomJour: "14 sep" },
-        { nomJour: "15 sep" },
-        { nomJour: "16 sep", title: "DD", description: "La soirée des 4C.", textColor: "black", backgroundColor: lightTheme.brown },
-        { nomJour: "17 sep" },
-        { nomJour: "18 sep" },
-        { nomJour: "19 sep", title: "Event sport", description: "La soirée des 5C.", textColor: "black", backgroundColor: lightTheme.lightGreen },
-        { nomJour: "20 sep" },
-        { nomJour: "21 sep" },
+        { nomJour: "27 jan" },
+        { nomJour: "28 jan" },
+        { nomJour: "29 jan" },
+        
+    { nomJour: "30 jan", title: "Dévoilement", description: "Bienvenue à la Crypt !", textColor: "black", backgroundColor: lightTheme.brown},
+        { nomJour: "31 jan",  title: "SOS",  description: "La Crypt pour te servir ! Va voir tous nos services sur l’appli puis appelle-nous !",  textColor: "black",  backgroundColor: lightTheme.brown  },
+        { nomJour: "1 fev", title: "Soirée BDE + SOS",  description: "La soirée à ne pas manquer ! (20h30 - 4h) \n La Crypt pour te servir ! Va voir tous nos services sur l’appli puis appelle-nous !",  textColor: "black", backgroundColor: lightTheme.lightGreen  },
+        { nomJour: "2 fev",  title: "SOS",  description: "La Crypt pour te servir ! Va voir tous nos services sur l’appli puis appelle-nous !",  textColor: "black",  backgroundColor: lightTheme.brown  },
+        { nomJour: "3 fev", title: "Kfet",  description: "Deviens un fauve déchaîné avec nos pichets !",  textColor: "black", backgroundColor: lightTheme.lightGreen  },
+        { nomJour: "4 fev" },
+        { nomJour: "5 fev", title: "Goûter Campus", description: "Viens prendre des forces avec un goûter de folie au campus !", textColor: "black", backgroundColor: lightTheme.lightGreen },
+        { nomJour: "6 fev", title: "WEL", description: "Livraison express dans la jungle ! Va voir nos plats sur l’appli puis appelle-nous !", textColor: "black", backgroundColor: lightTheme.brown },
+        { nomJour: "7 fev", title: "Soirée Zik", description: "Viens t’ambiancer avec tous les groupes qui ont préparé des pépites d’or ! Le programme de la soirée est sur l’appli ! ", textColor: "black", backgroundColor: lightTheme.lightGreen },
+        { nomJour: "8 fev", title: "WEL", description: "Livraison express dans la jungle ! Va voir nos plats sur l’appli puis appelle-nous !", textColor: "black", backgroundColor: lightTheme.brown },
+        { nomJour: "9 fev", title: "WEL", description: "Livraison express dans la jungle ! Va voir nos plats sur l’appli puis appelle-nous !", textColor: "black", backgroundColor: lightTheme.brown },
+        { nomJour: "10 fev", title: "Goûter Minatec", description: "Viens prendre des forces avec un goûter de folie à Minatec !", textColor: "black", backgroundColor: lightTheme.lightGreen },
+        { nomJour: "11 fev" },
+        { nomJour: "12 fev" },
+        { nomJour: "13 fev", title: "Event DD", description: "Viens respirer l’atmosphère tropicale de la jungle…", textColor: "black", backgroundColor: lightTheme.lightGreen },
+        { nomJour: "14 fev" },
+        { nomJour: "15 fev", title: "Aprem BDA", description: "Un trésor t’attend à Grenoble… Viens le trouver lors de notre Jungle Quest !", textColor: "black", backgroundColor: lightTheme.brown },
+        { nomJour: "16 fev", title: "Event Sport", description: "Un après-midi féroce et coloré t’attend …", textColor: "black", backgroundColor: lightTheme.lightGreen },
+
 
 
         // { nomJour : "18 dec", title : "SOS", description : "La soirée de noel", textColor : "black", backgroundColor : lightTheme.lightGreen }
     ],
 
-    titres_base : ["Info pratique", "Au programme", "Au menue"],
+    titres_base : ["Info pratique", "Au programme", "Au menu"],
 
     SoireeBDE : 
     {
@@ -129,31 +226,36 @@ const data =
     SoireeZik : 
     {
         info_pratique: [
-            { type: "ligne", emoji: "🎉", titre: "Thème", description: "troubadour carrement" },
+            { type: "ligne", emoji: "🎉", titre: "Thème", description: "La jungle, pour être original" },
             { type : "separation"},
-            { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type: "ligne", emoji: "📅", titre: "Date", description: "Vendredi 7 février" },
             { type : "separation"},
-            { type: "ligne", emoji: "🪩", titre: "Lieu", description: "l'alpha", lien: "https://www.google.com/maps" },
+            { type: "ligne", emoji: "📅", titre: "Horaires", description: "20h - 2h" },
             { type : "separation"},
-            { type: "ligne", emoji: "💸", titre: "Prix", description: "10 phelma, 12 exte" },
+            { type: "ligne", emoji: "🪩", titre: "Lieu", description: "Le Bronx Grenoble", lien: "https://www.google.com/maps/place/Le+Bronx+Grenoble/@45.1912789,5.717131,17z/data=!4m6!3m5!1s0x478af538a613e31d:0x9c10dddc1c2a76!8m2!3d45.1912751!4d5.7197059!16s%2Fg%2F11y919n5_8?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" },
             { type : "separation"},
-            { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
+            { type: "ligne", emoji: "💸", titre: "Prix", description: "???" },
             { type : "separation"},
-            { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
+            { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Tram ligne B - arrêt Alsace Lorraine \n\nBus C1 - arrêt Félix Viallet \n\nVélo - Parking à vélo en face \n\nVoiture - Place gratuite"},
           ],
-
         au_programme : 
         [
             { type : "liste", titre : "20h-minuit", emoji : "🪩",items : 
-                [   { titre : "Groupe 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
-                    { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
-                    { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
+                [   { titre : "Groupe 1 :",description : "Groupe Mystère"},
+                    { titre : "Groupe 2 :",description : "Bocchi the rock", lien_insta : "https://www.instagram.com" },
+                    { titre : "Groupe 3 :",description : "EKLATE", lien_insta : "https://www.instagram.com" },
+	       { titre : "Groupe 4 :",description : "Banger", lien_insta : "https://www.instagram.com" },
+	       { titre : "Groupe 5 :",description : "Ensirvana", lien_insta : "https://www.instagram.com" },
+]
             },
             { type : "separation"},
-            { type : "liste", titre : "Showcase", emoji : "🎤", items :
-                [   { titre : "Showcase 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
-                    { titre : "Showcase 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
-                    { titre : "Showcase 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
+            { type : "liste", titre : "Showcases", emoji : "🎤", items :
+                [   { titre : "Showcase 1 :",description : "IAE"},
+                    { titre : "Showcase 2 :",description : "E3"},
+                    { titre : "Showcase 3 :",description : "Groupe Mystère"},
+                    { titre : "Showcase 4 :",description : "La Bobmarliste", lien_insta : "https://www.instagram.com"},
+	       { titre : "Showcase 5 :",description : "La Crypt", lien_insta : "https://www.instagram.com"},
+]
             },
             { type : "separation"},
             { type : "liste", titre : "After DJ",emoji : "📀", items :
@@ -186,6 +288,7 @@ const data =
             ]},
         ]
     },
+
     DD : 
     {
    info_pratique: [
@@ -242,77 +345,96 @@ const data =
        ]},
    ]
 },
-    ApremBDA : 
-    {
-        info_pratique: [
-            { type: "ligne", emoji: "🎲", titre: "Jeux de BDA en pleine air", description: "" },
-            { type : "separation"},
-            { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
-            { type : "separation"},
-            { type: "ligne", emoji: "🎡", titre: "Lieu", description: "parc asterix", lien: "https://www.google.com/maps" },
-            { type : "separation"},
-            { type: "ligne", emoji: "💸", titre: "Prix", description: "5 phelma, 6 exte" },
-            { type : "separation"},
-            { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
-            { type : "separation"},
-            { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
-          ],
+ApremBDA : 
+{
+    info_pratique: [
+        { type: "paragraphe", emoji: "🎲", titre: "Jungle Quest", description: "Pars à la chasse au trésor dans la jungle de Grenoble remplie de fauves déchaînés !" },
+        { type : "separation"},
+        { type: "ligne", emoji: "📅", titre: "Date", description: "Samedi 15 février" },
+        { type : "separation"},
+        { type: "ligne", emoji: "🎡", titre: "Lieu", description: "Les chemins sinueux de Grenoble "},
+        { type : "separation"},
+        { type: "ligne", emoji: "💸", titre: "Prix", description: "3€" },
+        { type : "separation"},
+        { type: "paragraphe", emoji: "🚍", titre: "Transports", description: "Juste tes jambes et tes pieds avec de bonnes chaussures." },
+      ],
+    au_programme : 
+    [
+        {   type : "paragraphe",
+            titre : "Chasse au Trésor",
+            emoji : "🎲",
+            description: "Avec votre équipe d'aventuriers intrépides (7 personnes), partez à la conquête de la jungle mystérieuse de Grenoble pour découvrir la légendaire crypte inca de l'Empereur Pachacutec.\n\nTout au long de votre aventure, vous devrez surmonter des épreuves originales, parfois artistiques, souvent culturelles... et dangereusement arrosées ! \n\nEt après l’effort, un goûter convivial viendra couronner les plus courageux (et les plus assoiffés) d’entre vous ! \n\nFous rires, surprises et esprit d’équipe seront vos meilleurs alliés pour briller dans cette aventure ! \nRécompense à la clef !"
+        }        
+    ],
+//     au_programme : 
+//    [
+//        { type : "liste", titre : "20h-minuit", emoji : "🪩",items : 
+//            [   { titre : "Groupe 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
+//                { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
+//                { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
+//        },
+//     ],
+    
+    au_menu : 
+    [   
+        {   type : "double",
+            titre : "A manger", 
+            emoji : "🍽️",
+            items : [
+            { nom : "Goûter Surprise !",  emoji : "🥗" },
+        ]},
+        { type : "separation"},
+        {
+            type : "double",
+            titre : "A boire",
+            emoji : "🍹",
+            items :  [
+            { nom : "Bière Surprise !", emoji : "🍺" },
+            { nom : "Shot Surprise", emoji : "💧" },
+        ]},
+    ]
+},
 
-        au_programme : 
-        [
-            {   type : "double",
-                titre : "Jeux de société",
-                emoji : "🎲",
-                items : [
-                { nom : "Skyjo",  emoji : "🥂" },
-                { nom : "Poulet braisé curry oignon ", emoji : "🃏" },
-                { nom : "Un autre jeu", emoji : "🥧" },
-            ]},
-            { type : "separation"},
-            {
-                type : "double",
-                titre : "Jeux en plein air",
-                emoji : "🎡",
-                items :  [
-                { nom : "Boules", emoji : "🎳" },
-                { nom : "Pétanque", emoji : "🎯" },
-                { nom : "Chasse au trésor", emoji : "🔍" },
-            ]},
-            { type : "separation"},
-            {
-                type : "double",
-                titre : "Jeux de réflexion",
-                emoji : "🧩",
-                items :  [
-                { nom : "Escape game", emoji : "🔐" },
-                { nom : "Puzzle", emoji : "🧩" },
-                { nom : "Mots croisés", emoji : "📝" },
-            ],
-            }
-        ],
-        
-        au_menu : 
-        [   
-            {   type : "double",
-                titre : "A manger",
-                emoji : "🍽️",
-                items : [
-                { nom : "Salade césare chevre miel pignon...",  emoji : "🥗" },
-                { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
-                { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
-            ]},
-            { type : "separation"},
-            {
-                type : "double",
-                titre : "A boire",
-                emoji : "🍹",
-                items :  [
-                { nom : "Bière : chouffe, blonde, ...", emoji : "🍺" },
-                { nom : "Cocktail spécial surprise", emoji : "🍷" },
-                { nom : "Eau bénite", emoji : "💧" },
-            ]},
-        ]
-    },
+MINP : 
+{
+    info_pratique: [
+        { type: "ligne", emoji: "🕺", titre: "Theme", description: "Crypt" },
+        { type : "separation"},
+        { type: "ligne", emoji: "📅", titre: "Date", description: "3 Février " },
+        { type : "separation"},
+        { type: "ligne", emoji: "🎡", titre: "Lieu", description: "MINP", lien: "https://maps.app.goo.gl/huD8uVGKTr9CFRH1A" },
+        { type : "separation"},
+        { type: "ligne", emoji: "💸", titre: "Prix", description: "6.5e" },
+      ],
+    au_programme : 
+    [
+        {   type : "double",
+            titre : "activité crypt/jungle ",
+            emoji : "🐒",
+            items : [
+            { nom : "stand déguisement ",  emoji : "🎨" },
+            ]}],
+    au_menu : 
+    [   
+        {   type : "double",
+            titre : "A manger",
+            emoji : "🍽️",
+            items : [
+            { nom : "Panini mozza tomates pesto",  emoji : "  mettre un emoji  " },
+                      ]},
+        { type : "separation"},
+        {
+            type : "double",
+            titre : "A boire",
+            emoji : "🍹",
+            items :  [
+            { nom : "Bière .", emoji : "🍺" },
+            { nom : "Sangria", emoji : "🍷" },
+            { nom : "Vin blanc ", emoji : " "},
+        ]},
+    ]
+},
+
     MINP : 
     {
         info_pratique: [
@@ -432,43 +554,55 @@ const data =
 
     WEL : 
     [
-        { titre : 'Jour 1',
-            date_debut : '2025-01-20T00:00:00Z',
+        { titre : 'Jeudi',
+            date_debut : '2025-01-0T00:00:00Z',
             items : 
             [
                 {
-                    titre : "Menu 1",
-                    photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+                    titre : "Plats",
+                    //photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
                     commander_lien : "tel:0781885377",
                     items : 
                     [ 
-                        {   nom : "Burgerr", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                        {   nom : "Curry des tropiques", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 5,
-                            
-                            ingredients : " Pain au graine, steak, tomate, salade, fromage, ketchup, moutarde, oignon, cornichon, frite",
+                            vege : true,
+                            ingredients : "Riz, lait de coco, curry, patates, courgettes, carottes, oignons, ail",
                          },
-                        {   nom : "Muffinoo", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                        {   nom : "Poulet curry des tropiques", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             commander_lien : "https://www.google.com",
-                            ingredients : "Farine, oeuf, sucre, lait, beurre, levure, chocolat",
+                            ingredients : "Poulet, Riz, lait de coco, curry, patates, courgettes, carottes, oignons, ail",
+                         },
+                         {   nom : "Pizza raclette", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "pate à pizza, fromage à raclette, crème, mozza, patates",
+                         },
+                         {   nom : "Pizza chèvre miel", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "pates à pizza, chèvre, miel, sauce tomate, mozza",
                          },
                     ]
                 },
                 {
-                    titre : "Shotgun",
+                    titre : "Desserts",
                     photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
 
                     items : 
                     [
-                        {   nom : "Burger", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                        {   nom : "Le délice de la panthère", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 5,
                             commander_lien : "https://www.google.com",
-                            ingredients : " Pain, steak, tomate, salade, fromage, ketchup, moutarde, oignon, cornichon, frite",
+                            ingredients : " Mousse au chocolat",
                          },
-                        {   nom : "Muffinoo", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                        {   nom : "Le Jone's aux pommes", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             commander_lien : "https://www.google.com",
-                            ingredients : "Farine, oeuf, sucre, lait, beurre, levure, chocolat",
+                            ingredients : "Gateau Yaourt aux pommes",
                          },
                     ]
                 }
@@ -477,16 +611,94 @@ const data =
 
             
         },
-        { titre : 'Jour 2',
-            date_debut : '2025-01-25T00:00:00Z',
+        { titre : 'Samedi',
+            date_debut : '2025-01-00T00:00:00Z',
+            items : 
+            [
+                {
+                    titre : "Plats",
+                    //photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+                    commander_lien : "tel:0781885377",
+                    items : 
+                    [ 
+                        {   nom : "Burger Poulet du Tigre", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+            
+                            commander_lien : "https://www.google.com",
+                            ingredients : "burger ",
+                         },
+                        {   nom : "Méli-mélo tropical", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 5,
+                            vege : true,
+                            ingredients : "Mélange de frites de carottes, de patate douce et de pomme de terre",
+                         },
+                        
+                         {   nom : "Pizza raclette", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "pate à pizza, fromage à raclette, crème, mozza, patates",
+                         },
+                         {   nom : "Pizza chèvre miel", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "pates à pizza, chèvre, miel, sauce tomate, mozza",
+                         },
+                    ]
+                },
+                {
+                    titre : "Desserts",
+                    photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+
+                    items : 
+                    [
+                        {   nom : "Le délice de la panthère", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 5,
+                            commander_lien : "https://www.google.com",
+                            ingredients : " Mousse au chocolat",
+                         },
+                        {   nom : "Le Jone's aux pommes", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "Gateau Yaourt aux pommes",
+                         },
+                    ]
+                }
+
+            ]
+            
+        },
+        { titre : 'Dimanche',
+            date_debut : '2025-01-00T00:00:00Z',
 
             
         },
-        { titre : 'Jour 3',
-            date_debut : '2025-01-25T00:00:00Z',
-
-            
-        },
+        {
+            titre : 'Packs',
+            date_debut : '2025-01-00T00:00:00Z',
+            items : 
+                    [
+                        {   nom : "Éveil \nsauvage", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "langue de chat, café, croissant",
+                         },
+                        {   nom : "Balou", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 3,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "torsade de pesto, bière de la liste, croissant boursin/pesto/chèvre et kiri",
+                         },
+                         {   nom : "Bob Marliste", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 8,
+                            vege : false,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "clopes",
+                         }, 
+                    ]
+        }
        
 
     ],

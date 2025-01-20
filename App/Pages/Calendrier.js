@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     eventTitle: {
-        fontSize: 12,
+        fontSize: 10,
         color: '#00796b',
         textAlign: 'center',
         fontFamily : "SemiBold",

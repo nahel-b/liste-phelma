@@ -17,6 +17,8 @@ import ListeDefis from './App/Pages/ListeDefis';
 import ClassementDefis from './App/Pages/ClassementDefis';
 import WEL,{WELMenuPage,WELDescriptionMenuPage} from './App/Pages/WEL';
 
+import DefisCache from './App/Pages/DefisCache';
+
 import React,{useEffect} from 'react';
 import { ShakeEventExpo } from './App/Components/Shake';
 
@@ -91,6 +93,7 @@ export default function App() {
           <Stack.Screen name="WELMenuPage" component={WELMenuPage} />
           <Stack.Screen name="WELDescriptionMenuPage" component={WELDescriptionMenuPage} />
           <Stack.Screen name="DD" component={DD} />
+          <Stack.Screen name="DefisCache" component={DefisCache} />
         </Stack.Navigator>
       </NavigationContainer>
       <Bottom/>

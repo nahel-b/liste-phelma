@@ -84,7 +84,7 @@ const HapticBounceable = ({
 
 const onLongPress = () => {
   console.log('Long press detected!');
-  fetchAndOpenURL();
+  //fetchAndOpenURL();
 };
 
 

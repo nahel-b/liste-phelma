@@ -47,7 +47,7 @@ const TabSelector = ({ titles, components,head_item }) => {
     componentContainer: {
       marginTop: height * 0.02,
       justifyContent: "flex-start",
-     
+      height: height*0.65,
     },
   });
 
@@ -74,6 +74,7 @@ const TabSelector = ({ titles, components,head_item }) => {
             </View>
           </HapticBounceable>
         ))}
+        
       </ScrollView>
 
       {head_item != null && head_item[selectedIndex]}
