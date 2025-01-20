@@ -564,27 +564,27 @@ MINP :
                     commander_lien : "tel:0781885377",
                     items : 
                     [ 
-                        {   nom : "Curry des tropiques", photo : require('../assets/images/WEL/jour1/menu1.png'),
-                            prix : 5,
+                        {   nom : "Curry des tropiques végé", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 1,
                             vege : true,
                             ingredients : "Riz, lait de coco, curry, patates, courgettes, carottes, oignons, ail",
                          },
                         {   nom : "Poulet curry des tropiques", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             commander_lien : "https://www.google.com",
-                            ingredients : "Poulet, Riz, lait de coco, curry, patates, courgettes, carottes, oignons, ail",
+                            ingredients : "Poulet, Riz, lait de coco, curry, patates, courgettes, carottes, oignons, ail, ce plat est en sg referez vous au compte insta de la crypt !",
                          },
-                         {   nom : "Pizza raclette", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                         {   nom : "Pizzamazonienne raclette", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             vege : true,
                             commander_lien : "https://www.google.com",
-                            ingredients : "pate à pizza, fromage à raclette, crème, mozza, patates",
+                            ingredients : "pate à pizza, fromage à raclette, crème, mozza, patates (lait, blé); ce plat est en sg referez vous au compte insta de la crypt !",
                          },
-                         {   nom : "Pizza chèvre miel", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                         {   nom : "Pizzamazonienne chèvre miel", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             vege : true,
                             commander_lien : "https://www.google.com",
-                            ingredients : "pates à pizza, chèvre, miel, sauce tomate, mozza",
+                            ingredients : "pates à pizza, chèvre, miel, sauce tomate, mozza (lait,blé); ce plat est en sg referez vous au compte insta de la crypt !",
                          },
                     ]
                 },
@@ -595,14 +595,14 @@ MINP :
                     items : 
                     [
                         {   nom : "Le délice de la panthère", photo : require('../assets/images/WEL/jour1/menu1.png'),
-                            prix : 5,
+                            prix : 1.5,
                             commander_lien : "https://www.google.com",
-                            ingredients : " Mousse au chocolat",
+                            ingredients : " Une creme chocolat qui plaira aux plus grands fans de chocolat !",
                          },
-                        {   nom : "Le Jone's aux pommes", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                        {   nom : "Le Jones aux pommes", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             commander_lien : "https://www.google.com",
-                            ingredients : "Gateau Yaourt aux pommes",
+                            ingredients : "Un gateau au yaourt avec un coeur de pommes",
                          },
                     ]
                 }
@@ -622,10 +622,16 @@ MINP :
                     items : 
                     [ 
                         {   nom : "Burger Poulet du Tigre", photo : require('../assets/images/WEL/jour1/menu1.png'),
-                            prix : 2,
+                            prix : 3,
             
                             commander_lien : "https://www.google.com",
-                            ingredients : "burger ",
+                            ingredients : "pain a burger, poulet pané, oignons confits, sauce big mac, tomates, salade, fromage",
+                         },
+								{   nom : "Burger végé du Tigre", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 3,
+                            vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "pain a burger, galette de pdt, oignons confits, sauce big mac, tomates, salade, fromage",
                          },
                         {   nom : "Méli-mélo tropical", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 5,
@@ -633,17 +639,12 @@ MINP :
                             ingredients : "Mélange de frites de carottes, de patate douce et de pomme de terre",
                          },
                         
-                         {   nom : "Pizza raclette", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                        
+                         {   nom : "Anneaux du serpent", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 2,
                             vege : true,
                             commander_lien : "https://www.google.com",
-                            ingredients : "pate à pizza, fromage à raclette, crème, mozza, patates",
-                         },
-                         {   nom : "Pizza chèvre miel", photo : require('../assets/images/WEL/jour1/menu1.png'),
-                            prix : 2,
-                            vege : true,
-                            commander_lien : "https://www.google.com",
-                            ingredients : "pates à pizza, chèvre, miel, sauce tomate, mozza",
+                            ingredients : "oignons rings avec sauce burger",
                          },
                     ]
                 },
@@ -653,15 +654,15 @@ MINP :
 
                     items : 
                     [
-                        {   nom : "Le délice de la panthère", photo : require('../assets/images/WEL/jour1/menu1.png'),
-                            prix : 5,
+                        {   nom : "Muffins mystiques", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 0.5,
                             commander_lien : "https://www.google.com",
-                            ingredients : " Mousse au chocolat",
+                            ingredients : " muffins coeur coulant chocolat ou muffins framboises et choclat blanc (oeuf,lait)",
                          },
-                        {   nom : "Le Jone's aux pommes", photo : require('../assets/images/WEL/jour1/menu1.png'),
-                            prix : 2,
+                        {   nom : "Festin du capucin", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 1.25,
                             commander_lien : "https://www.google.com",
-                            ingredients : "Gateau Yaourt aux pommes",
+                            ingredients : "Salade de fruits composée de clementines, kiwis, pommes, poires et jus de citron",
                          },
                     ]
                 }
@@ -671,6 +672,44 @@ MINP :
         },
         { titre : 'Dimanche',
             date_debut : '2025-01-00T00:00:00Z',
+items : 
+            [
+                {
+                    titre : "Plats",
+                    //photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+                    commander_lien : "tel:0781885377",
+                    items : 
+                    [ 
+                        {   nom : "Jungle gratinée", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 3,
+                            vege : true,
+                            ingredients : "Croziflette composée de crozets, creme, oignons, fromage (lait,blé)",
+                         },
+                        {   nom : "Delice des Dunes", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 2.5,
+							vege : true,
+                            commander_lien : "https://www.google.com",
+                            ingredients : "Un couscous végé (falafels, saucisse vege) qui vous rappelera vos aventures dans les deserts du monde",
+                         },
+                         
+                    ]
+                },
+                {
+                    titre : "Desserts",
+                    photo_principale : require('../assets/images/WEL/jour1/menu1.png'),
+
+                    items : 
+                    [
+                        {   nom : "Tresor de la jungle", photo : require('../assets/images/WEL/jour1/menu1.png'),
+                            prix : 0.75,
+                            commander_lien : "https://www.google.com",
+                            ingredients : " Un excellent crumble aux pommes pour bien finir ce WEL (blé,lait)",
+                         },
+                        
+                    ]
+                }
+
+            ]
 
             
         },
@@ -683,19 +722,19 @@ MINP :
                             prix : 2,
                             vege : true,
                             commander_lien : "https://www.google.com",
-                            ingredients : "langue de chat, café, croissant",
+                            ingredients : "5 langues de chat, café, croissant et 2 pancakes (blé,lait)",
                          },
                         {   nom : "Balou", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 3,
                             vege : true,
                             commander_lien : "https://www.google.com",
-                            ingredients : "torsade de pesto, bière de la liste, croissant boursin/pesto/chèvre et kiri",
+                            ingredients : "torsade de pesto, bière de la Crypt, croissant boursin/pesto/chèvre et kiri",
                          },
                          {   nom : "Bob Marliste", photo : require('../assets/images/WEL/jour1/menu1.png'),
                             prix : 8,
                             vege : false,
                             commander_lien : "https://www.google.com",
-                            ingredients : "clopes",
+                            ingredients : "cigarettes à prix exotique",
                          }, 
                     ]
         }
@@ -705,12 +744,16 @@ MINP :
 
     avantage_carte : 
     [
-        { commerce : "🍹 Buble Tea", promotion :"1 acheté = 1 offert" },
-        { commerce : "🥙 Kebab", promotion :"2 acheté = 1 offert" },
-        { commerce : "🍟 McDo", promotion :"1 acheté = 1 offert" },
+        { commerce : "🧋Tea and Bubble", promotion :"50 centimes de réduction sur toute la carte" },
+        { commerce : "🎭 Fêt à fête", promotion :"-15% sur tout le magasin" },
+        { commerce : "🍺 La Girafe", promotion :"-10% sur toute la carte" },
+        { commerce : "🌯 Fresh Burritos", promotion :"Tarif étudiant pour le menu burritos + nachos + boisson" },
+        { commerce : "🍔 Les burgers de papa", promotion :"supplément fromage offert (Bleu, Cheddar ou Raclette)" },
+        { commerce : "🥃 Le Pharaon", promotion :"Pastis à 1€ et Jägerbomb à 2€" },
+        { commerce : "👙 A Fleur de Peau", promotion :"-10% sur la lingerie" },
         
-
     ]
+
 
 
 }

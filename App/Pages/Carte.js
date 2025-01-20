@@ -107,14 +107,14 @@ const RenderPromotion = (data) => {
         },
         texteCommerce: {
             fontFamily: "JungleBold",
-            fontSize: width * 0.04,
+            fontSize: width * 0.035,
             color: "white",
             textAlign: "left",
             opacity: 1,
         },
         textePromotion: {
             fontFamily: "JungleBold",
-            fontSize: width * 0.04,
+            fontSize: width * 0.03,
             color: "white",
             textAlign: "left",
             opacity: 1,
@@ -145,12 +145,13 @@ const RenderPromotion = (data) => {
                     return (
                         <View key={index}  >
                             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-evenly", padding: 10 }}>
-                                <View style={{ flex: 1 }}>
+                                <View style={{ flex: 1,justifyContent : "center",alignItems :"flex-start" }} >
                                     <Text style={styles.texteCommerce}>{item.commerce}</Text>
                                 </View>
-                                <View style={{ flex: 1.4 }}>
+                                <View style={{ flex: 0.1 }} />
+                                <View style={{ flex: 1.4,justifyContent : "center", alignItems :"center",}} >
                                     <Text style={styles.textePromotion}>{item.promotion}{" "}
-                                        <Text style={{ opacity: 0 }}>😀</Text>
+                                        {/* <Text style={{ opacity: 1 }}>😀</Text> */}
                                     </Text>
                                 </View>
                             </View>
@@ -162,6 +163,8 @@ const RenderPromotion = (data) => {
                         </View>
                     );
                 })}
+
+                <View style={{ height: height * 0.3 }} />
             </ScrollView>
         </View>
     )
