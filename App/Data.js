@@ -167,38 +167,28 @@ const data =
         info_pratique: [
             { type: "ligne", emoji: "🎉", titre: "Thème", description: "Jungle" },
             { type : "separation"},
-            { type: "ligne", emoji: "📅", titre: "Date", description: "Mardi 3 septembre" },
+            { type: "ligne", emoji: "📅", titre: "Date", description: "Samedi 1er février" },
             { type : "separation"},
-            { type: "ligne", emoji: "🪩", titre: "Lieu", description: "2 colombes", lien: "https://www.google.com/maps" },
+            { type: "ligne", emoji: "📅", titre: "Horaires", description: "21h - 3h45" },
             { type : "separation"},
-            { type: "ligne", emoji: "💸", titre: "Prix", description: "8 phelma, 10 exte" },
+            { type: "ligne", emoji: "🪩", titre: "Lieu", description: "2 Colombes", lien: "https://www.google.com/maps/place/Location+de+salle+Aux+Deux+Colombes,+Saint-Egreve,+Grenoble/@45.2100144,5.6867142,13.05z/data=!4m6!3m5!1s0x478af3c97f8e2801:0x3501763697b1e98!8m2!3d45.217288!4d5.679727!16s%2Fg%2F1tdn2_30?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" },
             { type : "separation"},
-            { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Metro..... \nBus..... \nVelo..... \nVoiture....." },
+            { type: "ligne", emoji: "💸", titre: "Prix", description: "11€ Phelma, 13€ Extérieur" },
             { type : "separation"},
-            { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Navette \nVelo \nVoiture" },
+            { type: "paragraphe", emoji: "🚍", titre: "Transport aller", description: "Tram ligne E - arrêt Fiancey Prédieu" },
+            { type : "separation"},
+            { type: "paragraphe", emoji: "🥱", titre: "Transport retour", description: "Bus navette à partir de 1h " },
           ],
-
         au_programme : 
         [
-            { type : "liste", titre : "20h-minuit", emoji : "🪩",items : 
-                [   { titre : "Groupe 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
-                    { titre : "Groupe 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
-                    { titre : "Groupe 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
-            },
+                { type : "ligne",emoji : "⚡️" , titre : "Surprises éclair pour nos aventuriers toutes les heures de 22h30 à 1h30 ", },
             { type : "separation"},
-            { type : "liste", titre : "Showcase", emoji : "🎤", items :
-                [   { titre : "Showcase 1 :",description : "nom 1", lien_insta : "https://www.instagram.com" },
-                    { titre : "Showcase 2 :",description : "nom 2", lien_insta : "https://www.instagram.com" },
-                    { titre : "Showcase 3 :",description : "nom 3", lien_insta : "https://www.instagram.com" }]
-            },
-            { type : "separation"},
-            { type : "liste", titre : "After DJ",emoji : "📀", items :
-                [   { titre : "DJ 1 :",description : "nom DJ 1", lien_insta : "https://www.instagram.com" },
-                    { titre : "DJ 2 :",description : "nom DJ 2", lien_insta : "https://www.instagram.com" },
-                    { titre : "DJ 3 :",description : "nom DJ 3", lien_insta : "https://www.instagram.com" }
-                ]
-            }
-        ],
+            { type : "ligne",emoji : "🌿" , titre : "La Crypt vous a préparé de nombreuses surprises, venez pour toutes les découvrir !", },
+
+            ],
+         
+                 
+                    
         
         au_menu : 
         [   
@@ -206,9 +196,7 @@ const data =
                 titre : "A manger",
                 emoji : "🍽️",
                 items : [
-                { nom : "Salade césare chevre miel pignon...",  emoji : "🥗" },
-                { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
-                { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
+                { nom : "Panini" ,  emoji : "🥪" },
             ]},
             { type : "separation"},
             {
@@ -216,9 +204,10 @@ const data =
                 titre : "A boire",
                 emoji : "🍹",
                 items :  [
-                { nom : "Bière : chouffe, blonde, ...", emoji : "🍺" },
-                { nom : "Cocktail spécial surprise", emoji : "🍷" },
-                { nom : "Eau bénite", emoji : "💧" },
+                { nom : "De nombreux cocktails disponibles !", emoji : "🍷" },
+              
+                { nom : "Stand Pastis", emoji : "💧" },
+	  { nom :"Stand Shots", emoji : "🥃" },
             ]},
         ]
     },
@@ -395,127 +384,67 @@ ApremBDA :
     ]
 },
 
-MINP : 
-{
-    info_pratique: [
-        { type: "ligne", emoji: "🕺", titre: "Theme", description: "Crypt" },
-        { type : "separation"},
-        { type: "ligne", emoji: "📅", titre: "Date", description: "3 Février " },
-        { type : "separation"},
-        { type: "ligne", emoji: "🎡", titre: "Lieu", description: "MINP", lien: "https://maps.app.goo.gl/huD8uVGKTr9CFRH1A" },
-        { type : "separation"},
-        { type: "ligne", emoji: "💸", titre: "Prix", description: "6.5e" },
-      ],
-    au_programme : 
-    [
-        {   type : "double",
-            titre : "activité crypt/jungle ",
-            emoji : "🐒",
-            items : [
-            { nom : "stand déguisement ",  emoji : "🎨" },
-            ]}],
-    au_menu : 
-    [   
-        {   type : "double",
-            titre : "A manger",
-            emoji : "🍽️",
-            items : [
-            { nom : "Panini mozza tomates pesto",  emoji : "  mettre un emoji  " },
-                      ]},
-        { type : "separation"},
-        {
-            type : "double",
-            titre : "A boire",
-            emoji : "🍹",
-            items :  [
-            { nom : "Bière .", emoji : "🍺" },
-            { nom : "Sangria", emoji : "🍷" },
-            { nom : "Vin blanc ", emoji : " "},
-        ]},
-    ]
-},
-
     MINP : 
     {
         info_pratique: [
-            { type: "ligne", emoji: "🕺", titre: "Theme", description: "Schrek" },
+            { type: "ligne", emoji: "🕺", titre: "Theme", description: "Crypt" },
             { type : "separation"},
-            { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type: "ligne", emoji: "📅", titre: "Date", description: "3 Février " },
             { type : "separation"},
-            { type: "ligne", emoji: "🎡", titre: "Lieu", description: "MINP", lien: "https://www.google.com/maps" },
+            { type: "ligne", emoji: "🎡", titre: "Lieu", description: "MINP", lien: "https://maps.app.goo.gl/huD8uVGKTr9CFRH1A" },
             { type : "separation"},
-            { type: "ligne", emoji: "💸", titre: "Prix", description: "5 phelma, 6 exte" },
-          ],
-
+            { type: "ligne", emoji: "💸", titre: "Prix", description: "6.5e" },
+        ],
         au_programme : 
         [
             {   type : "double",
-                titre : "Jeux sportifs",
-                emoji : "🏐",
+                titre : "activité crypt/jungle ",
+                emoji : "🐒",
                 items : [
-                { nom : "Volley",  emoji : "🏐" },
-                { nom : "Foot", emoji : "⚽" },
-                { nom : "Basket", emoji : "🏀" }
-                ,
-            ]},
-            { type : "separation"},
-            {
-                type : "double",
-                titre : "Jeux à boire",
-                emoji : "🍾",
-                items :  [
-                { nom : "Beer pong", emoji : "🍺" },
-                { nom : "Flip cup", emoji : "🍻" },
-                { nom : "Kings", emoji : "👑" },
-            ]},
-           
-        ],
-        
+                { nom : "stand déguisement ",  emoji : "🎨" },
+                ]}],
         au_menu : 
         [   
             {   type : "double",
                 titre : "A manger",
                 emoji : "🍽️",
                 items : [
-                { nom : "Salade césare chevre miel pignon...",  emoji : "🥗" },
-                { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
-                { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
-            ]},
+                { nom : "Panini mozza tomates pesto",  emoji : "🥪" },
+                        ]},
             { type : "separation"},
             {
                 type : "double",
                 titre : "A boire",
                 emoji : "🍹",
                 items :  [
-                { nom : "Bière : chouffe, blonde, ...", emoji : "🍺" },
-                { nom : "Cocktail spécial surprise", emoji : "🍷" },
-                { nom : "Eau bénite", emoji : "💧" },
+                { nom : "Bière .", emoji : "🍺" },
+                { nom : "Sangria", emoji : "🍷" },
+                { nom : "Vin blanc ", emoji : " "},
             ]},
         ]
     },
 
+    
+
     EventSportif : 
     {
         info_pratique: [
-            { type: "ligne", emoji: "🪂", titre: "Trampoline park", description: "" },
+            { type: "ligne", emoji: "🎨🎯🔫", titre: "PaintBall", description: "" },
             { type : "separation"},
-            { type: "ligne", emoji: "📅", titre: "Date", description: "Jeudi 9 septembre" },
+            { type: "ligne", emoji: "📅", titre: "Date", description: "16 Février " },
             { type : "separation"},
-            { type: "ligne", emoji: "🎡", titre: "Lieu", description: "Jump in park", lien: "https://www.google.com/maps" },
+            { type: "ligne", emoji: "🎡", titre: "Lieu", description: "28 rue Barnave 38400 Saint Martin d’Hères", lien: "https://maps.app.goo.gl/SC2PZugRtNxJosYbA" },
             { type : "separation"},
-            { type: "ligne", emoji: "💸", titre: "Prix", description: "5 phelma, 6 exte" },
+            { type: "ligne", emoji: "💸", titre: "Prix", description: "4€" },
           ],
-
         au_programme : 
         [
             {   type : "double",
                 titre : "Que du bonheur",
                 emoji : "😇",
                 items : [
-                { nom : "Trampolines",  emoji : "🏐" },
-                { nom : "Parkour Ninja", emoji : "⚽" },
-                { nom : "Basket", emoji : "🏀" }
-                ,
+                { nom : "Paintball",  emoji : "🔫" },
+                
             ]},
             { type : "separation"},
             {
@@ -532,12 +461,11 @@ MINP :
         au_menu : 
         [   
             {   type : "double",
-                titre : "A manger",
+                titre : "goûter ",
                 emoji : "🍽️",
                 items : [
-                { nom : "Salade césare chevre miel pignon...",  emoji : "🥗" },
-                { nom : "Poulet braisé curry oignon ", emoji : "🍗" },
-                { nom : "Tarte potimaron jsp quoi mettre", emoji : "🥧" },
+                { nom : "Crêpes ",  emoji : "" },
+                { nom : "gâteau chocolat ", emoji : "" },
             ]},
             { type : "separation"},
             {
@@ -551,6 +479,7 @@ MINP :
             ]},
         ]
     },
+
 
     WEL : 
     [
