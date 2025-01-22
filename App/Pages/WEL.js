@@ -361,7 +361,7 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                 
                 <View style={{flexDirection : "row", width : "100%", backgroundColor : "transparent",alignItems : "center",justifyContent : "space-around" }} >
                 <View >
-                <Text style={{marginLeft : 0.02*width, width : width*0.35, fontSize: width * 0.06, fontFamily: "JungleBold", color: lightTheme.text, textAlign: "left" }}>
+                <Text style={{marginLeft : 0.02*width, width : width*0.45, fontSize: width * 0.06, fontFamily: "JungleBold", color: lightTheme.text, textAlign: "left" }}>
                     {item.nom}
                     <Text style={{  fontFamily: "JungleBold", color: lightTheme.text, textAlign: "center",
                         color : "#D3B206"
@@ -377,20 +377,20 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                 </View>
                 
                 <View style={{backgroundColor : "#D3B206",paddingHorizontal : width*0.02,padding : width*0.01,borderRadius : 10}}>
-                        <Text style={{ fontSize: width * 0.07, fontFamily: "JungleBold", color: "white", textAlign: "center" }}>
+                        <Text style={{ fontSize: width * 0.08, fontFamily: "JungleBold", color: "white", textAlign: "center" }}>
                               {item.prix + ""}
                               <FontAwesome5 name="euro-sign" size={20} color="white" />
                             </Text>
                         </View>
                 <View style={{backgroundColor : "transparent"}}>
-                        <Image   
+                        {/* <Image   
                         
                         style={{ 
                            
                             borderRadius : 10,
                             width:  width*0.2, height: width*0.1, resizeMode: "cover" }} 
                         
-                        source={item.photo} />
+                        source={item.photo} /> */}
                 </View>     
                 </View>
                 <View style={{ marginTop : height * 0.01,width : "90%"}} >
