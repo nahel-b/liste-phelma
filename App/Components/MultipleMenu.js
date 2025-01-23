@@ -8,7 +8,7 @@ const { width, height } = Dimensions.get("window");
 const TabSelector = ({ titles, components,head_item }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const w = titles.length === 3 ? width * 0.31 : width * 0.25;
+  const w = titles.length === 1 ? width * 0.4  : titles.length === 3 ? width * 0.31 : width * 0.25;
 
   const styles = StyleSheet.create({
     container: {
@@ -61,11 +61,11 @@ const TabSelector = ({ titles, components,head_item }) => {
             onPress={() => setSelectedIndex(index)}
             
           >
-            <View style={styles.tabButton}>
+            <View style={[styles.tabButton, titles.length === 1 && {alignItems : "center",width : width}]}>
             <Image
               style={styles.tabImage}
               source={
-                selectedIndex === index
+                selectedIndex === index && titles.length > 1
                   ? require("../../assets/images/button/button-wood-pressed.png")
                   : require("../../assets/images/button/button-wood.png")
               }

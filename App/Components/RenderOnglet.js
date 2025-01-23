@@ -153,7 +153,7 @@ return(
 
 function Ligne ({text, emoji,lien}) {
 return(
-    <View style={[{ flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" },styles.seperation]}>
+    <View style={[{width : 0.71*width, flexDirection : "row",alignItems : "flex-start", justifyContent : "flex-start" },styles.seperation]}>
         <Text style={{ height : "100%",fontSize : width * 0.05}}>{emoji}</Text>
         <Text style={[styles.textPage,{ fontSize :  height * 0.026,opacity : 0.9}]}>{" "}{text}</Text>
         {lien && 

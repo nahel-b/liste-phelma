@@ -57,11 +57,11 @@ export function DD() {
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
-                titles={titres_base}
+                titles={titres_base.slice(0,1)}
                 components={[
                     <RenderOnglet data={Data.DD.info_pratique} />,
-                    <RenderOnglet data={Data.DD.au_programme} />,
-                    <RenderOnglet data={Data.DD.au_menu} />
+                    // <RenderOnglet data={Data.DD.au_programme} />,
+                    // <RenderOnglet data={Data.DD.au_menu} />
                 ]}
             />
         </View>

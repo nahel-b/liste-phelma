@@ -16,6 +16,7 @@ import lightTheme from "../Colors";
 import HapticBounceable from "../Components/HapticBounceable";
 import { ScrollView } from "react-native";
 
+const liens_telephones = data.liens_telephones_wel;
 export default function WEL() {
 
 
@@ -60,6 +61,7 @@ export default function WEL() {
         ));
     };
 
+    
 
     return (
         <View style={styles.container}>
@@ -115,7 +117,7 @@ export default function WEL() {
                 <Animated.View style={[styles.modal, modalStyle2,{ zIndex: 1 } ]}>
                     <View style={styles.handleBar} />
 
-                    <Image source={require("../../assets/images/carte-zone.png")} 
+                    <Image source={require("../../assets/images/carte-zone.jpeg")} 
 
                     style={{height : width * 0.5,zIndex : 2,width : width * 0.9,
                         borderRadius : 10,
@@ -406,6 +408,32 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
             </View>
         )
     }
+    const collapsedHeight2 = height; // Position de départ du modal (bas)
+        const modalHeight2 = height * 0.4; // Hauteur du modal ouvert
+        const translateY2 = useSharedValue(collapsedHeight2); // Position verticale animée du modal
+    
+
+    const gestureHandler2 = useAnimatedGestureHandler({
+            onStart: (_, ctx) => {
+                ctx.startY = translateY2.value;
+            },
+            onActive: (event, ctx) => {
+                translateY2.value = ctx.startY + event.translationY;
+                if (translateY2.value < 0) translateY2.value = 0; // Empêche de dépasser le haut
+            },
+            onEnd: () => {
+                if (translateY2.value > modalHeight2 / 2) {
+                    translateY2.value = withSpring(collapsedHeight2); // Fermer le modal
+                } else {
+                    translateY2.value = withSpring(0); // Ouvrir le modal
+                }
+            },
+        });
+    
+        const modalStyle2 = useAnimatedStyle(() => ({
+            transform: [{ translateY: translateY2.value }],
+        }));
+
 
 
     return (
@@ -433,7 +461,7 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                     { data.titre }
                 </Text>
 
-                <HapticBounceable onPress={()=>Linking.openURL(data.commander_lien)} style={{zIndex : 2,justifyContent : "center",alignItems : "center"}}>
+                <HapticBounceable onPress={()=>translateY2.value = withSpring(0, { damping: 150, stiffness: 500 })} style={{zIndex : 2,justifyContent : "center",alignItems : "center"}}>
                                 <View style={{alignItems : "center",zIndex : 2,backgroundColor : lightTheme.lightBackground,padding : 10,borderRadius : 20}}>
                                 <Image source={require("../../assets/images/animaux/tigre.png")} style={{height : width * 0.15,zIndex : 2,width : width * 0.15}} />
                             <Text style={{color : "black",fontFamily : "JungleBold",fontSize : width*0.035}}>Commander</Text>
@@ -462,10 +490,113 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
 
             {/* </ScrollView> */}
 
+            <PanGestureHandler onGestureEvent={gestureHandler2}>
+                <Animated.View style={[styles.modal, modalStyle2,{ zIndex: 3 } ]}>
+                
+                    {/* gauche */}
+                    
+                    <View style={styles.handleBar} />   
+
+                    <View style={{flexDirection : "row",justifyContent : "space-around",alignItems : "center"}}>
+                    <Image source={require("../../assets/images/carte-zone-carree.jpeg")} 
+
+                    style={{height : width * 0.5,zIndex : 2,width : width * 0.5,
+                        borderRadius : 10,
+                        alignSelf : "center",
+                        zIndex : -1
+                    }} />
+                    <View>
+                    <HapticBounceable onPress={() => {Linking.openURL(liens_telephones[0])}}  >
+                    <View style={[{alignItems : "center",justifyContent : "center",
+                        backgroundColor : lightTheme.lightBackground,
+
+                        width : width*0.4,
+                        alignSelf : "center",  zIndex : 4,  borderRadius : width * 0.03, shadowColor: 'black',
+                        shadowOffset: {width: 0, height: 1},  shadowOpacity: 1, shadowRadius: 3, borderColor: "black",
+                        borderWidth: 0,
+                        flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
+                    }]}>
+                    
+                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <Text style={{color : "rgb(80,100,190)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
+                        Zone bleu
+                        </Text>
+                    </View>
+                    </HapticBounceable>
+                    <HapticBounceable onPress={() => {Linking.openURL(liens_telephones[1])}}  >
+                    <View style={[{alignItems : "center",justifyContent : "center",
+                        backgroundColor : lightTheme.lightBackground,
+
+                        width : width*0.4,
+                        alignSelf : "center",  zIndex : 4,  borderRadius : width * 0.03, shadowColor: 'black',
+                        shadowOffset: {width: 0, height: 1},  shadowOpacity: 1, shadowRadius: 3, borderColor: "black",
+                        borderWidth: 0,
+                        flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
+                    }]}>
+                    
+                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <Text style={{color : "rgb(120,120,120)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
+                        Zone grise
+                        </Text>
+                    </View>
+                    </HapticBounceable>
+                    <HapticBounceable onPress={() => {Linking.openURL(liens_telephones[2])}}  >
+                    <View style={[{alignItems : "center",justifyContent : "center",
+                        backgroundColor : lightTheme.lightBackground,
+
+                        width : width*0.4,
+                        alignSelf : "center",  zIndex : 4,  borderRadius : width * 0.03, shadowColor: 'black',
+                        shadowOffset: {width: 0, height: 1},  shadowOpacity: 1, shadowRadius: 3, borderColor: "black",
+                        borderWidth: 0,
+                        flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
+                    }]}>
+                    
+                        <FontAwesome5 name="phone-alt" size={18} color="black" />
+                        <Text style={{color : "rgb(80,140,70)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
+                        Zone verte
+                        </Text>
+                    </View>
+                    </HapticBounceable>
+                    <HapticBounceable onPress={() => {Linking.openURL(liens_telephones[3])}}  >
+                    <View style={[{alignItems : "center",justifyContent : "center",
+                        backgroundColor : lightTheme.lightBackground,
+
+                        width : width*0.4,
+                        alignSelf : "center",  zIndex : 4,  borderRadius : width * 0.03, shadowColor: 'black',
+                        shadowOffset: {width: 0, height: 1},  shadowOpacity: 1, shadowRadius: 3, borderColor: "black",
+                        borderWidth: 0,
+                        flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
+                    }]}>
+                    
+                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <Text style={{color : "rgb(200,130,60)",fontFamily : "JungleBold",fontSize : width*0.05,margin : 8}}>
+                        Zone orange
+                        </Text>
+                    </View>
+                    </HapticBounceable>
+
+                    </View>
+                    </View>
+
+                    <Text style={{alignSelf : "center",marginTop : height*0.03, color : lightTheme.background,fontFamily : "JungleBold",fontSize : width*0.05}}>
+                        Jeudi : 12h30 - 18h{"\n"}
+                        Samedi : 9h - 17h{"\n"}
+                        Dimanche : 9h - 0h{"\n"}
+                    </Text>
+                        <View
+                            style={{height : height*0.5}}
+                        >
+
+
+                    </View>
+                </Animated.View>
+            </PanGestureHandler>
+
             
         </View>
     );
 }
+
 
 
 
