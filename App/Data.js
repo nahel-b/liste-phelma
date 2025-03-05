@@ -1,12 +1,16 @@
 import lightTheme  from './Colors'
-const data =
+
+
+let data =
 {
    nom_de_la_liste : "La CRYPT",
    lien_liste_insta : "https://www.instagram.com/crypt_la_liste/",
    lien_liste_facebook : "https://www.facebook.com/crypt_la_liste",
-   lien_liste_youtube : "https://www.youtube.com:@Crypt_la_liste",
+   lien_liste_youtube : "https://www.youtube.com/@Crypt_la_liste",
    catégories_missions : ["Tout", "Corvées", "Bien être", "Divertissements", "Packs" ],
        
+   debloque_wel_debut : false,
+   debloque_wel: false,
 
    liens_telephones_wel : 
     [
@@ -32,7 +36,7 @@ const data =
         "tel:0766331083",
 
         // zone verte :
-        "tel:0629498990",
+        "tel:0629498980",
 
         //zone orange :
         "tel:0777440118",
@@ -73,10 +77,10 @@ const data =
        { nom: "Chocotropic 10€ pour 10", categorie: "Packs", description: "Fontaine de chocolat avec pommes, bananes, clémentines, raisins" },
        { nom: "Anniversaire", categorie: "Packs", description: "On vient fêter ton anniversaire !" },
        { nom: "Cookie tisane 3€", categorie: "Packs", description: "Pour un goûter détente" },
-       { nom: "Chicha", categorie: "Corvées", description: "Appelez nous pour en savoir plus" }
+       { nom: "Chicha", categorie: "Divertissements", description: "Appelez nous pour en savoir plus" }
    ],
-   catégories_défis : ["Tout", "DD", "Crypt", "Membres de la Crypt", "Bob marliste",  "Hard Core"],
-   date_fin_defi : '2025-02-16T00:00:00Z',
+   catégories_défis : ["Tout", "DD", "Crypt", "Membres de la Crypt", "Bob Marliste",  "Hard Core"],
+   date_fin_defi : '2025-02-17T00:00:00Z',
    defis : [
        { nom: "Fumer tue", categorie: "DD", description: "Fais une campagne de prévention à un fumeur", points : 20 },
        { nom: "Montre au chef que t'es végé", categorie: "DD", description: "Prendre une assiette végé à la cantine en regardant le chef droit dans les yeux en lui disant \"je mange végétarien pour sauver la planète\"", points : 20 },
@@ -133,9 +137,9 @@ const data =
          { nom: "Ça rapproche", categorie: "Hard Core", description: "Chanter du Bob Marley à un inconnu", points : 25 },
        { nom: "Concert ", categorie: "Hard Core", description: "Faire un concert de Reggae à un inconnu", points : 25 },
        { nom: "Gros bg des pistes va ", categorie: "Hard Core", description: "Faire du ski habillé en Tarzan (slip léopard)", points : 25 },
-       { nom: "Marsu Marsu", categorie: " Hard Core", description: "Viens en cours en Marsupilami", points : 25 },
-       { nom: "Animal ", categorie: " Hard Core", description: "Faire le crie de Tarzan au châlet debout sur une table ", points : 25 },
-       { nom: "Event addict ", categorie: " Hard Core", description: "Faire tous les évènements de La Crypt", points : 50 },
+       { nom: "Marsu Marsu", categorie: "Hard Core", description: "Viens en cours en Marsupilami", points : 25 },
+       { nom: "Animal ", categorie: "Hard Core", description: "Faire le crie de Tarzan au châlet debout sur une table ", points : 25 },
+       { nom: "Event addict ", categorie: "Hard Core", description: "Faire tous les évènements de La Crypt", points : 50 },
 ],
    defis_cache : [
        { nom: "As des As", categorie: "Défis Cachés", description: "Dire en face d'un prof : \"Je fais partie des As de la jungle\"", points : 20 },
@@ -145,8 +149,8 @@ const data =
        { nom: "Grand fan ", categorie: "Défis Cachés", description: "Demander l'autographe d'un aventurier célèbre ", points : 20 },
        { nom: "En mode chasse", categorie: "Défis Cachés", description: "Voler la queue du marsupilami ", points : 20 },
        { nom: "Chasseur chassé ", categorie: "Défis Cachés", description: "Partir à la chasse du chasseur de la liste ", points : 20 },
-       { nom: "1v1 Régis", categorie: " Hard Core", description: "serrer la main de régis plus fort que lui ne la sert ", points : 75 },
-       { nom: "C'est juste un daron chill", categorie: " Hard Core", description: "Fumé un gros teh avec Régis ", points : 75 },
+       //{ nom: "1v1 Régis", categorie: " Hard Core", description: "serrer la main de régis plus fort que lui ne la sert ", points : 75 },
+      // { nom: "C'est juste un daron chill", categorie: " Hard Core", description: "Fumé un gros teh avec Régis ", points : 75 },
    ],
   
    nom_mois : ["jan", "fev", "mar", "avr", "mai", "jun", "jul", "aout", "sep", "oct", "nov", "dec"],
@@ -155,7 +159,7 @@ const data =
        { nomJour: "28 jan" },
        { nomJour: "29 jan" },
       
-   { nomJour: "30 jan", title: "Dévoilement", description: "Bienvenue à la Crypt !", textColor: "black", backgroundColor: lightTheme.brown},
+        { nomJour: "30 jan", title: "Dévoilement", description: "Bienvenue à la Crypt !", textColor: "black", backgroundColor: lightTheme.brown},
        { nomJour: "31 jan",  title: "SOS",  description: "La Crypt pour te servir ! Va voir tous nos services sur l’appli puis appelle-nous !",  textColor: "black",  backgroundColor: lightTheme.brown  },
        { nomJour: "1 fev", title: "Soirée BDE + SOS",  description: "La soirée à ne pas manquer ! (21 - 3h45h) \n La Crypt pour te servir ! Va voir tous nos services sur l’appli puis appelle-nous !",  textColor: "black", backgroundColor: lightTheme.lightGreen  },
        { nomJour: "2 fev",  title: "SOS",  description: "La Crypt pour te servir ! Va voir tous nos services sur l’appli puis appelle-nous !",  textColor: "black",  backgroundColor: lightTheme.brown  },
@@ -195,9 +199,9 @@ const data =
          ],
        au_programme :
        [
-               { type : "ligne",emoji : "⚡️" , titre : "Surprises éclair pour nos aventuriers toutes les heures de 22h30 à 1h30 ", },
+               { type : "ligne",emoji : "⚡️" , titre : "Surprises éclair pour nos aventuriers toutes les heures de 22h30 à 0h30 ",description:"" },
            { type : "separation"},
-           { type : "ligne",emoji : "🌿" , titre : "La Crypt vous a préparé de nombreuses surprises, venez pour toutes les découvrir !", },
+           { type : "ligne",emoji : "🌿" , titre : "La Crypt vous a préparé de nombreuses surprises, venez pour toutes les découvrir !",description:"" },
            ],
        
                
@@ -400,6 +404,13 @@ ApremBDA :
            { type: "ligne", emoji: "🎡", titre: "Lieu", description: "28 rue Barnave 38400 Saint Martin d’Hères", lien: "https://maps.app.goo.gl/SC2PZugRtNxJosYbA" },
            { type : "separation"},
            { type: "ligne", emoji: "💸", titre: "Prix", description: "4€" },
+          // { type : "separation"},
+        //    {
+        //     type : "paragraphe",
+        //     titre : "A boire",
+        //     emoji : "💧",
+        //     description : "   Softs et eau" },
+        
          ],
        au_programme :
        [
@@ -423,29 +434,17 @@ ApremBDA :
       
        au_menu :
        [  
-           {   type : "double",
-               titre : "goûter ",
-               emoji : "🍽️",
-               items : [
-               { nom : "Crêpes ",  emoji : "" },
-               { nom : "gâteau chocolat ", emoji : "" },
-           ]},
-           { type : "separation"},
-           {
-               type : "double",
-               titre : "A boire",
+           {   type : "ligne",
+               titre : "Soft et eau",
                emoji : "🍹",
-               items :  [
-               { nom : "Bière : chouffe, blonde, ...", emoji : "🍺" },
-               { nom : "Cocktail spécial surprise", emoji : "🍷" },
-               { nom : "Eau bénite", emoji : "💧" },
-           ]},
+               description : ""
+           }
        ]
    },
    WEL :
    [
        { titre : 'Jeudi',
-           date_debut : '2025-01-0T00:00:00Z',
+           date_debut : '2025-02-06T00:00:00Z',
            items :
            [
                {
@@ -499,8 +498,8 @@ ApremBDA :
           
        },
        { titre : 'Samedi',
-           date_debut : '2025-01-00T00:00:00Z',
-           items :
+        date_debut : '2025-02-08T00:00:00Z',
+        items :
            [
                {
                    titre : "Plats",
@@ -556,8 +555,8 @@ ApremBDA :
           
        },
        { titre : 'Dimanche',
-           date_debut : '2025-01-00T00:00:00Z',
-items :
+        date_debut : '2025-02-09T00:00:00Z',
+        items :
            [
                {
                    titre : "Plats",
@@ -574,7 +573,7 @@ items :
                            prix : 2.5,
                            vege : true,
                            commander_lien : "https://www.google.com",
-                           ingredients : "Un couscous végé (falafels, saucisse vege) qui vous rappelera vos aventures dans les deserts du monde",
+                           ingredients : "Un couscous végé qui vous rappelera vos aventures dans les deserts du monde",
                         },
                        
                    ]
@@ -597,7 +596,7 @@ items :
        },
        {
            titre : 'Packs',
-           date_debut : '2025-01-00T00:00:00Z',
+           date_debut : '2025-02-06T00:00:00Z',
            items :
                    [
                        {   nom : "Éveil \nsauvage", photo : require('../assets/images/WEL/jour1/menu1.png'),

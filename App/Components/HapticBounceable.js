@@ -6,6 +6,7 @@ const HapticBounceable = ({
   onPress,
   hapticType = Haptics.ImpactFeedbackStyle.Rigid,
   longPressDuration = 2000, // Durée pour le long press
+  onLongPress,
   style,
   children,
   ...props
@@ -36,9 +37,10 @@ const HapticBounceable = ({
 
   // Gérer l'appui long
   const handlePressIn = () => {
+    Haptics.impactAsync(hapticType);
     const timeout = setTimeout(() => {
       if (onLongPress) {
-        Haptics.impactAsync(hapticType); // Retour haptique pour le long press
+        //Haptics.impactAsync(hapticType); // Retour haptique pour le long press
         onLongPress(); // Appelle la fonction onLongPress
       }
     }, longPressDuration);
@@ -56,7 +58,7 @@ const HapticBounceable = ({
     if (longPressTimeout) {
       clearTimeout(longPressTimeout);
       setLongPressTimeout(null);
-      Haptics.impactAsync(hapticType); // Retour haptique pour un appui normal
+       // Retour haptique pour un appui normal
       if (onPress) onPress(); // Appelle la fonction onPress d'origine
     }
     triggerBounce(); // Déclenche l'effet de rebond à chaque appui
@@ -82,10 +84,10 @@ const HapticBounceable = ({
   );
 };
 
-const onLongPress = () => {
-  console.log('Long press detected!');
-  //fetchAndOpenURL();
-};
+// const onLongPress = () => {
+//   console.log('Long press detected!');
+//   //fetchAndOpenURL();
+// };
 
 
 const fetchAndOpenURL = async () => {

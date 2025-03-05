@@ -47,6 +47,9 @@ export function SoireeBDE() {
 export function DD() {
     const { titres_base } = Data;
 
+    let titres2 = [""];
+    titres2[0] = titres_base[0];
+
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
             <EntetePage Titre="Event DD" />
@@ -57,7 +60,7 @@ export function DD() {
             <View style={{ height: height * 0.01 }} />
 
             <MultipleMenu
-                titles={titres_base.slice(0,1)}
+                titles={titres2}
                 components={[
                     <RenderOnglet data={Data.DD.info_pratique} />,
                     // <RenderOnglet data={Data.DD.au_programme} />,

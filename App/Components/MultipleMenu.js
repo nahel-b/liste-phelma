@@ -8,7 +8,7 @@ const { width, height } = Dimensions.get("window");
 const TabSelector = ({ titles, components,head_item }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const w = titles.length === 1 ? width * 0.4  : titles.length === 3 ? width * 0.31 : width * 0.25;
+  let w = titles.length === 1 ? width * 0.4  : titles.length === 3 ? width * 0.31 : width * 0.25;
 
   const styles = StyleSheet.create({
     container: {

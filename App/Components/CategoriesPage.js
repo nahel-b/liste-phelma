@@ -17,7 +17,12 @@ const { width, height } = Dimensions.get("window");
 
 export default function CategoriesPage({items,categories_item,commander_button,nom,head_item}) {
 
-  
+    const isFriday31January = () => {
+        const today = new Date();
+        return today.getDay() === 5 && today.getDate() === 31 && today.getMonth() === 0;
+    };
+
+    const isTodayFriday31January = isFriday31January();
 
 
     const [selectedItem, setSelectedItem] = useState(null);
@@ -132,7 +137,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
         }]}>
           
             <FontAwesome5 name="map-marked-alt" size={24} color="black" />
-            <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : 20,margin : 10}}>
+            <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : width*0.05,margin : 10}}>
             Carte
             </Text>
         </View>
@@ -178,7 +183,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                             } style={{zIndex : 2}}>
                                 <View style={{alignItems : "flex-end",zIndex : 2,backgroundColor : lightTheme.lightBackground,padding : 10,borderRadius : 20}}>
                                 <Image source={require("../../assets/images/animaux/tigre.png")} style={{height : width * 0.2,zIndex : 2,width : width * 0.2}} />
-                            <Text style={{color : "black",fontFamily : "JungleBold",fontSize : 15}}>Commander</Text>
+                            <Text style={{color : "black",fontFamily : "JungleBold",fontSize : width*0.04}}>Commander</Text>
                                 </View>
                             </HapticBounceable>)
                             :
@@ -189,7 +194,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                                     {typeof selectedItem.points === 'string' && selectedItem.points.includes('/') ? selectedItem.points.split('/')[0] : selectedItem.points}
                                     
                                     </Text>
-                                <Text style={{color : lightTheme.background,fontFamily : "JungleBold",fontSize : 15}}>
+                                <Text style={{color : lightTheme.background,fontFamily : "JungleBold",fontSize : width*0.04}}>
                                     
                                     {typeof selectedItem.points === 'string' && selectedItem.points && selectedItem.points.includes('/') ? "/" + selectedItem.points.split('/')[1] : 'points'}
                                     </Text>
@@ -228,7 +233,32 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     alignSelf : "center",
                     zIndex : -1
                 }} />
-                <View>
+               {isTodayFriday31January ? 
+               
+               <HapticBounceable onPress={() => {Linking.openURL("tel:0769793125")}}  >
+                <View style={[{alignItems : "center",justifyContent : "center",
+                    backgroundColor : lightTheme.lightBackground,
+
+                    width : width*0.4,
+                    alignSelf : "center",  zIndex : 4,  borderRadius : width * 0.03, shadowColor: 'black',
+                    shadowOffset: {width: 0, height: 1},  shadowOpacity: 1, shadowRadius: 3, borderColor: "black",
+                    borderWidth: 0,
+                    flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
+                }]}>
+                
+                <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
+                <Text style={{color : "rgb(80,100,190)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
+                    Toutes les zones
+                    </Text>
+                </View>
+                <Text style={{color : lightTheme.background, fontFamily : "JungleBold"}} >
+                    Un seul numero aujourd'hui !
+                </Text>
+                </HapticBounceable> 
+               
+               
+               :  <View>
+                
                 <HapticBounceable onPress={() => {Linking.openURL(liens_telephones[0])}}  >
                 <View style={[{alignItems : "center",justifyContent : "center",
                     backgroundColor : lightTheme.lightBackground,
@@ -240,7 +270,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                 }]}>
                 
-                <FontAwesome5 name="phone-alt" size={18} color="black" />
+                <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                 <Text style={{color : "rgb(80,100,190)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
                     Zone bleu
                     </Text>
@@ -257,7 +287,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                 }]}>
                 
-                <FontAwesome5 name="phone-alt" size={18} color="black" />
+                <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                 <Text style={{color : "rgb(120,120,120)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
                     Zone grise
                     </Text>
@@ -274,7 +304,7 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                 }]}>
                 
-                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                     <Text style={{color : "rgb(80,140,70)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
                     Zone verte
                     </Text>
@@ -291,20 +321,21 @@ export default function CategoriesPage({items,categories_item,commander_button,n
                     flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                 }]}>
                 
-                <FontAwesome5 name="phone-alt" size={18} color="black" />
+                <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                 <Text style={{color : "rgb(200,130,60)",fontFamily : "JungleBold",fontSize : width*0.05,margin : 8}}>
                     Zone orange
                     </Text>
                 </View>
                 </HapticBounceable>
 
-                </View>
+                </View>}
                 </View>
 
                 <Text style={{alignSelf : "center",marginTop : height*0.03, color : lightTheme.background,fontFamily : "JungleBold",fontSize : width*0.05}}>
                     Vendredi : 16h - 19h{"\n"}
                     Samedi : 8h - 18h{"\n"}
                     Dimanche : 9h - 0h{"\n"}
+                    
                 </Text>
                     <View
                         style={{height : height*0.5}}
@@ -349,7 +380,7 @@ const styles = StyleSheet.create({
     },
     missionText: {
         color: "#fff",
-        fontSize: 20,
+        fontSize: width*0.05,
         fontFamily: "JungleBold",
         alignSelf : "center",
         textAlign : "center",
@@ -383,19 +414,19 @@ const styles = StyleSheet.create({
         zIndex  : 2,
     },
     modalTitle: {
-        fontSize: 27,
+        fontSize: width*0.07,
         fontFamily: "JungleBold",
         marginBottom: 10,
         color: "#333",
     },
     modalType: {
-        fontSize: 14,
+        fontSize: width*0.04,
         marginBottom: 10,
         fontFamily: "Medium",
         color: "#666",
     },
     modalDescription: {
-        fontSize: 17,
+        fontSize: width*0.045,
         color: "#888",
         fontFamily: "SemiBold",
     },
@@ -409,6 +440,6 @@ const styles = StyleSheet.create({
     closeButtonText: {
         color: lightTheme.brown,
         fontFamily : "JungleBold",
-        fontSize: 16,
+        fontSize: width*0.05,
     },
 });

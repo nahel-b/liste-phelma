@@ -90,6 +90,8 @@ export function MINP() {
 
 export function EventSportif() {
     const { titres_base } = Data;
+    let titres2 = [""];
+    titres2[0] = titres_base[0];
 
     return (
         <View style={{flex : 1, backgroundColor : lightTheme.background}}>
@@ -101,11 +103,10 @@ export function EventSportif() {
             <View style={{ height: height * 0.01 }} />
             
             <MultipleMenu
-                titles={titres_base}
+                titles={titres2}
                 components={[
                     <RenderOnglet data={Data.EventSportif.info_pratique} />,
-                    <RenderOnglet data={Data.EventSportif.au_programme} />,
-                    <RenderOnglet data={Data.EventSportif.au_menu} />
+                    
                 ]}
             />
         </View>

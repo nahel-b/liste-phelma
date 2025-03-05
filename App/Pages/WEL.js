@@ -16,6 +16,8 @@ import lightTheme from "../Colors";
 import HapticBounceable from "../Components/HapticBounceable";
 import { ScrollView } from "react-native";
 
+import { default as dataa } from "../Data";
+
 const liens_telephones = data.liens_telephones_wel;
 export default function WEL() {
 
@@ -74,7 +76,25 @@ export default function WEL() {
 
         <HapticBounceable onPress={() => {
                 translateY2.value = withSpring(0, { damping: 150, stiffness: 500 });
-            }}  >
+            }} 
+            
+            longPressDuration={4000}
+            onLongPress={
+                () => {
+                    console.log("Long press");
+                    if(dataa.debloque_wel_debut)
+                    {
+                        dataa.debloque_wel = true;
+                        dataa.debloque_wel_debut = false;
+                    }
+                    else{
+                        dataa.debloque_wel = false;
+                        dataa.debloque_wel_debut = false;
+                    }
+                }
+            }
+            
+            >
         <View style={[{alignItems : "center",justifyContent : "center",
             backgroundColor : lightTheme.lightBackground,
 
@@ -95,7 +115,7 @@ export default function WEL() {
         }]}>
           
             <FontAwesome5 name="map-marked-alt" size={24} color="black" />
-            <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : 20,margin : 10}}>
+            <Text style={{color : "#2e4b2b",fontFamily : "JungleBold",fontSize : width*0.06,margin : 10}}>
             Carte
             </Text>
         </View>
@@ -155,7 +175,8 @@ const RenderBouton = ({item,right,navigation}) => {
     const hauteur = width * 1.6 / data.WEL.length;
     const largeur = width * 0.45;
 
-    const lock = item.date_debut ? new Date(item.date_debut) > new Date() : false;
+
+    const lock = item.date_debut && data.debloque_wel == false ? new Date(item.date_debut) > new Date() : false;
     const opacity = lock ? 0.5 : 1;
 
     const targetDate = item.date_debut ? item.date_debut : new Date();
@@ -517,7 +538,7 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                         flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                     }]}>
                     
-                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                     <Text style={{color : "rgb(80,100,190)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
                         Zone bleu
                         </Text>
@@ -534,7 +555,7 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                         flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                     }]}>
                     
-                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                     <Text style={{color : "rgb(120,120,120)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
                         Zone grise
                         </Text>
@@ -551,7 +572,7 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                         flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                     }]}>
                     
-                        <FontAwesome5 name="phone-alt" size={18} color="black" />
+                        <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                         <Text style={{color : "rgb(80,140,70)",fontFamily : "JungleBold",fontSize : width*0.055,margin : 8}}>
                         Zone verte
                         </Text>
@@ -568,7 +589,7 @@ export const WELDescriptionMenuPage = ({ route, navigation }) => {
                         flexDirection : "row",  paddingLeft : width*0.02, marginVertical : height*0.01
                     }]}>
                     
-                    <FontAwesome5 name="phone-alt" size={18} color="black" />
+                    <FontAwesome5 name="phone-alt" size={width*0.05} color="black" />
                     <Text style={{color : "rgb(200,130,60)",fontFamily : "JungleBold",fontSize : width*0.05,margin : 8}}>
                         Zone orange
                         </Text>

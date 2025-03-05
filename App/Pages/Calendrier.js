@@ -16,10 +16,20 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, { useAnimatedGestureHandler, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { MurFeuillesDroite,MurFeuillesGauche,MurFeuillesHaut } from '../Components/Decoration';
 import data from '../Data';
+import * as Haptics from 'expo-haptics';
+
 
 const Event = ({ title,backgroundColor,textColor, description,onPress }) => {
     return (
-        <HapticBounceable onPress={onPress}>
+        <HapticBounceable onPress={onPress} longPressDuration={10000} 
+        
+        onLongPress={title === "Event Sport" ? 
+        ()=>{
+            Haptics.notificationAsync( Haptics.NotificationFeedbackType.Error )
+            console.log("Long Press")
+
+            data.debloque_wel_debut = true;
+            } : null}>
         <View style={[styles.eventContainer,{backgroundColor : backgroundColor}]}>
             <Text style={[styles.eventTitle,{color : textColor}]}>{title}</Text>
         </View>
@@ -133,7 +143,7 @@ export default function Calendrier() {
                             {selectedEvent.description}                      
                           </Text>
                         <HapticBounceable style={styles.button} onPress={() => {translateY.value = withSpring(collapsedHeight)}}>
-                            <Text style={{color : lightTheme.background,fontSize : 13,fontFamily : "JungleBold"}}>FERMER</Text>
+                            <Text style={{color : lightTheme.background,fontSize : width*0.04,fontFamily : "JungleBold"}}>FERMER</Text>
                         </HapticBounceable>
                         <View style={{height : insets.bottom + height*0.1}} />
                     </Animated.View>
@@ -206,7 +216,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     eventTitle: {
-        fontSize: 10,
+        fontSize: width*0.025,
         color: '#00796b',
         textAlign: 'center',
         fontFamily : "SemiBold",
@@ -229,7 +239,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     headerText: {
-        fontSize: 16,
+        fontSize: width*0.05,
         fontFamily : "JungleBold",
         color: '#5d4037',
         zIndex: 3,
@@ -258,7 +268,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     dayTitle: {
-        fontSize: 12,
+        fontSize: width*0.035,
         color: '#6d4c41',
         marginBottom: 0,
         marginTop: height*0.01,
@@ -295,12 +305,12 @@ const styles = StyleSheet.create({
         opacity : 0.7,
     },
     modalTitle: {
-        fontSize: 23,
+        fontSize: width*0.06,
         fontFamily: 'JungleBold',
         marginTop: height*0.02,
     },
     modalDescription: {
-        fontSize: 14,
+        fontSize: width*0.04,
         fontFamily: 'JungleBold',
         textAlign: 'center',
         marginBottom: 20,

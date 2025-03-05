@@ -2,13 +2,13 @@
   "expo": {
     "name": "La Crypt",
     "slug": "liste-phelma",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/logo-liste.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/logo-liste-transparent.png",
+      "image": "./assets/images/logo-liste.png",
       "resizeMode": "contain",
       "backgroundColor": "#8eb187"
     },
@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo-liste-transparent.png",
+        "foregroundImage": "./assets/images/logo-liste.png",
         "backgroundColor": "#8eb187"
       },
       "googleServicesFile": "./google-services.json",
@@ -67,6 +67,12 @@
       "eas": {
         "projectId": "dade7171-1968-48b9-b2ae-609712624831"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/dade7171-1968-48b9-b2ae-609712624831"
     }
   }
 }

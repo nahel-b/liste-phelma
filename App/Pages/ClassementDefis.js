@@ -318,7 +318,7 @@ const styles = StyleSheet.create({
     textNom: 
     {
         color : 'white',
-        fontSize : 30,
+        fontSize : width*0.08,
         //fontWeight : 'bold',
         fontFamily:'JungleBold'
     },

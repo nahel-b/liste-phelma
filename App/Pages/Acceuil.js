@@ -330,7 +330,7 @@ const eventDuJourClick = (navigation) => {
   else if(event.title == "SOS"){
     navigation.navigate("SOS");
   }
-  else if(event.title == "Soirée BDE"){
+  else if(event.title == "Soirée BDE" || event.title == "Soirée BDE + SOS"){
     navigation.navigate("SoireeBDE");
   }
   else if(event.title == "Soirée Zik"){
@@ -342,10 +342,10 @@ const eventDuJourClick = (navigation) => {
   else if(event.title == "MINP"){
     navigation.navigate("MINP");
   }
-  else if(event.title == "Event Sportif" || event.title == "Event sport"){
+  else if(event.title == "Event Sportif" || event.title == "Event Sport"){
     navigation.navigate("EventSportif");
   }
-  else if(event.title == "DD" || event.title == "Evenement DD"){
+  else if(event.title == "DD" || event.title == "Event DD"){
     navigation.navigate("DD");
   }
   else
